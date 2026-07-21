@@ -4,34 +4,37 @@ layout: default
 
 <section class="hero card reveal">
   <div class="hero-copy">
-    <p class="eyebrow">Marca personal</p>
-    <h1>Una web sobria, personal y lista para crecer.</h1>
+    <p class="eyebrow">system profile</p>
+    <h1>Una presencia clara, tecnica y con identidad propia.</h1>
     <p class="lede">
-      Esta version toma la vibra de un sitio autoral y la adapta a tu marca:
-      limpia, profesional, con contenido real y espacio para proyectos, blog y servicios.
+      Inspirada en un entorno Linux: limpia, precisa y ligera. Esta base prioriza legibilidad,
+      personalidad y una estructura que no cargue la vista en desktop ni en mobile.
     </p>
     <div class="hero-actions">
-    <a class="button button-solid" href="{{ site.announcement_cta_url | relative_url }}">{{ site.announcement_cta }}</a>
+      <a class="button button-solid" href="{{ site.announcement_cta_url | relative_url }}">{{ site.announcement_cta }}</a>
       <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
     </div>
   </div>
-  <div class="hero-panel">
-    <p class="eyebrow">Ahora mismo</p>
+  <div class="hero-panel terminal-panel">
+    <p class="eyebrow">status</p>
     <h2>{{ site.announcement_title }}</h2>
     <p>{{ site.announcement_text }}</p>
+    <pre class="terminal-snippet">rmdigital@local:~$ ls services blog projects
+services  blog  topoapp
+</pre>
   </div>
 </section>
 
 <section id="anuncios" class="card reveal">
   <div class="section-heading">
-    <p class="eyebrow">Anuncios</p>
-    <h2>Un espacio fijo para novedades, lanzamientos y estado de proyectos.</h2>
+    <p class="eyebrow">updates</p>
+    <h2>Un espacio limpio para anuncios y avances de proyectos.</h2>
   </div>
   <div class="announcement-box">
     <div class="announcement-media" aria-hidden="true"></div>
     <div class="announcement-copy">
       <p class="muted">
-        Aqui puedes actualizar mensajes como "Estoy trabajando en X proyecto" sin tocar la estructura del sitio.
+        Aquí puedes actualizar mensajes como "Estoy trabajando en X proyecto" sin tocar la estructura del sitio.
       </p>
       <a class="button button-ghost" href="#faq">Ver preguntas frecuentes</a>
     </div>
@@ -40,8 +43,8 @@ layout: default
 
 <section id="servicios" class="card reveal">
   <div class="section-heading">
-    <p class="eyebrow">Servicios</p>
-    <h2>Lo que hago, sin ruido innecesario.</h2>
+    <p class="eyebrow">services</p>
+    <h2>Lo que hago, sin saturar la interfaz.</h2>
   </div>
   <div class="service-grid">
     <article class="service-card">
@@ -65,18 +68,17 @@ layout: default
 
 <section id="acerca" class="card reveal">
   <div class="section-heading">
-    <p class="eyebrow">Acerca de</p>
-    <h2>Una presencia personal, con criterio y espacio para evolucionar.</h2>
+    <p class="eyebrow">about</p>
+    <h2>Una presencia personal con criterio, sin exagerar la forma.</h2>
   </div>
   <div class="about-grid">
     <p>
-      Esta base esta pensada para combinar una estetica sobria con una voz cercana.
-      La idea es que el sitio se sienta humano, facil de navegar y util tanto para mostrar trabajo
-      como para convertir visitantes en contactos.
+      Esta base está pensada para parecerse más a un sistema vivo que a una web corporativa.
+      Quiero que se sienta cercana, fácil de explorar y con una voz clara.
     </p>
     <p>
-      TopoApp aparece como parte de tu ecosistema, y el blog queda listo para historias, notas,
-      procesos y anuncios. Todo con slugs limpios, SEO basico y secciones reutilizables.
+      TopoApp, el blog y los servicios quedan listos como módulos, con slugs limpios, SEO básico
+      y una estructura preparada para evolucionar.
     </p>
   </div>
   <a class="button button-ghost" href="{{ '/acerca-de/' | relative_url }}">Ir a la pagina de acerca de</a>
@@ -84,8 +86,8 @@ layout: default
 
 <section id="faq" class="card reveal">
   <div class="section-heading">
-    <p class="eyebrow">FAQ</p>
-    <h2>Respuestas rapidas para las preguntas que mas se repiten.</h2>
+    <p class="eyebrow">faq</p>
+    <h2>Respuestas rápidas, sin texto de relleno.</h2>
   </div>
   <div class="faq-list">
     <details open>
@@ -119,7 +121,7 @@ layout: default
 
 <section class="card reveal">
   <div class="section-heading">
-    <p class="eyebrow">Blog</p>
+    <p class="eyebrow">blog</p>
     <h2>Una base lista para escribir en Markdown.</h2>
   </div>
   <div class="post-grid">
