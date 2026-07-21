@@ -1,7 +1,6 @@
 <aside class="sidebar-right" aria-label="Perfil">
   <div class="avatar">
-    {% comment %} Reemplazar por <img> cuando exista la foto real {% endcomment %}
-    {% include icon.html name="user" size=26 %}
+    <img src="{{ '/assets/img/avatar-web-bw.webp' | relative_url }}" alt="Retrato de {{ site.author.name }}">
   </div>
 
   <div class="profile-info">
