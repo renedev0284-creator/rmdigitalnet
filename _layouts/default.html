@@ -1,84 +1,28 @@
-<!doctype html>
-<html lang="es">
-  <head>
-    {% include head.html %}
-  </head>
-  <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <div class="page-shell">
-      <aside class="rail rail-left" aria-label="Enlaces rapidos">
-        <section class="rail-card rail-links" aria-label="Proyectos online">
-          <p class="eyebrow">links</p>
-          {% for item in site.left_rail_links %}
-            <a class="rail-item {% if item.icon == 'coffee' %}rail-item--coffee{% endif %}" href="{{ item.url }}">
-              <span class="rail-item-icon" aria-hidden="true">{% include icon.html name=item.icon %}</span>
-              <span class="rail-item-copy">
-                <strong>{{ item.label }}</strong>
-                <span class="sr-only">{{ item.note }}</span>
-              </span>
-            </a>
-          {% endfor %}
-        </section>
-      </aside>
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <div class="page-center">
-        <header class="topbar">
-          <a class="topbar-brand" href="{{ '/' | relative_url }}" aria-label="Ir al inicio">
-            <span class="topbar-brand__icon" aria-hidden="true">rm</span>
-            <span class="topbar-brand__logo">rmdigital.net</span>
-          </a>
+  {% seo %}
+  <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
 
-          <nav class="topbar-nav" aria-label="Navegacion superior">
-            {% for link in site.nav_links %}
-              <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
-            {% endfor %}
-          </nav>
-        </header>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
 
-        <main id="contenido" class="content">
-          {{ content }}
-        </main>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
-        <footer class="site-footer">
-          <div>
-            <p class="eyebrow">rmdigital.net</p>
-            <p>{{ site.profile_role }}</p>
-          </div>
-          <div>
-            <p class="muted">Hecho para crecer con blog, slugs limpios y SEO desde la base.</p>
-          </div>
-          <div class="site-footer__links">
-            <a href="{{ '/acerca-de/' | relative_url }}">Acerca de</a>
-            <a href="{{ '/blog/' | relative_url }}">Blog</a>
-            <a href="{{ '/legal/' | relative_url }}">Legal</a>
-          </div>
-        </footer>
-      </div>
+  {% include topnav.html %}
 
-      <aside class="rail rail-right" aria-label="Perfil">
-        <section class="rail-card profile-card">
-          <p class="eyebrow">Perfil</p>
-          <div class="avatar" aria-hidden="true">
-            <span>RM</span>
-          </div>
-          <h2>{{ site.profile_name }}</h2>
-          <p>{{ site.profile_bio }}</p>
-          <div class="social-row" aria-label="Redes sociales">
-            {% for social in site.social_links %}
-              <a class="social-link" href="{{ social.url }}" aria-label="{{ social.label }}">
-                <span aria-hidden="true">{% include icon.html name=social.icon %}</span>
-                <span class="sr-only">{{ social.label }}</span>
-              </a>
-            {% endfor %}
-          </div>
-          <div class="tag-cloud profile-tags">
-            {% for tag in site.service_tags %}
-              <a class="tag" href="{{ '/#servicios' | relative_url }}">{{ tag }}</a>
-            {% endfor %}
-          </div>
-          <a class="button button-ghost button-full" href="{{ '/acerca-de/' | relative_url }}">Leer mas</a>
-        </section>
-      </aside>
-    </div>
-  </body>
+  {{ content }}
+
+  {% include footer.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
 </html>

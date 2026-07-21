@@ -1,28 +1,61 @@
 ---
 layout: default
 ---
+{% assign post_trail = "blog|/blog/;" | append: page.title %}
+<div class="frame">
 
-<nav class="crumbs" aria-label="Breadcrumb">
-  <a href="{{ '/' | relative_url }}">inicio</a>
-  <span aria-hidden="true">/</span>
-  <a href="{{ '/blog/' | relative_url }}">blog</a>
-  <span aria-hidden="true">/</span>
-  <span>{{ page.title | downcase }}</span>
-</nav>
+  {% include breadcrumb.html trail=post_trail %}
 
-<article class="card prose reveal">
-  <p class="eyebrow">Blog</p>
-  <h1>{{ page.title }}</h1>
-  <p class="post-meta">{{ page.date | date: "%d %b %Y" }}</p>
-  {% if page.lede %}
-    <p class="lede">{{ page.lede }}</p>
-  {% endif %}
-  <div class="post-tags">
-    {% for tag in page.tags %}
-      <span class="tag">{{ tag }}</span>
-    {% endfor %}
+  <div class="content content--page">
+
+    {% include sidebar-left.html %}
+
+    <main id="main-content" class="main-col">
+      <article class="post">
+
+        <header class="post-header">
+          <h1>{{ page.title }}</h1>
+          <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+              {{ page.date | date: "%d de %B de %Y" }}
+            </time>
+            {% if page.categories.size > 0 %}
+              <span class="dot" aria-hidden="true">·</span>
+              {% for cat in page.categories %}
+                <span class="post-category">{{ cat }}</span>
+              {% endfor %}
+            {% endif %}
+          </p>
+
+          {% if page.image %}
+            <div class="post-cover">
+              <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+            </div>
+          {% endif %}
+        </header>
+
+        <div class="post-body">
+          {{ content }}
+        </div>
+
+        {% if page.tags.size > 0 %}
+          <div class="post-tags">
+            {% for tag in page.tags %}
+              <a class="rtag" href="{{ '/blog/' | relative_url }}?tag={{ tag | slugify }}">#{{ tag }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="post-support">
+          <p>Si este artículo te sirvió, puedes invitarme un café.</p>
+          {% include coffee-button.html %}
+        </div>
+
+      </article>
+    </main>
+
+    {% include sidebar-right.html %}
+
   </div>
-  <div class="prose-body">
-    {{ content }}
-  </div>
-</article>
+
+</div>

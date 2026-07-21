@@ -1,20 +1,23 @@
 ---
 layout: default
 ---
+<div class="frame">
 
-<nav class="crumbs" aria-label="Breadcrumb">
-  <a href="{{ '/' | relative_url }}">inicio</a>
-  <span aria-hidden="true">/</span>
-  <span>{{ page.title | downcase }}</span>
-</nav>
+  {% include breadcrumb.html trail=page.breadcrumb %}
 
-<article class="card prose reveal">
-  <p class="eyebrow">{{ page.eyebrow | default: page.title }}</p>
-  <h1>{{ page.title }}</h1>
-  {% if page.lede %}
-    <p class="lede">{{ page.lede }}</p>
-  {% endif %}
-  <div class="prose-body">
-    {{ content }}
+  <div class="content content--page">
+
+    {% include sidebar-left.html %}
+
+    <main id="main-content" class="main-col">
+      <article class="page-body">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+      </article>
+    </main>
+
+    {% include sidebar-right.html %}
+
   </div>
-</article>
+
+</div>

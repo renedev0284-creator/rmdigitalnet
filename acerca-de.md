@@ -1,35 +1,21 @@
 ---
 layout: page
-title: Acerca de
-eyebrow: Sobre mi
-description: Quien soy, que hago y como trabajo en rmdigital.net.
+title: "Acerca de"
+description: "La trayectoria de René M.: desarrollo, sistemas, hojas de cálculo y pauta digital."
 permalink: /acerca-de/
-lede: Una pagina pensada para contar el contexto detras de la marca sin perder orden ni claridad.
+breadcrumb: "acerca de"
 ---
 
-Soy Rene Moya y trabajo en proyectos donde la claridad importa tanto como la estetica.
-Me interesan las soluciones practicas: hojas de calculo bien armadas, sistemas faciles de mantener,
-pauta con seguimiento real y productos digitales que no se sientan pesados.
+Texto ampliado de la biografía. Reemplaza este párrafo con tu historia real:
+de dónde vienes, qué te trajo a trabajar en desarrollo, sistemas, hojas de
+cálculo y pauta digital, y qué te hizo lanzar topoapp.net.
 
-Esta web quiere mostrar eso sin exagerar el tono. La idea es tener una presencia sobria,
-un poco sombría, pero fresca; con aire editorial, una pizca de energia punk y una estructura que
-permita crecer sin rehacerlo todo cada pocos meses.
+## Cómo trabajo
 
-## Lo que me interesa mostrar
+Placeholder: describe tu proceso de trabajo, con quién te gusta trabajar,
+y qué esperas de un proyecto para aceptarlo.
 
-- Servicios concretos, no humo.
-- Un blog para procesos, ideas, avances y notas breves.
-- TopoApp como parte del ecosistema digital.
-- Una identidad que pueda evolucionar con el tiempo.
+## Lo que no hago
 
-## Como me gusta trabajar
-
-Me gustan los sistemas simples, el contenido ordenado y las decisiones visuales que no gritan.
-Si algo puede explicarse en una frase clara, mejor. Si puede resolverse con una estructura limpia,
-mejor todavia.
-
-## Siguiente paso
-
-Si quieres escribirme, usa las redes del sidebar o el boton de apoyo. Si quieres ver trabajo en curso,
-el blog va a ser el lugar natural para eso.
-
+Placeholder: si hay tipos de proyecto que no tomas, acláralo aquí para
+filtrar mejor los contactos que recibes.

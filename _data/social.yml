@@ -1,0 +1,47 @@
+# Sidebar izquierdo: redes y proyectos.
+# "icon" es la clase de Tabler Icons (https://tabler.io/icons) -- outline.
+# "kind": "primary" se muestra con el sidebar normal,
+# "kind": "support" se muestra separado (ej. botón de café).
+
+left_sidebar:
+  - name: "GitHub"
+    url: "https://github.com/tuusuario"
+    icon: "ti ti-brand-github"
+    kind: "primary"
+  - name: "X"
+    url: "https://x.com/tuusuario"
+    icon: "ti ti-brand-x"
+    kind: "primary"
+  - name: "Instagram"
+    url: "https://instagram.com/tuusuario"
+    icon: "ti ti-brand-instagram"
+    kind: "primary"
+  - name: "topoapp.net"
+    url: "https://topoapp.net"
+    icon: "ti ti-world"
+    kind: "primary"
+  - name: "Invítame un café"
+    url: "https://www.paypal.com/paypalme/rene0284"
+    icon: "ti ti-coffee"
+    kind: "support"
+
+# Sidebar derecho: redes personales
+right_sidebar:
+  - name: "Facebook"
+    url: "https://facebook.com/tuusuario"
+    icon: "ti ti-brand-facebook"
+  - name: "X"
+    url: "https://x.com/tuusuario"
+    icon: "ti ti-brand-x"
+  - name: "TikTok"
+    url: "https://tiktok.com/@tuusuario"
+    icon: "ti ti-brand-tiktok"
+
+# Etiquetas de especialidad, sidebar derecho, cada una enlaza a servicios
+specialty_tags:
+  - text: "#dev"
+    url: "/#servicios"
+  - text: "#ads"
+    url: "/#servicios"
+  - text: "#sheets"
+    url: "/#servicios"

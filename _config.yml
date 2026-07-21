@@ -1,90 +1,90 @@
-title: rmdigital.net
-description: Marca personal, servicios, proyectos y blog de rmdigital.
-url: ""
-baseurl: "/rmdigitalnet"
-author: Rene Moya
-email: rene0284@msn.com
-timezone: America/Guatemala
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-permalink: /blog/:year/:month/:day/:title/
-plugins:
-  - jekyll-seo-tag
-  - jekyll-sitemap
+# ------------------------------------------------------------------
+# Configuración del sitio — rmdigital.net
+# Todo lo que es "identidad" (título, descripción, redes, autor) vive
+# aquí para no tener que tocar layouts ni includes cuando cambie.
+# ------------------------------------------------------------------
+
+title: "rmdigital.net"
+tagline: "Con calma, con orden, sin relleno."
+description: >-
+  René M. — hojas de cálculo, desarrollo de sistemas y pauta en Meta y Google.
+  Creador de topoapp.net, plataforma de gestión de negocios.
+url: "https://rmdigital.net"        # cambiar cuando el dominio esté activo
+baseurl: ""                          # dejar vacío si usas dominio propio;
+                                      # usar "/nombre-repo" si publicas en
+                                      # usuario.github.io/nombre-repo
+
+author:
+  name: "René M."
+  email: "rene0284@msn.com"
+
+lang: es
+
+logo: /assets/img/logo.svg
+default_social_image: /assets/img/social-default.png   # placeholder para og:image
+
+paypal_email: "rene0284@msn.com"
+
+# ------------------------------------------------------------------
+# Colecciones y permalinks
+# ------------------------------------------------------------------
+permalink: /blog/:slug/
+
+collections:
+  posts:
+    output: true
 
 defaults:
   - scope:
       path: ""
-      type: posts
+      type: "posts"
     values:
-      layout: post
-      image: /assets/images/social-card.png
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
 
-nav_links:
-  - label: inicio
-    url: /
-  - label: acerca de
-    url: /acerca-de/
-  - label: servicios
+# ------------------------------------------------------------------
+# Plugins soportados de forma nativa por GitHub Pages
+# ------------------------------------------------------------------
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: /feed.xml
+
+# ------------------------------------------------------------------
+# Navegación superior — editar aquí para agregar/quitar secciones
+# ------------------------------------------------------------------
+nav:
+  - text: "inicio"
+    url: "/"
+  - text: "acerca de"
+    url: "/acerca-de/"
+  - text: "servicios"
     url: "/#servicios"
-  - label: preguntas frecuentes
-    url: "/#faq"
-  - label: blog
-    url: /blog/
+  - text: "preguntas frecuentes"
+    url: "/#faqs"
+  - text: "blog"
+    url: "/blog/"
 
-left_rail_links:
-  - label: GitHub
-    url: https://github.com/renedev0284-creator
-    note: Codigo, pruebas y repos
-    icon: github
-  - label: X
-    url: https://x.com/
-    note: Novedades y updates
-    icon: x
-  - label: Instagram
-    url: https://instagram.com/
-    note: Visuales y procesos
-    icon: instagram
-  - label: TopoApp
-    url: https://topoapp.net
-    note: Plataforma de gestion
-    icon: grid
-  - label: Cafe
-    url: "https://www.paypal.com/donate/?business=rene0284%40msn.com&currency_code=USD"
-    note: Apoya el proyecto
-    icon: coffee
+sass:
+  sass_dir: _sass
+  style: compressed
 
-social_links:
-  - label: Facebook
-    url: https://facebook.com/
-    icon: facebook
-  - label: X
-    url: https://x.com/
-    icon: x
-  - label: TikTok
-    url: https://tiktok.com/
-    icon: tiktok
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
-service_tags:
-  - Hojas de calculo
-  - Sistemas
-  - Desarrollo
-  - Meta Ads
-  - Google Ads
-  - Automatizacion
-  - TopoApp
-  - Blog
-
-announcement_title: Estoy trabajando en nuevos proyectos.
-announcement_text: La pagina central mostrara avances, lanzamientos y notas breves sobre lo que estoy construyendo ahora mismo.
-announcement_cta: Cuentame tu proyecto
-announcement_cta_url: "/#servicios"
-
-donation_label: Invitame un cafe
-donation_url: "https://www.paypal.com/donate/?business=rene0284%40msn.com&currency_code=USD"
-
-profile_name: René M.
-profile_role: Desarrollo · sistemas · pauta
-profile_bio: Trabajo entre hojas de calculo, sistemas, pauta y producto digital. Me gustan las webs limpias, con personalidad y base para crecer.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - templates

@@ -1,0 +1,25 @@
+<aside class="sidebar-right" aria-label="Perfil">
+  <div class="avatar">
+    {% comment %} Reemplazar por <img> cuando exista la foto real {% endcomment %}
+    <i class="ti ti-user" aria-hidden="true"></i>
+  </div>
+
+  <div class="profile-info">
+    <p class="name">{{ site.author.name }}</p>
+    <p class="role">Desarrollo · sistemas · pauta</p>
+  </div>
+
+  <div class="socials">
+    {% for item in site.data.social.right_sidebar %}
+      <a href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">
+        <i class="{{ item.icon }}" aria-hidden="true"></i>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="rtags">
+    {% for tag in site.data.social.specialty_tags %}
+      <a class="rtag" href="{{ tag.url | relative_url }}">{{ tag.text }}</a>
+    {% endfor %}
+  </div>
+</aside>

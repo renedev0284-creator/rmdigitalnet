@@ -1,0 +1,21 @@
+<header class="topnav">
+  <a href="{{ '/' | relative_url }}" class="brand" aria-label="{{ site.title }}, ir a inicio">
+    <span class="logo" aria-hidden="true">
+      {% include logo.svg %}
+    </span>
+    <span class="brandname">{{ site.title }}</span>
+  </a>
+
+  <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menú">
+    <i class="ti ti-menu-2" aria-hidden="true"></i>
+  </button>
+
+  <nav id="main-menu" class="menu" aria-label="Navegación principal">
+    {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}"
+         class="{% if item.url == '/' and page.url == '/' %}active{% elsif item.url == page.url %}active{% endif %}">
+        {{ item.text }}
+      </a>
+    {% endfor %}
+  </nav>
+</header>

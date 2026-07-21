@@ -1,0 +1,19 @@
+{% comment %}
+  Uso: {% include breadcrumb.html trail="Blog|/blog/;Título del post" %}
+  El último tramo no lleva enlace. Si no se pasa "trail", solo muestra "inicio".
+{% endcomment %}
+<nav class="breadcrumb" aria-label="Ruta de navegación">
+  <a href="{{ '/' | relative_url }}">inicio</a>
+  {% if include.trail %}
+    {% assign parts = include.trail | split: ";" %}
+    {% for part in parts %}
+      {% assign piece = part | split: "|" %}
+      <span class="sep" aria-hidden="true">/</span>
+      {% if piece.size == 2 %}
+        <a href="{{ piece[1] | relative_url }}">{{ piece[0] }}</a>
+      {% else %}
+        <span aria-current="page">{{ piece[0] }}</span>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</nav>

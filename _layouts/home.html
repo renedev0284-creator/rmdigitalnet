@@ -1,99 +1,84 @@
 ---
 layout: default
 ---
+<div class="frame">
 
-<nav class="crumbs crumbs-home" aria-label="Breadcrumb">
-  <a href="{{ '/' | relative_url }}">inicio</a>
-</nav>
+  {% include breadcrumb.html %}
 
-<section class="hero card reveal hero-home">
-  <p class="eyebrow">system profile</p>
-  <h1>Ayudo a negocios a organizarse: hojas de calculo, sistemas y publicidad.</h1>
-  <p class="lede">Con calma, con orden, sin relleno.</p>
-</section>
+  <div class="hero">
+    <p class="main">{{ page.hero_title }}</p>
+    <p class="sub">{{ page.hero_sub }}</p>
+  </div>
 
-<section class="card reveal now-panel" id="ahora">
-  <div class="now-media" aria-hidden="true"></div>
-  <div class="now-copy">
-    <p class="eyebrow">ahora mismo</p>
-    <h2>Trabajando en topoapp.net</h2>
-    <p>
-      Mi plataforma para gestionar inventario, ventas y clientes. Actualizo este espacio conforme avanzo.
-    </p>
-  </div>
-</section>
+  <div class="content">
 
-<section class="card reveal services-panel" id="servicios">
-  <div class="section-heading">
-    <p class="eyebrow">servicios</p>
-    <h2>¿Tienes un proyecto en mente?</h2>
-  </div>
-  <div class="tag-list">
-    <a class="tag tag--solid" href="#faq">hojas de calculo</a>
-    <a class="tag tag--solid" href="#faq">desarrollo</a>
-    <a class="tag tag--solid" href="#faq">pauta meta / google</a>
-  </div>
-  <div class="section-cta">
-    <a class="button button-solid button-primary" href="mailto:rene0284@msn.com?subject=Proyecto%20rmdigital">cuéntame tu proyecto</a>
-  </div>
-</section>
+    {% include sidebar-left.html %}
 
-<section class="card reveal about-panel" id="acerca">
-  <div class="section-heading">
-    <p class="eyebrow">acerca de</p>
-  </div>
-  <p>
-    Texto breve sobre trayectoria, tono directo, sin relleno corporativo. Me interesan las soluciones
-    claras, los sistemas fáciles de sostener y una web que se sienta útil desde el primer vistazo.
-  </p>
-  <a class="button button-ghost" href="{{ '/acerca-de/' | relative_url }}">leer más</a>
-</section>
+    <main id="main-content" class="main-col">
 
-<section class="card reveal faq-panel" id="faq">
-  <div class="section-heading">
-    <p class="eyebrow">preguntas frecuentes</p>
-    <h2>Respuestas rápidas para empezar.</h2>
-  </div>
-  <div class="faq-list">
-    <details open>
-      <summary>¿Cómo puedo contactarte?</summary>
-      <p>Escríbeme por cualquiera de mis redes en el menú lateral, ahí respondo primero.</p>
-    </details>
-    <details>
-      <summary>¿Cuánto cobras?</summary>
-      <p>Cada quien pone sus precios, la verdad es que no puedo ni quiero competir por precio. Dame tu presupuesto y trabajemos cuanto antes, necesito ocuparme en algo.</p>
-    </details>
-    <details>
-      <summary>¿Cómo apoyo el proyecto?</summary>
-      <p>A lo largo de este sitio vas a encontrar botones de “invítame un café” donde puedes donar algo vía PayPal (<a href="mailto:rene0284@msn.com">rene0284@msn.com</a>).</p>
-    </details>
-    <details>
-      <summary>¿Eres una agencia?</summary>
-      <p>Ahora mismo no soy una gran agencia. Si algún día lo fuera, lo seguiría tomando con respeto y humildad.</p>
-    </details>
-    <details>
-      <summary>¿Cuál es tu forma de trabajo?</summary>
-      <p>Plantilla editable: René puede ajustar esta respuesta para explicar tiempos, alcance o entregables.</p>
-    </details>
-  </div>
-</section>
+      <!-- Bloque "ahora mismo": editar aquí cuando cambie el proyecto activo -->
+      <section class="card announce">
+        <div class="img">
+          <img src="{{ page.now_image | default: '/assets/img/ahora-mismo-placeholder.png' | relative_url }}"
+               alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}">
+        </div>
+        <div class="txt">
+          <p class="label">ahora mismo</p>
+          <p class="title">{{ page.now_title }}</p>
+          <p class="desc">{{ page.now_desc }}</p>
+        </div>
+      </section>
 
-<section class="card reveal blog-panel">
-  <div class="section-heading">
-    <p class="eyebrow">blog</p>
-    <h2>Notas breves, avances y procesos.</h2>
+      <!-- Servicios + CTA único dominante -->
+      <section id="servicios" class="cta">
+        <p class="q">¿Tienes un proyecto en mente?</p>
+        <div class="tags">
+          <span class="tag">hojas de cálculo</span>
+          <span class="tag">desarrollo / sistemas</span>
+          <span class="tag">pauta meta / google</span>
+          <a class="tag" href="https://topoapp.net" target="_blank" rel="noopener">topoapp.net</a>
+        </div>
+        <a class="btn-cta" href="mailto:{{ site.author.email }}">cuéntame tu proyecto</a>
+        <div class="coffee-inline">{% include coffee-button.html %}</div>
+      </section>
+
+      <!-- Resumen de acerca de -->
+      <section class="card about-card">
+        <p class="label">acerca de</p>
+        <p class="txt">{{ page.about_summary }}</p>
+        <a class="read-more" href="{{ '/acerca-de/' | relative_url }}">leer más →</a>
+      </section>
+
+      <!-- FAQs -->
+      <section id="faqs" class="card faq-card">
+        <p class="label">preguntas frecuentes</p>
+
+        {% include faq-item.html
+            question="¿Cómo puedo contactarte?"
+            answer="Escríbeme por cualquiera de mis redes en el menú lateral, ahí respondo primero."
+            open=true %}
+
+        {% include faq-item.html
+            question="¿Cuánto cobras por tus servicios?"
+            answer="Cada quien pone sus precios, la verdad es que no puedo ni quiero competir por precio. Dame tu presupuesto y trabajemos cuanto antes, necesito ocuparme en algo." %}
+
+        {% include faq-item.html
+            question="¿Cómo puedo apoyar tu proyecto?"
+            answer="A lo largo de este sitio vas a encontrar botones de 'invítame un café' donde puedes donar algo vía PayPal." %}
+
+        {% include faq-item.html
+            question="¿Eres una agencia?"
+            answer="Ahora mismo no soy una gran agencia. Si algún día lo fuera, lo seguiría tomando con respeto y humildad." %}
+
+        {% include faq-item.html
+            question="¿Cuánto tardas en responder o entregar un proyecto?"
+            answer="Placeholder: edita esta respuesta con tus tiempos reales de respuesta y entrega." %}
+      </section>
+
+    </main>
+
+    {% include sidebar-right.html %}
+
   </div>
-  <div class="post-grid">
-    {% for post in site.posts limit:3 %}
-      <article class="post-card">
-        <p class="post-meta">{{ post.date | date: "%d %b %Y" }}</p>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-      </article>
-    {% endfor %}
-    {% if site.posts.size == 0 %}
-      <p class="muted">Aun no hay entradas publicadas. El primer post de ejemplo ya esta preparado en Markdown.</p>
-    {% endif %}
-  </div>
-  <a class="button button-ghost" href="{{ '/blog/' | relative_url }}">ver blog</a>
-</section>
+
+</div>

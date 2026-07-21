@@ -1,0 +1,9 @@
+{% comment %}
+  Uso: {% include coffee-button.html %}
+  Botón secundario, siempre con menos peso visual que el CTA principal.
+{% endcomment %}
+<a class="coffee-button" href="https://www.paypal.com/paypalme/{{ site.paypal_email | split: '@' | first }}"
+   target="_blank" rel="noopener">
+  <i class="ti ti-coffee" aria-hidden="true"></i>
+  <span>invítame un café</span>
+</a>
