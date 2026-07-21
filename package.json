@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "bundle exec jekyll build",
-    "build:cloudflare": "bundle exec jekyll build --config _config.yml,_config_cloudflare.yml",
+    "build:css": "sass assets/css/main.scss assets/css/main.css --load-path=_sass --style=compressed --no-source-map --silence-deprecation=import",
+    "build": "npm run build:css && bundle exec jekyll build",
+    "build:cloudflare": "npm run build:css && bundle exec jekyll build --config _config.yml,_config_cloudflare.yml",
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
+    "sass": "1.89.2",
     "wrangler": "4.113.0"
   }
 }

@@ -3,7 +3,7 @@
   "name": "rmdigitalnet",
   "compatibility_date": "2026-07-21",
   "build": {
-    "command": "bundle exec jekyll build --config _config.yml,_config_cloudflare.yml"
+    "command": "npm run build:cloudflare"
   },
   "assets": {
     "directory": "./_site"
