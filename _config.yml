@@ -9,10 +9,8 @@ tagline: "Con calma, con orden, sin relleno."
 description: >-
   René M. — hojas de cálculo, desarrollo de sistemas y pauta en Meta y Google.
   Creador de topoapp.net, plataforma de gestión de negocios.
-url: "https://rmdigital.net"        # cambiar cuando el dominio esté activo
-baseurl: ""                          # dejar vacío si usas dominio propio;
-                                      # usar "/nombre-repo" si publicas en
-                                      # usuario.github.io/nombre-repo
+url: "https://renedev0284-creator.github.io"
+baseurl: "/rmdigitalnet"             # proyecto GitHub Pages: dominio base + nombre del repo
 
 author:
   name: "René M."
