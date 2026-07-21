@@ -82,4 +82,60 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach(function (section) { sectionObserver.observe(section); });
   }
 
+  // ---------------- Preferencias de cookies ----------------
+  var cookieBanner = document.getElementById("cookie-banner");
+  var cookieAccept = document.getElementById("cookie-accept");
+  var cookieNecessary = document.getElementById("cookie-necessary");
+  var cookieSettings = document.querySelectorAll("[data-cookie-settings]");
+  var consentKey = "rmdigital_cookie_consent";
+  var consentVersion = 1;
+  var consentLifetime = 180 * 24 * 60 * 60 * 1000;
+
+  function readConsent() {
+    try {
+      var stored = JSON.parse(localStorage.getItem(consentKey));
+      if (!stored || stored.version !== consentVersion || stored.expiresAt < Date.now()) return null;
+      return stored;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function showCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = false;
+    requestAnimationFrame(function () { cookieBanner.classList.add("is-visible"); });
+  }
+
+  function hideCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.classList.remove("is-visible");
+    window.setTimeout(function () { cookieBanner.hidden = true; }, 220);
+  }
+
+  function saveConsent(choice) {
+    try {
+      localStorage.setItem(consentKey, JSON.stringify({
+        version: consentVersion,
+        choice: choice,
+        savedAt: Date.now(),
+        expiresAt: Date.now() + consentLifetime
+      }));
+    } catch (error) {
+      // El banner puede cerrarse aunque el navegador bloquee localStorage.
+    }
+    hideCookieBanner();
+  }
+
+  if (cookieBanner && !readConsent()) showCookieBanner();
+  if (cookieAccept) cookieAccept.addEventListener("click", function () { saveConsent("accepted"); });
+  if (cookieNecessary) cookieNecessary.addEventListener("click", function () { saveConsent("necessary"); });
+
+  cookieSettings.forEach(function (button) {
+    button.addEventListener("click", function () {
+      showCookieBanner();
+      if (cookieNecessary) cookieNecessary.focus();
+    });
+  });
+
 });

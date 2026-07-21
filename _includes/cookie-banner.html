@@ -1,0 +1,14 @@
+<section class="cookie-banner" id="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" hidden>
+  <div class="cookie-icon" aria-hidden="true">
+    {% include icon.html name="cookie" size=24 %}
+  </div>
+  <div class="cookie-copy">
+    <p class="cookie-label">Tu privacidad importa</p>
+    <h2 id="cookie-title">Cookies, pero sin sorpresas.</h2>
+    <p>Este sitio guarda tu elección y no utiliza cookies de analítica ni publicidad por ahora. Puedes conocer todos los detalles en la <a href="{{ '/cookies/' | relative_url }}">política de cookies</a>.</p>
+  </div>
+  <div class="cookie-actions">
+    <button class="cookie-button cookie-button--primary" id="cookie-accept" type="button">Aceptar</button>
+    <button class="cookie-button cookie-button--secondary" id="cookie-necessary" type="button">Solo necesarias</button>
+  </div>
+</section>

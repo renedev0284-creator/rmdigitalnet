@@ -300,6 +300,12 @@
     font-size: 11px;
   }
 
+  .footer-policy-links { display: inline-flex; flex-wrap: wrap; gap: 12px; }
+  .footer-policy-links a,
+  .footer-policy-links button { padding: 0; color: var(--text-secondary); background: none; border: 0; font: inherit; }
+  .footer-policy-links a:hover,
+  .footer-policy-links button:hover { color: var(--accent); }
+
   .footer-status { display: inline-flex; align-items: center; gap: 7px; }
   .footer-status i { width: 7px; height: 7px; background: #2f936f; border-radius: 50%; box-shadow: 0 0 0 4px rgba(47, 147, 111, 0.12); }
 }

@@ -32,7 +32,11 @@
 
   <div class="footer-bottom">
     <span>© {{ site.time | date: '%Y' }} {{ site.title }}</span>
-    <a href="{{ '/legal/' | relative_url }}">Legal y privacidad</a>
+    <span class="footer-policy-links">
+      <a href="{{ '/legal/' | relative_url }}">Legal y privacidad</a>
+      <a href="{{ '/cookies/' | relative_url }}">Cookies</a>
+      <button type="button" data-cookie-settings>Preferencias</button>
+    </span>
     <span class="footer-status"><i aria-hidden="true"></i> Disponible para nuevos proyectos</span>
   </div>
 </footer>
