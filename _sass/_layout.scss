@@ -26,7 +26,7 @@
 
   .brand { display: flex; align-items: center; gap: 10px; }
   .logo { display: flex; color: var(--accent); }
-  .logo svg { width: 30px; height: 30px; }
+  .logo img { width: 30px; height: 30px; object-fit: contain; }
 
   .brandname {
     color: var(--text-primary);
@@ -276,7 +276,7 @@
   .footer-brand p { max-width: 330px; margin: 15px 0 0; color: var(--text-secondary); font-size: 13px; }
 
   .footer-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); font-family: $font-mono; font-weight: 700; }
-  .footer-logo svg { width: 30px; height: 30px; }
+  .footer-logo img { width: 30px; height: 30px; object-fit: contain; }
 
   .footer-column { display: flex; align-items: flex-start; flex-direction: column; gap: 7px; }
   .footer-column a { color: var(--text-secondary); font-size: 13px; }
