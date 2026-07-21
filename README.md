@@ -1,6 +1,6 @@
 # rmdigital.net
 
-Sitio personal de René M. construido en Jekyll, listo para publicar en GitHub Pages.
+Sitio personal de René M. construido en Jekyll, preparado para GitHub Pages y Cloudflare Workers Static Assets.
 
 ## Cómo correrlo en local
 
@@ -22,7 +22,7 @@ Abre `http://localhost:4000`.
   `now_image` en el front matter de `index.md`.
 - **Mensaje del hero** → campos `hero_title` y `hero_sub` en `index.md`.
 - **FAQs de la home** → directamente en `_layouts/home.html`, cada una usa
-  `{% include faq-item.html question="..." answer="..." %}`.
+  los datos definidos en `_data/home.yml`.
 - **Textos de Acerca de y Legal** → `acerca-de.md` y `legal.md`.
 - **Botón de café / PayPal** → `paypal_email` en `_config.yml` y el include
   `_includes/coffee-button.html`.
@@ -52,6 +52,24 @@ propios metadatos SEO (gracias a `jekyll-seo-tag`).
 - `robots.txt` apunta al sitemap.
 - Cada página y post debe llevar su propio `description` distinto —
   no reutilices el mismo texto en todo el sitio.
+
+## Despliegue en Cloudflare
+
+El repositorio incluye `wrangler.jsonc`. Wrangler compila Jekyll con la
+configuración de producción `_config_cloudflare.yml` y publica `_site` como
+sitio estático.
+
+En **Settings > Build** de Cloudflare utiliza:
+
+```text
+Build command: dejar vacío
+Deploy command: npx wrangler deploy
+Root directory: /
+```
+
+No uses `npx bundle exec jekyll build`: `bundle` es un ejecutable de Ruby, no
+un paquete de npm. El comando correcto de Jekyll ya está definido en
+`wrangler.jsonc`.
 
 ## Antes de lanzar
 

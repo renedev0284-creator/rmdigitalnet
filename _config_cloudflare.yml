@@ -1,0 +1,4 @@
+# Valores de producción para Cloudflare Workers Static Assets.
+# Se combinan con _config.yml durante el build.
+url: "https://rmdigital.net"
+baseurl: ""
