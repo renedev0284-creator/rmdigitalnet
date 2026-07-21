@@ -11,7 +11,7 @@ layout: default
       limpia, profesional, con contenido real y espacio para proyectos, blog y servicios.
     </p>
     <div class="hero-actions">
-      <a class="button button-solid" href="{{ site.announcement_cta_url }}">{{ site.announcement_cta }}</a>
+    <a class="button button-solid" href="{{ site.announcement_cta_url | relative_url }}">{{ site.announcement_cta }}</a>
       <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
     </div>
   </div>
@@ -58,7 +58,7 @@ layout: default
     </article>
   </div>
   <div class="section-cta">
-    <a class="button button-solid" href="/acerca-de/">Conocer mas</a>
+    <a class="button button-solid" href="{{ '/acerca-de/' | relative_url }}">Conocer mas</a>
     <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
   </div>
 </section>
@@ -79,7 +79,7 @@ layout: default
       procesos y anuncios. Todo con slugs limpios, SEO basico y secciones reutilizables.
     </p>
   </div>
-  <a class="button button-ghost" href="/acerca-de/">Ir a la pagina de acerca de</a>
+  <a class="button button-ghost" href="{{ '/acerca-de/' | relative_url }}">Ir a la pagina de acerca de</a>
 </section>
 
 <section id="faq" class="card reveal">
@@ -126,7 +126,7 @@ layout: default
     {% for post in site.posts limit:3 %}
       <article class="post-card">
         <p class="post-meta">{{ post.date | date: "%d %b %Y" }}</p>
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
       </article>
     {% endfor %}
@@ -134,5 +134,5 @@ layout: default
       <p class="muted">Aun no hay entradas publicadas. El primer post de ejemplo ya esta preparado en Markdown.</p>
     {% endif %}
   </div>
-  <a class="button button-ghost" href="/blog/">Ver blog</a>
+  <a class="button button-ghost" href="{{ '/blog/' | relative_url }}">Ver blog</a>
 </section>

@@ -1,7 +1,7 @@
 title: rmdigital.net
 description: Marca personal, servicios, proyectos y blog de rmdigital.
 url: ""
-baseurl: ""
+baseurl: "/rmdigitalnet"
 author: Rene Moya
 email: rene0284@msn.com
 timezone: America/Guatemala

@@ -14,7 +14,7 @@ lede: Aqui puedes escribir publicaciones cortas o largas con slugs limpios y una
     {% for post in site.posts %}
       <article class="post-card">
         <p class="post-meta">{{ post.date | date: "%d %b %Y" }}</p>
-        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
         <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
       </article>
     {% endfor %}
@@ -33,5 +33,4 @@ Si quieres escribir una nueva entrada, duplica la plantilla:
 - Tags utiles
 - Slug limpio
 
-<a class="button button-ghost" href="/blog/plantilla/">Abrir plantilla</a>
-
+<a class="button button-ghost" href="{{ '/blog/plantilla/' | relative_url }}">Abrir plantilla</a>

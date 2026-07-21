@@ -20,7 +20,7 @@
         <nav class="rail-card rail-nav" aria-label="Navegacion principal">
           <p class="eyebrow">Navegacion</p>
           {% for link in site.nav_links %}
-            <a class="rail-link" href="{{ link.url }}">{{ link.label }}</a>
+            <a class="rail-link" href="{{ link.url | relative_url }}">{{ link.label }}</a>
           {% endfor %}
         </nav>
 
@@ -40,13 +40,13 @@
 
       <div class="page-center">
         <header class="topbar">
-          <a class="topbar-brand" href="/" aria-label="Ir al inicio">
+          <a class="topbar-brand" href="{{ '/' | relative_url }}" aria-label="Ir al inicio">
             <span class="topbar-brand__logo">rmdigital.net</span>
           </a>
 
           <nav class="topbar-nav" aria-label="Navegacion superior">
             {% for link in site.nav_links %}
-              <a href="{{ link.url }}">{{ link.label }}</a>
+              <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
             {% endfor %}
           </nav>
 
@@ -68,9 +68,9 @@
             <p class="muted">Hecho para crecer con blog, slugs limpios y SEO desde la base.</p>
           </div>
           <div class="site-footer__links">
-            <a href="/acerca-de/">Acerca de</a>
-            <a href="/blog/">Blog</a>
-            <a href="/legal/">Legal</a>
+            <a href="{{ '/acerca-de/' | relative_url }}">Acerca de</a>
+            <a href="{{ '/blog/' | relative_url }}">Blog</a>
+            <a href="{{ '/legal/' | relative_url }}">Legal</a>
           </div>
         </footer>
       </div>
@@ -83,7 +83,7 @@
           </div>
           <h2>{{ site.profile_name }}</h2>
           <p>{{ site.profile_bio }}</p>
-          <a class="button button-ghost button-full" href="/acerca-de/">Leer mas</a>
+          <a class="button button-ghost button-full" href="{{ '/acerca-de/' | relative_url }}">Leer mas</a>
         </section>
 
         <section class="rail-card rail-social">
@@ -101,7 +101,7 @@
           <p class="eyebrow">Etiquetas</p>
           <div class="tag-cloud">
             {% for tag in site.service_tags %}
-              <a class="tag" href="/blog/">{{ tag }}</a>
+              <a class="tag" href="{{ '/blog/' | relative_url }}">{{ tag }}</a>
             {% endfor %}
           </div>
         </section>
