@@ -4,6 +4,6 @@
 {% endcomment %}
 <a class="coffee-button" href="https://www.paypal.com/paypalme/{{ site.paypal_email | split: '@' | first }}"
    target="_blank" rel="noopener">
-  <i class="ti ti-coffee" aria-hidden="true"></i>
+  {% include icon.html name="coffee" size=17 %}
   <span>invítame un café</span>
 </a>

@@ -1,7 +1,7 @@
 <aside class="sidebar-right" aria-label="Perfil">
   <div class="avatar">
     {% comment %} Reemplazar por <img> cuando exista la foto real {% endcomment %}
-    <i class="ti ti-user" aria-hidden="true"></i>
+    {% include icon.html name="user" size=26 %}
   </div>
 
   <div class="profile-info">
@@ -12,7 +12,7 @@
   <div class="socials">
     {% for item in site.data.social.right_sidebar %}
       <a href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">
-        <i class="{{ item.icon }}" aria-hidden="true"></i>
+        {% include icon.html name=item.icon size=17 %}
       </a>
     {% endfor %}
   </div>

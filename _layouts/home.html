@@ -1,8 +1,6 @@
 ---
 layout: default
 ---
-<div class="frame">
-
   {% include breadcrumb.html %}
 
   <div class="hero">
@@ -19,8 +17,12 @@ layout: default
       <!-- Bloque "ahora mismo": editar aquí cuando cambie el proyecto activo -->
       <section class="card announce">
         <div class="img">
-          <img src="{{ page.now_image | default: '/assets/img/ahora-mismo-placeholder.png' | relative_url }}"
-               alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}">
+          {% if page.now_image %}
+            <img src="{{ page.now_image | relative_url }}"
+                 alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}">
+          {% else %}
+            {% include icon.html name="image" size=25 %}
+          {% endif %}
         </div>
         <div class="txt">
           <p class="label">ahora mismo</p>
@@ -34,7 +36,7 @@ layout: default
         <p class="q">¿Tienes un proyecto en mente?</p>
         <div class="tags">
           <span class="tag">hojas de cálculo</span>
-          <span class="tag">desarrollo / sistemas</span>
+          <span class="tag">desarrollo</span>
           <span class="tag">pauta meta / google</span>
         </div>
         <a class="btn-cta" href="mailto:{{ site.author.email }}">cuéntame tu proyecto</a>
@@ -56,20 +58,12 @@ layout: default
             open=true %}
 
         {% include faq-item.html
-            question="¿Cuánto cobras por tus servicios?"
+            question="¿Cuánto cobras?"
             answer="Cada quien pone sus precios, la verdad es que no puedo ni quiero competir por precio. Dame tu presupuesto y trabajemos cuanto antes, necesito ocuparme en algo." %}
 
         {% include faq-item.html
-            question="¿Cómo puedo apoyar tu proyecto?"
+            question="¿Cómo apoyo el proyecto?"
             answer="A lo largo de este sitio vas a encontrar botones de 'invítame un café' donde puedes donar algo vía PayPal." %}
-
-        {% include faq-item.html
-            question="¿Eres una agencia?"
-            answer="Ahora mismo no soy una gran agencia. Si algún día lo fuera, lo seguiría tomando con respeto y humildad." %}
-
-        {% include faq-item.html
-            question="¿Cuánto tardas en responder o entregar un proyecto?"
-            answer="Placeholder: edita esta respuesta con tus tiempos reales de respuesta y entrega." %}
       </section>
 
     </main>
@@ -78,4 +72,6 @@ layout: default
 
   </div>
 
-</div>
+  <a class="scroll-cue" href="#faqs" aria-label="Ir a preguntas frecuentes">
+    {% include icon.html name="arrow-down" size=20 %}
+  </a>

@@ -39,20 +39,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ---------------- Scroll suave a anclas ----------------
-  document.querySelectorAll('a[href*="#"]').forEach(function (link) {
-    var url = new URL(link.href, window.location.href);
-    var isSamePage = url.pathname === window.location.pathname;
-
-    if (isSamePage && url.hash) {
-      link.addEventListener("click", function (e) {
-        var target = document.querySelector(url.hash);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      });
-    }
-  });
-
 });

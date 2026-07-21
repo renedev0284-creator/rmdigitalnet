@@ -2,8 +2,6 @@
 layout: default
 ---
 {% assign post_trail = "blog|/blog/;" | append: page.title %}
-<div class="frame">
-
   {% include breadcrumb.html trail=post_trail %}
 
   <div class="content content--page">
@@ -57,5 +55,3 @@ layout: default
     {% include sidebar-right.html %}
 
   </div>
-
-</div>

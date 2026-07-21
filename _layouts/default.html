@@ -4,28 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
-
   {% seo %}
   <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | absolute_url }}">
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | absolute_url }}" type="image/svg+xml">
 
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}">
 </head>
 <body>
 
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
-  {% include topnav.html %}
-
-  {{ content }}
-
-  {% include footer.html %}
+  <div class="frame">
+    {% include topnav.html %}
+    {{ content }}
+    {% unless page.url == '/' %}{% include footer.html %}{% endunless %}
+  </div>
 
   <script src="{{ '/assets/js/main.js' | absolute_url }}" defer></script>
 </body>

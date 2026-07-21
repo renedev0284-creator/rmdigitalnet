@@ -5,7 +5,7 @@
 <div class="faq-item {% if include.open %}is-open{% endif %}">
   <button class="faq-question" aria-expanded="{% if include.open %}true{% else %}false{% endif %}">
     <span>{{ include.question }}</span>
-    <i class="ti ti-chevron-down chev" aria-hidden="true"></i>
+    <span class="chev">{% include icon.html name="chevron-down" size=14 %}</span>
   </button>
   <div class="faq-answer" {% unless include.open %}hidden{% endunless %}>
     <p>{{ include.answer }}</p>

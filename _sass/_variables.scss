@@ -1,53 +1,31 @@
-// ------------------------------------------------------------------
-// Paleta base — editar SOLO aquí para cambiar los colores de todo el
-// sitio. Ningún componente debe usar un color hex fuera de este archivo.
-// ------------------------------------------------------------------
+// Colores medidos de docs/reference-home.png.
+$color-bg: #faf9f6;
+$color-surface: #fffefa;
+$color-surface-alt: #ece7dc;
+$color-border: #ded9cf;
+$color-text-primary: #292824;
+$color-text-secondary: #716f68;
+$color-text-muted: #969287;
+$color-accent: #355f54;
+$color-accent-soft: #ebf2ef;
+$color-support: #b65324;
 
-// Modo claro (por defecto)
-$color-bg:            #f4f2eb;
-$color-surface:        #ffffff;
-$color-surface-alt:    #f0ede3;
-$color-border:         #d8d2c5;
-$color-text-primary:   #202622;
-$color-text-secondary: #565d58;
-$color-text-muted:     #89877d;
-
-$color-accent:         #087f66;   // verde vivo: CTA, enlaces y estados activos
-$color-accent-soft:    #e4f5ef;
-$color-accent-strong:  #075e4d;
-$color-accent-hover:   #096d59;
-$color-accent-border:  #dce9e3;
-$color-support:        #d35d25;   // naranja: café y detalles puntuales
-$color-support-soft:   #fff4ec;
-$color-support-hover:  #c67a49;
-$color-warm-soft:      #f3ead1;
-$color-faq-open:       #f1eee5;
-$color-profile-mint:   #d9f4ea;
-$color-profile-peach:  #ffddc7;
-
-// Estados
-$color-danger:  #a32d2d;
+$color-danger: #a32d2d;
 $color-success: #3b6d11;
 
-// ------------------------------------------------------------------
-// Tipografía
-// ------------------------------------------------------------------
-$font-sans: "IBM Plex Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
-$fs-xs:   11px;
-$fs-sm:   12px;
-$fs-base: 14px;
-$fs-md:   16px;
-$fs-lg:   18px;
-$fs-xl:   22px;
+$fs-xs: 10px;
+$fs-sm: 12px;
+$fs-base: 13px;
+$fs-md: 14px;
+$fs-lg: 17px;
+$fs-xl: 22px;
 
-// ------------------------------------------------------------------
-// Espaciado y radios
-// ------------------------------------------------------------------
 $radius-sm: 6px;
 $radius-md: 10px;
-$radius-lg: 14px;
+$radius-lg: 12px;
 
 $gap-xs: 6px;
 $gap-sm: 10px;
@@ -55,10 +33,8 @@ $gap-md: 16px;
 $gap-lg: 24px;
 
 $max-width: 1040px;
-
-// Breakpoints
-$bp-tablet: 680px;
-$bp-mobile: 520px;
+$bp-tablet: 620px;
+$bp-mobile: 480px;
 
 :root {
   --bg: #{$color-bg};
@@ -70,14 +46,5 @@ $bp-mobile: 520px;
   --text-muted: #{$color-text-muted};
   --accent: #{$color-accent};
   --accent-soft: #{$color-accent-soft};
-  --accent-strong: #{$color-accent-strong};
-  --accent-hover: #{$color-accent-hover};
-  --accent-border: #{$color-accent-border};
   --support: #{$color-support};
-  --support-soft: #{$color-support-soft};
-  --support-hover: #{$color-support-hover};
-  --warm-soft: #{$color-warm-soft};
-  --faq-open: #{$color-faq-open};
-  --profile-mint: #{$color-profile-mint};
-  --profile-peach: #{$color-profile-peach};
 }
