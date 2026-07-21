@@ -1,10 +1,11 @@
 .frame {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: $radius-lg;
+  border-radius: 16px;
   overflow: hidden;
   max-width: $max-width;
   margin: $gap-lg auto;
+  box-shadow: 0 12px 34px rgba(40, 54, 46, 0.06);
 
   @media (max-width: $bp-tablet) {
     margin: 0;
@@ -32,7 +33,8 @@
 
   .brandname {
     font-family: $font-mono;
-    font-size: $fs-base;
+    font-size: $fs-sm;
+    letter-spacing: 0.05em;
     color: var(--text-primary);
   }
 
@@ -41,7 +43,7 @@
     gap: $gap-lg;
 
     a {
-      font-size: $fs-base;
+      font-size: $fs-sm;
       color: var(--text-secondary);
       transition: color 0.15s ease;
 
@@ -86,6 +88,7 @@
   padding: $gap-xs $gap-lg 0;
   font-size: $fs-sm;
   color: var(--text-muted);
+  text-transform: lowercase;
 
   a { color: var(--text-muted); }
   a:hover { color: var(--accent); }
@@ -96,15 +99,17 @@
 .hero {
   padding: $gap-lg $gap-lg $gap-sm;
   text-align: center;
+  max-width: 760px;
+  margin: 0 auto;
 
-  .main { font-size: $fs-lg; font-weight: 600; margin-bottom: 6px; }
-  .sub { font-size: $fs-sm; color: var(--text-secondary); }
+  .main { font-size: clamp(24px, 3vw, 34px); font-weight: 700; margin-bottom: 8px; letter-spacing: -0.03em; }
+  .sub { font-size: $fs-base; color: var(--text-secondary); }
 }
 
 // ---------------- Content grid ----------------
 .content {
   display: grid;
-  grid-template-columns: 80px 1fr 210px;
+  grid-template-columns: 72px 1fr 230px;
   gap: $gap-lg;
   padding: $gap-lg;
 
@@ -124,6 +129,7 @@
   border: 1px solid var(--border);
   border-radius: $radius-md;
   padding: $gap-md $gap-lg;
+  background: var(--surface);
 }
 
 // ---------------- Sidebar izquierdo ----------------
@@ -134,6 +140,7 @@
   gap: $gap-lg;
   padding-top: 8px;
   border-right: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(238,242,234,0.6));
 
   .icon-item {
     display: flex;
@@ -173,11 +180,12 @@
   gap: $gap-sm;
   border-left: 1px solid var(--border);
   padding-left: $gap-md;
+  background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(238,242,234,0.55));
 
   .avatar {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: var(--surface-alt);
+    background: linear-gradient(180deg, #f8faf7, #edf1ea);
     border-radius: $radius-md;
     display: flex;
     align-items: center;
@@ -190,7 +198,7 @@
   }
 
   .name { font-size: $fs-base; font-weight: 600; margin: 0; }
-  .role { font-size: $fs-sm; color: var(--text-muted); margin: 2px 0 0; }
+  .role { font-size: $fs-sm; color: var(--text-secondary); margin: 2px 0 0; }
 
   .socials {
     display: flex;
@@ -223,6 +231,7 @@
   border-top: 1px solid var(--border);
   flex-wrap: wrap;
   gap: $gap-sm;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35), rgba(238,242,234,0.6));
 
   .brand-mini { font-family: $font-mono; font-size: $fs-xs; color: var(--text-muted); }
 

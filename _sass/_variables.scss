@@ -4,17 +4,17 @@
 // ------------------------------------------------------------------
 
 // Modo claro (por defecto)
-$color-bg:            #f2f0ea;
-$color-surface:        #fbfaf7;
-$color-surface-alt:    #eeeae0;
-$color-border:         #ddd9cf;
-$color-text-primary:   #26241f;
-$color-text-secondary: #6e6a5f;
-$color-text-muted:     #a9a595;
+$color-bg:            #f5f6f2;
+$color-surface:        #ffffff;
+$color-surface-alt:    #eef2ea;
+$color-border:         #d5dbd2;
+$color-text-primary:   #1d241f;
+$color-text-secondary: #5c6761;
+$color-text-muted:     #838b86;
 
-$color-accent:         #3f6a5f;   // verde-teal apagado: CTA, enlaces, activo
-$color-accent-soft:    #eef4f1;
-$color-support:        #a05c37;  // cobre: solo para "café" y detalles puntuales
+$color-accent:         #1f7054;   // verde-teal: CTA, enlaces, activo
+$color-accent-soft:    #eaf5ef;
+$color-support:        #b25c2b;  // cobre: solo para "café" y detalles puntuales
 
 // Estados
 $color-danger:  #a32d2d;
@@ -23,8 +23,8 @@ $color-success: #3b6d11;
 // ------------------------------------------------------------------
 // Tipografía
 // ------------------------------------------------------------------
-$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-$font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+$font-sans: "IBM Plex Sans", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 
 $fs-xs:   11px;
 $fs-sm:   12px;
