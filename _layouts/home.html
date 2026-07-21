@@ -1,0 +1,138 @@
+---
+layout: default
+---
+
+<section class="hero card reveal">
+  <div class="hero-copy">
+    <p class="eyebrow">Marca personal</p>
+    <h1>Una web sobria, personal y lista para crecer.</h1>
+    <p class="lede">
+      Esta version toma la vibra de un sitio autoral y la adapta a tu marca:
+      limpia, profesional, con contenido real y espacio para proyectos, blog y servicios.
+    </p>
+    <div class="hero-actions">
+      <a class="button button-solid" href="{{ site.announcement_cta_url }}">{{ site.announcement_cta }}</a>
+      <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
+    </div>
+  </div>
+  <div class="hero-panel">
+    <p class="eyebrow">Ahora mismo</p>
+    <h2>{{ site.announcement_title }}</h2>
+    <p>{{ site.announcement_text }}</p>
+  </div>
+</section>
+
+<section id="anuncios" class="card reveal">
+  <div class="section-heading">
+    <p class="eyebrow">Anuncios</p>
+    <h2>Un espacio fijo para novedades, lanzamientos y estado de proyectos.</h2>
+  </div>
+  <div class="announcement-box">
+    <div class="announcement-media" aria-hidden="true"></div>
+    <div class="announcement-copy">
+      <p class="muted">
+        Aqui puedes actualizar mensajes como "Estoy trabajando en X proyecto" sin tocar la estructura del sitio.
+      </p>
+      <a class="button button-ghost" href="#faq">Ver preguntas frecuentes</a>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="card reveal">
+  <div class="section-heading">
+    <p class="eyebrow">Servicios</p>
+    <h2>Lo que hago, sin ruido innecesario.</h2>
+  </div>
+  <div class="service-grid">
+    <article class="service-card">
+      <h3>Hojas de calculo</h3>
+      <p>Organizacion, formulas, reportes y herramientas que te ahorran tiempo y errores.</p>
+    </article>
+    <article class="service-card">
+      <h3>Sistemas y desarrollo</h3>
+      <p>Soluciones practicas para procesos, gestion y producto digital con base tecnica solida.</p>
+    </article>
+    <article class="service-card">
+      <h3>Pauta en Meta y Google</h3>
+      <p>Campanas y estructura para publicidad con enfoque en claridad, seguimiento y mejora.</p>
+    </article>
+  </div>
+  <div class="section-cta">
+    <a class="button button-solid" href="/acerca-de/">Conocer mas</a>
+    <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
+  </div>
+</section>
+
+<section id="acerca" class="card reveal">
+  <div class="section-heading">
+    <p class="eyebrow">Acerca de</p>
+    <h2>Una presencia personal, con criterio y espacio para evolucionar.</h2>
+  </div>
+  <div class="about-grid">
+    <p>
+      Esta base esta pensada para combinar una estetica sobria con una voz cercana.
+      La idea es que el sitio se sienta humano, facil de navegar y util tanto para mostrar trabajo
+      como para convertir visitantes en contactos.
+    </p>
+    <p>
+      TopoApp aparece como parte de tu ecosistema, y el blog queda listo para historias, notas,
+      procesos y anuncios. Todo con slugs limpios, SEO basico y secciones reutilizables.
+    </p>
+  </div>
+  <a class="button button-ghost" href="/acerca-de/">Ir a la pagina de acerca de</a>
+</section>
+
+<section id="faq" class="card reveal">
+  <div class="section-heading">
+    <p class="eyebrow">FAQ</p>
+    <h2>Respuestas rapidas para las preguntas que mas se repiten.</h2>
+  </div>
+  <div class="faq-list">
+    <details open>
+      <summary>Como puedo contactarte?</summary>
+      <p>Usa el sidebar de redes sociales. Tambien puedes llegar al enlace de contacto desde el area de perfil.</p>
+    </details>
+    <details>
+      <summary>Cuanto cobras por tus servicios?</summary>
+      <p>
+        Cada persona pone sus precios. La verdad es que no puedo ni quiero competir;
+        mandame tu presupuesto y trabajemos cuanto antes. Necesito ocuparme en algo.
+      </p>
+    </details>
+    <details>
+      <summary>Como puedo apoyar tu proyecto?</summary>
+      <p>
+        En este sitio veras botones de "invitame a un cafe" que llevan a PayPal usando
+        <a href="mailto:rene0284@msn.com">rene0284@msn.com</a>.
+      </p>
+    </details>
+    <details>
+      <summary>Eres una gran agencia?</summary>
+      <p>No, ahora mismo no. Y si algun dia lo fuera, me gustaria seguir tomando el trabajo con respeto y humildad.</p>
+    </details>
+    <details>
+      <summary>Que es TopoApp?</summary>
+      <p>Es tu plataforma de gestion de negocios, integrada aqui como parte del ecosistema que quieres mostrar.</p>
+    </details>
+  </div>
+</section>
+
+<section class="card reveal">
+  <div class="section-heading">
+    <p class="eyebrow">Blog</p>
+    <h2>Una base lista para escribir en Markdown.</h2>
+  </div>
+  <div class="post-grid">
+    {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        <p class="post-meta">{{ post.date | date: "%d %b %Y" }}</p>
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+      </article>
+    {% endfor %}
+    {% if site.posts.size == 0 %}
+      <p class="muted">Aun no hay entradas publicadas. El primer post de ejemplo ya esta preparado en Markdown.</p>
+    {% endif %}
+  </div>
+  <a class="button button-ghost" href="/blog/">Ver blog</a>
+</section>

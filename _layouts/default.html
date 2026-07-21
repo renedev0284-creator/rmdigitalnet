@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <div class="page-shell">
+      <aside class="rail rail-left" aria-label="Enlaces rapidos">
+        <div class="rail-card brand-card">
+          <p class="eyebrow">rmdigital.net</p>
+          <h1 class="brand-mark">rmdigital</h1>
+          <p class="muted">Minimal, sobrio y con personalidad.</p>
+          <a class="button button-ghost button-full" href="{{ site.donation_url }}">
+            {{ site.donation_label }}
+          </a>
+        </div>
+
+        <nav class="rail-card rail-nav" aria-label="Navegacion principal">
+          <p class="eyebrow">Navegacion</p>
+          {% for link in site.nav_links %}
+            <a class="rail-link" href="{{ link.url }}">{{ link.label }}</a>
+          {% endfor %}
+        </nav>
+
+        <section class="rail-card rail-links" aria-label="Proyectos online">
+          <p class="eyebrow">Proyectos online</p>
+          {% for item in site.left_rail_links %}
+            <a class="rail-item" href="{{ item.url }}">
+              <span class="rail-item-icon" aria-hidden="true">{% include icon.html name=item.icon %}</span>
+              <span class="rail-item-copy">
+                <strong>{{ item.label }}</strong>
+                <span>{{ item.note }}</span>
+              </span>
+            </a>
+          {% endfor %}
+        </section>
+      </aside>
+
+      <div class="page-center">
+        <header class="topbar">
+          <a class="topbar-brand" href="/" aria-label="Ir al inicio">
+            <span class="topbar-brand__logo">rmdigital.net</span>
+          </a>
+
+          <nav class="topbar-nav" aria-label="Navegacion superior">
+            {% for link in site.nav_links %}
+              <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
+          </nav>
+
+          <a class="button button-solid topbar-cta" href="{{ site.donation_url }}">
+            {{ site.donation_label }}
+          </a>
+        </header>
+
+        <main id="contenido" class="content">
+          {{ content }}
+        </main>
+
+        <footer class="site-footer">
+          <div>
+            <p class="eyebrow">rmdigital.net</p>
+            <p>{{ site.profile_role }}</p>
+          </div>
+          <div>
+            <p class="muted">Hecho para crecer con blog, slugs limpios y SEO desde la base.</p>
+          </div>
+          <div class="site-footer__links">
+            <a href="/acerca-de/">Acerca de</a>
+            <a href="/blog/">Blog</a>
+            <a href="/legal/">Legal</a>
+          </div>
+        </footer>
+      </div>
+
+      <aside class="rail rail-right" aria-label="Perfil">
+        <section class="rail-card profile-card">
+          <p class="eyebrow">Perfil</p>
+          <div class="avatar" aria-hidden="true">
+            <span>RM</span>
+          </div>
+          <h2>{{ site.profile_name }}</h2>
+          <p>{{ site.profile_bio }}</p>
+          <a class="button button-ghost button-full" href="/acerca-de/">Leer mas</a>
+        </section>
+
+        <section class="rail-card rail-social">
+          <p class="eyebrow">Redes</p>
+          <p class="muted">Enlaces base para reemplazar con tus perfiles reales.</p>
+          {% for social in site.social_links %}
+            <a class="social-link" href="{{ social.url }}">
+              <span aria-hidden="true">{% include icon.html name=social.icon %}</span>
+              <span>{{ social.label }}</span>
+            </a>
+          {% endfor %}
+        </section>
+
+        <section class="rail-card rail-tags">
+          <p class="eyebrow">Etiquetas</p>
+          <div class="tag-cloud">
+            {% for tag in site.service_tags %}
+              <a class="tag" href="/blog/">{{ tag }}</a>
+            {% endfor %}
+          </div>
+        </section>
+      </aside>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+title: rmdigital.net
+description: Marca personal, servicios, proyectos y blog de rmdigital.
+url: ""
+baseurl: ""
+author: Rene Moya
+email: rene0284@msn.com
+timezone: America/Guatemala
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: /blog/:year/:month/:day/:title/
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      image: /assets/images/social-card.png
+
+nav_links:
+  - label: Inicio
+    url: /
+  - label: Acerca de
+    url: /acerca-de/
+  - label: Blog
+    url: /blog/
+  - label: Legal
+    url: /legal/
+
+left_rail_links:
+  - label: GitHub
+    url: https://github.com/
+    note: Codigo, pruebas y repos
+    icon: code
+  - label: TopoApp
+    url: https://topoapp.net
+    note: Plataforma de gestion
+    icon: grid
+  - label: Blog
+    url: /blog/
+    note: Notas, procesos y updates
+    icon: pen
+  - label: Legal
+    url: /legal/
+    note: Avisos y condiciones
+    icon: file
+
+social_links:
+  - label: Facebook
+    url: https://facebook.com/
+    icon: facebook
+  - label: X
+    url: https://x.com/
+    icon: x
+  - label: TikTok
+    url: https://tiktok.com/
+    icon: tiktok
+
+service_tags:
+  - Hojas de calculo
+  - Sistemas
+  - Desarrollo
+  - Meta Ads
+  - Google Ads
+  - Automatizacion
+  - TopoApp
+  - Blog
+
+announcement_title: Estoy trabajando en nuevos proyectos.
+announcement_text: La pagina central mostrara avances, lanzamientos y notas breves sobre lo que estoy construyendo ahora mismo.
+announcement_cta: Ver servicios
+announcement_cta_url: "#servicios"
+
+donation_label: Invitame un cafe
+donation_url: "https://www.paypal.com/donate/?business=rene0284%40msn.com&currency_code=USD"
+
+profile_name: Rene Moya
+profile_role: Creador, programador y estratega digital
+profile_bio: Trabajo entre hojas de calculo, sistemas, pauta y producto digital. Me gustan las webs limpias, con personalidad y base para crecer.

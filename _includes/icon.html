@@ -1,0 +1,18 @@
+{% case include.name %}
+  {% when 'code' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8 4 12l4 4M16 8l4 4-4 4M14 5 10 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  {% when 'grid' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  {% when 'pen' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4.5-1 10.8-10.8a2 2 0 0 0 0-2.8l-1.7-1.7a2 2 0 0 0-2.8 0L4 14.5V20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M13 6l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+  {% when 'file' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l5 5v13H7z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+  {% when 'facebook' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 9V7.5c0-.8.5-1.5 1.5-1.5H16V2h-2c-2.8 0-5 2.2-5 5v2H6v4h3v9h4v-9h3l1-4h-4z" fill="currentColor"/></svg>
+  {% when 'x' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l7.9 9.8L4.2 20H7l6-6.7L18.2 20H20l-8.3-10.3L19.7 4H17l-5.5 6.1L6.8 4z" fill="currentColor"/></svg>
+  {% when 'tiktok' %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3c.5 3.5 2.4 5.8 6 6v3a8.6 8.6 0 0 1-6-2.1V16a5 5 0 1 1-5-5c.4 0 .7 0 1 .1v3.3a1.9 1.9 0 1 0 1 1.6V3h3z" fill="currentColor"/></svg>
+  {% else %}
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+{% endcase %}
