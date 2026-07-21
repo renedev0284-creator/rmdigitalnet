@@ -9,10 +9,10 @@
   display: inline-block;
   font-size: $fs-sm;
   padding: 5px 10px;
-  background: linear-gradient(180deg, #f7faf5, #eaf1e6);
+  background: var(--surface);
   border-radius: $radius-sm;
   color: var(--text-secondary);
-  border: 1px solid rgba(31, 112, 84, 0.09);
+  border: 1px solid var(--accent-border);
 }
 
 // ---------------- Bloque "ahora mismo" ----------------
@@ -21,16 +21,16 @@
   gap: $gap-md;
   align-items: stretch;
   flex-wrap: wrap;
-  background: linear-gradient(180deg, #ffffff, #fafcf8);
+  background: var(--surface);
 
   .img {
-    width: 190px;
-    height: 140px;
-    background: linear-gradient(180deg, #f4f7f2, #e7ede5);
+    width: 150px;
+    height: 110px;
+    background: var(--warm-soft);
     border-radius: $radius-sm;
     flex-shrink: 0;
     overflow: hidden;
-    border: 1px solid rgba(31, 112, 84, 0.08);
+    border: none;
 
     img { width: 100%; height: 100%; object-fit: cover; }
   }
@@ -44,7 +44,7 @@
   }
 
   .label { font-family: $font-mono; font-size: $fs-sm; color: var(--text-muted); margin: 0; }
-  .title { font-size: $fs-lg; font-weight: 600; margin: 0; }
+  .title { font-size: $fs-md; font-weight: 650; margin: 0; }
   .desc { font-size: $fs-base; color: var(--text-secondary); margin: 0; max-width: 600px; }
 
   @media (max-width: $bp-mobile) {
@@ -54,11 +54,10 @@
 
 // ---------------- CTA único dominante ----------------
 .cta {
-  border: 1.5px solid rgba(31, 112, 84, 0.55);
-  background: linear-gradient(180deg, #f2faf5, #e7f2ea);
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
   border-radius: $radius-md;
   padding: $gap-md;
-  box-shadow: 0 10px 24px rgba(31, 112, 84, 0.07);
 
   .q { font-size: $fs-md; font-weight: 600; margin-bottom: $gap-sm; }
 
@@ -73,10 +72,10 @@
     color: var(--surface);
     border-radius: $radius-sm;
     transition: transform 0.12s ease, opacity 0.12s ease, box-shadow 0.12s ease;
-    box-shadow: 0 8px 18px rgba(31, 112, 84, 0.12);
+    box-shadow: 0 4px 0 var(--accent-strong);
 
-    &:hover { opacity: 0.94; }
-    &:active { transform: scale(0.98); }
+    &:hover { background: var(--accent-hover); }
+    &:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--accent-strong); }
   }
 
   .coffee-inline { margin-top: $gap-sm; }
@@ -84,7 +83,7 @@
 
 // ---------------- Acerca de (resumen home) ----------------
 .about-card {
-  background: linear-gradient(180deg, #ffffff, #fafbf7);
+  background: var(--surface);
   .label { font-family: $font-mono; font-size: $fs-sm; color: var(--text-muted); margin-bottom: $gap-xs; }
   .txt { font-size: $fs-base; color: var(--text-secondary); }
   .read-more { color: var(--accent); font-size: $fs-sm; font-weight: 600; }
@@ -100,12 +99,12 @@
 
 .faq-item {
   border-bottom: 1px solid var(--border);
-  background: rgba(255,255,255,0.4);
+  background: var(--surface);
 
   &:last-child { border-bottom: none; }
 
   &.is-open {
-    background: linear-gradient(180deg, #f7faf6, #eef5ee);
+    background: var(--faq-open);
     border-radius: $radius-sm;
     border-bottom: none;
     margin-bottom: $gap-xs;
@@ -148,9 +147,9 @@
   color: var(--support);
   border-radius: $radius-sm;
   transition: background 0.15s ease, border-color 0.15s ease;
-  background: linear-gradient(180deg, #fffaf5, #f8f1ea);
+  background: var(--support-soft);
 
-  &:hover { background: #fff; border-color: #c67a49; }
+  &:hover { background: var(--surface); border-color: var(--support-hover); }
 }
 
 // ---------------- Blog: listado ----------------
@@ -169,9 +168,9 @@
   border-radius: $radius-md;
   padding: $gap-md;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  background: linear-gradient(180deg, #fff, #fafbf8);
+  background: var(--surface);
 
-  &:hover { border-color: #8eb8aa; box-shadow: 0 8px 18px rgba(31, 112, 84, 0.05); }
+  &:hover { border-color: var(--accent); box-shadow: 0 6px 18px rgba(8, 127, 102, 0.08); }
 
   .post-preview-img {
     width: 140px;
@@ -230,7 +229,7 @@
   margin-top: $gap-lg;
   padding-top: $gap-md;
   border-top: 1px solid var(--border);
-  background: linear-gradient(180deg, #fbfdfb, #f7faf6);
+  background: var(--accent-soft);
 
   p { font-size: $fs-sm; color: var(--text-secondary); margin-bottom: $gap-xs; }
 }

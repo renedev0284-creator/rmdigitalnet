@@ -4,17 +4,26 @@
 // ------------------------------------------------------------------
 
 // Modo claro (por defecto)
-$color-bg:            #f5f6f2;
+$color-bg:            #f4f2eb;
 $color-surface:        #ffffff;
-$color-surface-alt:    #eef2ea;
-$color-border:         #d5dbd2;
-$color-text-primary:   #1d241f;
-$color-text-secondary: #5c6761;
-$color-text-muted:     #838b86;
+$color-surface-alt:    #f0ede3;
+$color-border:         #d8d2c5;
+$color-text-primary:   #202622;
+$color-text-secondary: #565d58;
+$color-text-muted:     #89877d;
 
-$color-accent:         #1f7054;   // verde-teal: CTA, enlaces, activo
-$color-accent-soft:    #eaf5ef;
-$color-support:        #b25c2b;  // cobre: solo para "café" y detalles puntuales
+$color-accent:         #087f66;   // verde vivo: CTA, enlaces y estados activos
+$color-accent-soft:    #e4f5ef;
+$color-accent-strong:  #075e4d;
+$color-accent-hover:   #096d59;
+$color-accent-border:  #dce9e3;
+$color-support:        #d35d25;   // naranja: café y detalles puntuales
+$color-support-soft:   #fff4ec;
+$color-support-hover:  #c67a49;
+$color-warm-soft:      #f3ead1;
+$color-faq-open:       #f1eee5;
+$color-profile-mint:   #d9f4ea;
+$color-profile-peach:  #ffddc7;
 
 // Estados
 $color-danger:  #a32d2d;
@@ -45,17 +54,12 @@ $gap-sm: 10px;
 $gap-md: 16px;
 $gap-lg: 24px;
 
-$max-width: 1180px;
+$max-width: 1040px;
 
 // Breakpoints
-$bp-tablet: 900px;
-$bp-mobile: 560px;
+$bp-tablet: 680px;
+$bp-mobile: 520px;
 
-// ------------------------------------------------------------------
-// Modo oscuro — estructura lista, aunque el lanzamiento inicial es claro.
-// Se activa agregando data-theme="dark" al <html> (no implementado en JS
-// todavía, queda preparado para cuando se quiera ofrecer el toggle).
-// ------------------------------------------------------------------
 :root {
   --bg: #{$color-bg};
   --surface: #{$color-surface};
@@ -66,18 +70,14 @@ $bp-mobile: 560px;
   --text-muted: #{$color-text-muted};
   --accent: #{$color-accent};
   --accent-soft: #{$color-accent-soft};
+  --accent-strong: #{$color-accent-strong};
+  --accent-hover: #{$color-accent-hover};
+  --accent-border: #{$color-accent-border};
   --support: #{$color-support};
-}
-
-[data-theme="dark"] {
-  --bg: #14161b;
-  --surface: #1a1d24;
-  --surface-alt: #22262f;
-  --border: #2b2f38;
-  --text-primary: #e7e4db;
-  --text-secondary: #9b988e;
-  --text-muted: #6b6862;
-  --accent: #8fc7b8;
-  --accent-soft: #1c2b28;
-  --support: #c98b63;
+  --support-soft: #{$color-support-soft};
+  --support-hover: #{$color-support-hover};
+  --warm-soft: #{$color-warm-soft};
+  --faq-open: #{$color-faq-open};
+  --profile-mint: #{$color-profile-mint};
+  --profile-peach: #{$color-profile-peach};
 }

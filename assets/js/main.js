@@ -55,25 +55,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // ---------------- Animación al hacer scroll ----------------
-  var revealTargets = document.querySelectorAll(".card, .cta, .post-preview");
-  revealTargets.forEach(function (el) { el.classList.add("reveal"); });
-
-  if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    revealTargets.forEach(function (el) { observer.observe(el); });
-  } else {
-    revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
-  }
 });
