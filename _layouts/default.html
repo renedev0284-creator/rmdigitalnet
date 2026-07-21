@@ -5,46 +5,16 @@
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <header class="masthead" aria-label="Cabecera del sitio">
-      <div class="masthead__title">
-        <span class="masthead__dot"></span>
-        <span class="masthead__dot"></span>
-        <span class="masthead__dot"></span>
-        <strong>rmdigital.net</strong>
-      </div>
-      <div class="masthead__status">
-        <span>linux-style</span>
-        <span>responsive</span>
-        <span>blog-ready</span>
-      </div>
-    </header>
-
     <div class="page-shell">
       <aside class="rail rail-left" aria-label="Enlaces rapidos">
-        <div class="rail-card brand-card">
-          <p class="eyebrow">rmdigital.net</p>
-          <h1 class="brand-mark">rmdigital</h1>
-          <p class="muted">Perfil personal con base tecnica, clara y ligera.</p>
-          <a class="button button-ghost button-full" href="{{ site.donation_url }}">
-            {{ site.donation_label }}
-          </a>
-        </div>
-
-        <nav class="rail-card rail-nav" aria-label="Navegacion principal">
-          <p class="eyebrow">Navegacion</p>
-          {% for link in site.nav_links %}
-            <a class="rail-link" href="{{ link.url | relative_url }}">{{ link.label }}</a>
-          {% endfor %}
-        </nav>
-
         <section class="rail-card rail-links" aria-label="Proyectos online">
-          <p class="eyebrow">Proyectos online</p>
+          <p class="eyebrow">links</p>
           {% for item in site.left_rail_links %}
-            <a class="rail-item" href="{{ item.url }}">
+            <a class="rail-item {% if item.icon == 'coffee' %}rail-item--coffee{% endif %}" href="{{ item.url }}">
               <span class="rail-item-icon" aria-hidden="true">{% include icon.html name=item.icon %}</span>
               <span class="rail-item-copy">
                 <strong>{{ item.label }}</strong>
-                <span>{{ item.note }}</span>
+                <span class="sr-only">{{ item.note }}</span>
               </span>
             </a>
           {% endfor %}
@@ -54,6 +24,7 @@
       <div class="page-center">
         <header class="topbar">
           <a class="topbar-brand" href="{{ '/' | relative_url }}" aria-label="Ir al inicio">
+            <span class="topbar-brand__icon" aria-hidden="true">rm</span>
             <span class="topbar-brand__logo">rmdigital.net</span>
           </a>
 
@@ -62,10 +33,6 @@
               <a href="{{ link.url | relative_url }}">{{ link.label }}</a>
             {% endfor %}
           </nav>
-
-          <a class="button button-solid topbar-cta" href="{{ site.donation_url }}">
-            {{ site.donation_label }}
-          </a>
         </header>
 
         <main id="contenido" class="content">
@@ -96,27 +63,20 @@
           </div>
           <h2>{{ site.profile_name }}</h2>
           <p>{{ site.profile_bio }}</p>
-          <a class="button button-ghost button-full" href="{{ '/acerca-de/' | relative_url }}">Leer mas</a>
-        </section>
-
-        <section class="rail-card rail-social">
-          <p class="eyebrow">Redes</p>
-          <p class="muted">Enlaces base para reemplazar con tus perfiles reales.</p>
-          {% for social in site.social_links %}
-            <a class="social-link" href="{{ social.url }}">
-              <span aria-hidden="true">{% include icon.html name=social.icon %}</span>
-              <span>{{ social.label }}</span>
-            </a>
-          {% endfor %}
-        </section>
-
-        <section class="rail-card rail-tags">
-          <p class="eyebrow">Etiquetas</p>
-          <div class="tag-cloud">
-            {% for tag in site.service_tags %}
-              <a class="tag" href="{{ '/blog/' | relative_url }}">{{ tag }}</a>
+          <div class="social-row" aria-label="Redes sociales">
+            {% for social in site.social_links %}
+              <a class="social-link" href="{{ social.url }}" aria-label="{{ social.label }}">
+                <span aria-hidden="true">{% include icon.html name=social.icon %}</span>
+                <span class="sr-only">{{ social.label }}</span>
+              </a>
             {% endfor %}
           </div>
+          <div class="tag-cloud profile-tags">
+            {% for tag in site.service_tags %}
+              <a class="tag" href="{{ '/#servicios' | relative_url }}">{{ tag }}</a>
+            {% endfor %}
+          </div>
+          <a class="button button-ghost button-full" href="{{ '/acerca-de/' | relative_url }}">Leer mas</a>
         </section>
       </aside>
     </div>

@@ -2,139 +2,98 @@
 layout: default
 ---
 
-<section class="hero card reveal">
-  <div class="hero-copy">
-    <p class="eyebrow">system profile</p>
-    <h1>Una presencia clara, tecnica y con identidad propia.</h1>
-    <p class="lede">
-      Inspirada en un entorno Linux: limpia, precisa y ligera. Esta base prioriza legibilidad,
-      personalidad y una estructura que no cargue la vista en desktop ni en mobile.
+<nav class="crumbs crumbs-home" aria-label="Breadcrumb">
+  <a href="{{ '/' | relative_url }}">inicio</a>
+</nav>
+
+<section class="hero card reveal hero-home">
+  <p class="eyebrow">system profile</p>
+  <h1>Ayudo a negocios a organizarse: hojas de calculo, sistemas y publicidad.</h1>
+  <p class="lede">Con calma, con orden, sin relleno.</p>
+</section>
+
+<section class="card reveal now-panel" id="ahora">
+  <div class="now-media" aria-hidden="true"></div>
+  <div class="now-copy">
+    <p class="eyebrow">ahora mismo</p>
+    <h2>Trabajando en topoapp.net</h2>
+    <p>
+      Mi plataforma para gestionar inventario, ventas y clientes. Actualizo este espacio conforme avanzo.
     </p>
-    <div class="hero-actions">
-      <a class="button button-solid" href="{{ site.announcement_cta_url | relative_url }}">{{ site.announcement_cta }}</a>
-      <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
-    </div>
-  </div>
-  <div class="hero-panel terminal-panel">
-    <p class="eyebrow">status</p>
-    <h2>{{ site.announcement_title }}</h2>
-    <p>{{ site.announcement_text }}</p>
-    <pre class="terminal-snippet">rmdigital@local:~$ ls services blog projects
-services  blog  topoapp
-</pre>
   </div>
 </section>
 
-<section id="anuncios" class="card reveal">
+<section class="card reveal services-panel" id="servicios">
   <div class="section-heading">
-    <p class="eyebrow">updates</p>
-    <h2>Un espacio limpio para anuncios y avances de proyectos.</h2>
+    <p class="eyebrow">servicios</p>
+    <h2>¿Tienes un proyecto en mente?</h2>
   </div>
-  <div class="announcement-box">
-    <div class="announcement-media" aria-hidden="true"></div>
-    <div class="announcement-copy">
-      <p class="muted">
-        Aquí puedes actualizar mensajes como "Estoy trabajando en X proyecto" sin tocar la estructura del sitio.
-      </p>
-      <a class="button button-ghost" href="#faq">Ver preguntas frecuentes</a>
-    </div>
-  </div>
-</section>
-
-<section id="servicios" class="card reveal">
-  <div class="section-heading">
-    <p class="eyebrow">services</p>
-    <h2>Lo que hago, sin saturar la interfaz.</h2>
-  </div>
-  <div class="service-grid">
-    <article class="service-card">
-      <h3>Hojas de calculo</h3>
-      <p>Organizacion, formulas, reportes y herramientas que te ahorran tiempo y errores.</p>
-    </article>
-    <article class="service-card">
-      <h3>Sistemas y desarrollo</h3>
-      <p>Soluciones practicas para procesos, gestion y producto digital con base tecnica solida.</p>
-    </article>
-    <article class="service-card">
-      <h3>Pauta en Meta y Google</h3>
-      <p>Campanas y estructura para publicidad con enfoque en claridad, seguimiento y mejora.</p>
-    </article>
+  <div class="tag-list">
+    <a class="tag tag--solid" href="#faq">hojas de calculo</a>
+    <a class="tag tag--solid" href="#faq">desarrollo</a>
+    <a class="tag tag--solid" href="#faq">pauta meta / google</a>
   </div>
   <div class="section-cta">
-    <a class="button button-solid" href="{{ '/acerca-de/' | relative_url }}">Conocer mas</a>
-    <a class="button button-ghost" href="{{ site.donation_url }}">{{ site.donation_label }}</a>
+    <a class="button button-solid button-primary" href="mailto:rene0284@msn.com?subject=Proyecto%20rmdigital">cuéntame tu proyecto</a>
   </div>
 </section>
 
-<section id="acerca" class="card reveal">
+<section class="card reveal about-panel" id="acerca">
   <div class="section-heading">
-    <p class="eyebrow">about</p>
-    <h2>Una presencia personal con criterio, sin exagerar la forma.</h2>
+    <p class="eyebrow">acerca de</p>
   </div>
-  <div class="about-grid">
-    <p>
-      Esta base está pensada para parecerse más a un sistema vivo que a una web corporativa.
-      Quiero que se sienta cercana, fácil de explorar y con una voz clara.
-    </p>
-    <p>
-      TopoApp, el blog y los servicios quedan listos como módulos, con slugs limpios, SEO básico
-      y una estructura preparada para evolucionar.
-    </p>
-  </div>
-  <a class="button button-ghost" href="{{ '/acerca-de/' | relative_url }}">Ir a la pagina de acerca de</a>
+  <p>
+    Texto breve sobre trayectoria, tono directo, sin relleno corporativo. Me interesan las soluciones
+    claras, los sistemas fáciles de sostener y una web que se sienta útil desde el primer vistazo.
+  </p>
+  <a class="button button-ghost" href="{{ '/acerca-de/' | relative_url }}">leer más</a>
 </section>
 
-<section id="faq" class="card reveal">
+<section class="card reveal faq-panel" id="faq">
   <div class="section-heading">
-    <p class="eyebrow">faq</p>
-    <h2>Respuestas rápidas, sin texto de relleno.</h2>
+    <p class="eyebrow">preguntas frecuentes</p>
+    <h2>Respuestas rápidas para empezar.</h2>
   </div>
   <div class="faq-list">
     <details open>
-      <summary>Como puedo contactarte?</summary>
-      <p>Usa el sidebar de redes sociales. Tambien puedes llegar al enlace de contacto desde el area de perfil.</p>
+      <summary>¿Cómo puedo contactarte?</summary>
+      <p>Escríbeme por cualquiera de mis redes en el menú lateral, ahí respondo primero.</p>
     </details>
     <details>
-      <summary>Cuanto cobras por tus servicios?</summary>
-      <p>
-        Cada persona pone sus precios. La verdad es que no puedo ni quiero competir;
-        mandame tu presupuesto y trabajemos cuanto antes. Necesito ocuparme en algo.
-      </p>
+      <summary>¿Cuánto cobras?</summary>
+      <p>Cada quien pone sus precios, la verdad es que no puedo ni quiero competir por precio. Dame tu presupuesto y trabajemos cuanto antes, necesito ocuparme en algo.</p>
     </details>
     <details>
-      <summary>Como puedo apoyar tu proyecto?</summary>
-      <p>
-        En este sitio veras botones de "invitame a un cafe" que llevan a PayPal usando
-        <a href="mailto:rene0284@msn.com">rene0284@msn.com</a>.
-      </p>
+      <summary>¿Cómo apoyo el proyecto?</summary>
+      <p>A lo largo de este sitio vas a encontrar botones de “invítame un café” donde puedes donar algo vía PayPal (<a href="mailto:rene0284@msn.com">rene0284@msn.com</a>).</p>
     </details>
     <details>
-      <summary>Eres una gran agencia?</summary>
-      <p>No, ahora mismo no. Y si algun dia lo fuera, me gustaria seguir tomando el trabajo con respeto y humildad.</p>
+      <summary>¿Eres una agencia?</summary>
+      <p>Ahora mismo no soy una gran agencia. Si algún día lo fuera, lo seguiría tomando con respeto y humildad.</p>
     </details>
     <details>
-      <summary>Que es TopoApp?</summary>
-      <p>Es tu plataforma de gestion de negocios, integrada aqui como parte del ecosistema que quieres mostrar.</p>
+      <summary>¿Cuál es tu forma de trabajo?</summary>
+      <p>Plantilla editable: René puede ajustar esta respuesta para explicar tiempos, alcance o entregables.</p>
     </details>
   </div>
 </section>
 
-<section class="card reveal">
+<section class="card reveal blog-panel">
   <div class="section-heading">
     <p class="eyebrow">blog</p>
-    <h2>Una base lista para escribir en Markdown.</h2>
+    <h2>Notas breves, avances y procesos.</h2>
   </div>
   <div class="post-grid">
     {% for post in site.posts limit:3 %}
       <article class="post-card">
         <p class="post-meta">{{ post.date | date: "%d %b %Y" }}</p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 24 }}</p>
+        <p>{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
       </article>
     {% endfor %}
     {% if site.posts.size == 0 %}
       <p class="muted">Aun no hay entradas publicadas. El primer post de ejemplo ya esta preparado en Markdown.</p>
     {% endif %}
   </div>
-  <a class="button button-ghost" href="{{ '/blog/' | relative_url }}">Ver blog</a>
+  <a class="button button-ghost" href="{{ '/blog/' | relative_url }}">ver blog</a>
 </section>

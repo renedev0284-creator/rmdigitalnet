@@ -23,32 +23,38 @@ defaults:
       image: /assets/images/social-card.png
 
 nav_links:
-  - label: Inicio
+  - label: inicio
     url: /
-  - label: Acerca de
+  - label: acerca de
     url: /acerca-de/
-  - label: Blog
+  - label: servicios
+    url: "/#servicios"
+  - label: preguntas frecuentes
+    url: "/#faq"
+  - label: blog
     url: /blog/
-  - label: Legal
-    url: /legal/
 
 left_rail_links:
   - label: GitHub
-    url: https://github.com/
+    url: https://github.com/renedev0284-creator
     note: Codigo, pruebas y repos
-    icon: code
+    icon: github
+  - label: X
+    url: https://x.com/
+    note: Novedades y updates
+    icon: x
+  - label: Instagram
+    url: https://instagram.com/
+    note: Visuales y procesos
+    icon: instagram
   - label: TopoApp
     url: https://topoapp.net
     note: Plataforma de gestion
     icon: grid
-  - label: Blog
-    url: /blog/
-    note: Notas, procesos y updates
-    icon: pen
-  - label: Legal
-    url: /legal/
-    note: Avisos y condiciones
-    icon: file
+  - label: Cafe
+    url: "https://www.paypal.com/donate/?business=rene0284%40msn.com&currency_code=USD"
+    note: Apoya el proyecto
+    icon: coffee
 
 social_links:
   - label: Facebook
@@ -73,12 +79,12 @@ service_tags:
 
 announcement_title: Estoy trabajando en nuevos proyectos.
 announcement_text: La pagina central mostrara avances, lanzamientos y notas breves sobre lo que estoy construyendo ahora mismo.
-announcement_cta: Ver servicios
-announcement_cta_url: "#servicios"
+announcement_cta: Cuentame tu proyecto
+announcement_cta_url: "/#servicios"
 
 donation_label: Invitame un cafe
 donation_url: "https://www.paypal.com/donate/?business=rene0284%40msn.com&currency_code=USD"
 
-profile_name: Rene Moya
-profile_role: Creador, programador y estratega digital
+profile_name: René M.
+profile_role: Desarrollo · sistemas · pauta
 profile_bio: Trabajo entre hojas de calculo, sistemas, pauta y producto digital. Me gustan las webs limpias, con personalidad y base para crecer.
