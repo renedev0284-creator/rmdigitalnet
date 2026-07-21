@@ -4,9 +4,27 @@ document.addEventListener("DOMContentLoaded", function () {
   var menu = document.getElementById("main-menu");
 
   if (toggle && menu) {
+    function closeMenu() {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Abrir menú");
+    }
+
     toggle.addEventListener("click", function () {
       var isOpen = menu.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      toggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    });
+
+    menu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeMenu();
+        toggle.focus();
+      }
     });
   }
 
@@ -38,5 +56,30 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  // ---------------- Sección activa en la navegación ----------------
+  var navLinks = Array.from(document.querySelectorAll(".menu a:not(.menu-contact)"));
+  var sections = navLinks
+    .map(function (link) {
+      var hash = new URL(link.href, window.location.href).hash;
+      return hash ? document.querySelector(hash) : document.getElementById("inicio");
+    })
+    .filter(Boolean);
+
+  if (sections.length && "IntersectionObserver" in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+
+        navLinks.forEach(function (link) {
+          var hash = new URL(link.href, window.location.href).hash;
+          var isCurrent = hash ? hash === "#" + entry.target.id : entry.target.id === "inicio";
+          link.classList.toggle("active", isCurrent);
+        });
+      });
+    }, { rootMargin: "-25% 0px -60%", threshold: 0 });
+
+    sections.forEach(function (section) { sectionObserver.observe(section); });
+  }
 
 });

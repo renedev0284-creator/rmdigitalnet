@@ -1,0 +1,27 @@
+services:
+  - icon: spreadsheet
+    number: "01"
+    title: "Hojas de cálculo"
+    description: "Diseño archivos claros para controlar ventas, inventarios, costos y operación sin perder tiempo."
+    tag: "Excel · Google Sheets"
+  - icon: code
+    number: "02"
+    title: "Sistemas a medida"
+    description: "Construyo herramientas web y automatizaciones que se adaptan a la forma real en que trabaja tu negocio."
+    tag: "Web · automatización"
+  - icon: target
+    number: "03"
+    title: "Publicidad digital"
+    description: "Organizo campañas y medición para que Meta y Google trabajen con objetivos, datos y seguimiento."
+    tag: "Meta Ads · Google Ads"
+
+faqs:
+  - question: "¿Cómo empezamos a trabajar?"
+    answer: "Cuéntame qué necesitas resolver, qué herramientas usas y cuál es tu prioridad. Te respondo con preguntas concretas y el siguiente paso."
+    open: true
+  - question: "¿Cuánto cuesta un proyecto?"
+    answer: "Depende del alcance y la complejidad. Antes de cotizar, definimos juntos una primera versión útil para cuidar tu presupuesto y evitar trabajo innecesario."
+  - question: "¿Trabajas con negocios pequeños?"
+    answer: "Sí. Mi enfoque funciona especialmente bien para personas y equipos pequeños que necesitan ordenar procesos sin incorporar plataformas enormes."
+  - question: "¿También das soporte después de entregar?"
+    answer: "Sí. Podemos acordar acompañamiento, mejoras y mantenimiento según el tipo de solución y el ritmo de tu negocio."

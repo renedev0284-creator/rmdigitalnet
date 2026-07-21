@@ -1,20 +1,20 @@
-// Colores medidos de docs/reference-home.png.
-$color-bg: #faf9f6;
-$color-surface: #fffefa;
-$color-surface-alt: #ece7dc;
-$color-border: #ded9cf;
-$color-text-primary: #292824;
-$color-text-secondary: #716f68;
-$color-text-muted: #969287;
-$color-accent: #355f54;
-$color-accent-soft: #ebf2ef;
-$color-support: #b65324;
+// Paleta clara, cálida y técnica.
+$color-bg: #f2f0e9;
+$color-surface: #fffdf8;
+$color-surface-alt: #e9e5da;
+$color-border: #d8d4c8;
+$color-text-primary: #20231f;
+$color-text-secondary: #5f665f;
+$color-text-muted: #898e87;
+$color-accent: #236b57;
+$color-accent-soft: #e5f0ea;
+$color-support: #d66032;
 
 $color-danger: #a32d2d;
 $color-success: #3b6d11;
 
-$font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-$font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+$font-sans: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono: "Ubuntu Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
 $fs-xs: 10px;
 $fs-sm: 12px;
@@ -32,8 +32,8 @@ $gap-sm: 10px;
 $gap-md: 16px;
 $gap-lg: 24px;
 
-$max-width: 1040px;
-$bp-tablet: 620px;
+$max-width: 1180px;
+$bp-tablet: 680px;
 $bp-mobile: 480px;
 
 :root {

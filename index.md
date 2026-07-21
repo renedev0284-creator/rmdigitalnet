@@ -6,8 +6,8 @@ description: >-
   Creador de topoapp.net.
 permalink: /
 
-hero_title: "Ayudo a negocios a organizarse: hojas de cálculo, sistemas y publicidad."
-hero_sub: "Con calma, con orden, sin relleno."
+hero_title: "Ordeno lo complejo para que tu negocio avance."
+hero_sub: "Hojas de cálculo, sistemas y publicidad digital construidos con calma, criterio y atención al detalle."
 
 now_title: "Trabajando en topoapp.net"
 now_desc: "Mi plataforma para gestionar inventario, ventas y clientes. Actualizo este espacio conforme avanzo."

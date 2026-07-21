@@ -13,9 +13,10 @@
   <nav id="main-menu" class="menu" aria-label="Navegación principal">
     {% for item in site.nav %}
       <a href="{{ item.url | relative_url }}"
-         class="{% if item.url == '/' and page.url == '/' %}active{% elsif item.url == page.url %}active{% endif %}">
+         {% if item.url == '/' and page.url == '/' %}class="active" aria-current="page"{% elsif item.url == page.url %}class="active" aria-current="page"{% endif %}>
         {{ item.text }}
       </a>
     {% endfor %}
+    <a class="menu-contact" href="mailto:{{ site.author.email }}">Hablemos</a>
   </nav>
 </header>

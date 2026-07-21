@@ -1,9 +1,8 @@
 <aside class="sidebar-left" aria-label="Redes y proyectos">
   {% for item in site.data.social.left_sidebar %}
     {% if item.kind == "primary" %}
-      <a class="icon-item" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">
+      <a class="icon-item" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}" data-label="{{ item.name }}">
         {% include icon.html name=item.icon size=18 %}
-        <span class="lb">{{ item.name | downcase }}</span>
       </a>
     {% endif %}
   {% endfor %}
@@ -12,9 +11,8 @@
 
   {% for item in site.data.social.left_sidebar %}
     {% if item.kind == "support" %}
-      <a class="icon-item coffee-mini" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">
+      <a class="icon-item coffee-mini" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}" data-label="{{ item.name }}">
         {% include icon.html name=item.icon size=17 %}
-        <span class="lb">café</span>
       </a>
     {% endif %}
   {% endfor %}

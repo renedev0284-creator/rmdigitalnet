@@ -1,10 +1,38 @@
 <footer class="footer">
-  <span class="brand-mini">{{ site.title }}</span>
-  <nav class="links" aria-label="Mapa del sitio">
-    <a href="{{ '/' | relative_url }}">inicio</a>
-    <a href="{{ '/acerca-de/' | relative_url }}">acerca de</a>
-    <a href="{{ '/legal/' | relative_url }}">legal</a>
-    <a href="{{ '/blog/' | relative_url }}">blog</a>
-    <a href="{{ '/#servicios' | relative_url }}">contacto</a>
-  </nav>
+  <div class="footer-brand">
+    <a href="{{ '/' | relative_url }}" class="footer-logo">{% include logo.svg %}<span>{{ site.title }}</span></a>
+    <p>Orden, sistemas y publicidad para negocios que quieren avanzar sin complicarse.</p>
+  </div>
+
+  <div class="footer-column">
+    <p class="footer-title">Explorar</p>
+    <a href="{{ '/' | relative_url }}">Inicio</a>
+    <a href="{{ '/acerca-de/' | relative_url }}">Acerca de</a>
+    <a href="{{ '/blog/' | relative_url }}">Blog</a>
+  </div>
+
+  <div class="footer-column">
+    <p class="footer-title">Servicios</p>
+    <a href="{{ '/#servicios' | relative_url }}">Hojas de cálculo</a>
+    <a href="{{ '/#servicios' | relative_url }}">Sistemas</a>
+    <a href="{{ '/#servicios' | relative_url }}">Publicidad</a>
+  </div>
+
+  <div class="footer-column footer-contact">
+    <p class="footer-title">Contacto</p>
+    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+    <div class="footer-socials">
+      {% for item in site.data.social.right_sidebar %}
+        <a href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}">
+          {% include icon.html name=item.icon size=17 %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© {{ site.time | date: '%Y' }} {{ site.title }}</span>
+    <a href="{{ '/legal/' | relative_url }}">Legal y privacidad</a>
+    <span class="footer-status"><i aria-hidden="true"></i> Disponible para nuevos proyectos</span>
+  </div>
 </footer>
