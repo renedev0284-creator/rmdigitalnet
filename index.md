@@ -2,8 +2,7 @@
 layout: home
 title: "Sistemas, hojas de cálculo y publicidad digital"
 description: >-
-  René Moya ayuda a emprendedores y negocios a organizar procesos con hojas de
-  cálculo, sistemas personalizados, marketing y publicidad digital.
+  René Moya ayuda a emprendedores, micro y medianas empresas a organizar procesos, controlar gastos, crear herramientas, mejorar su marketing y tomar decisiones con mayor claridad.
 permalink: /
 image: /assets/img/social-default.png
 
