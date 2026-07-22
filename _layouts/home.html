@@ -2,12 +2,50 @@
 layout: default
 ---
   <section id="inicio" class="hero" aria-labelledby="hero-title">
-    <p class="eyebrow"><span aria-hidden="true">~/</span> sistemas para negocios reales</p>
-    <h1 id="hero-title" class="main">{{ page.hero_title }}</h1>
-    <p class="sub">{{ page.hero_sub }}</p>
-    <div class="hero-actions">
-      <a class="button button--primary" href="#servicios">Ver servicios {% include icon.html name="arrow-right" size=16 %}</a>
-      <a class="button button--ghost" href="mailto:{{ site.author.email }}">Hablemos</a>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><span aria-hidden="true">~/</span> para emprendedores y negocios en crecimiento</p>
+        <h1 id="hero-title" class="main">
+          {{ page.hero_title }}
+          <span>{{ page.hero_highlight }}</span>
+        </h1>
+        <p class="sub">{{ page.hero_sub }}</p>
+        <div class="hero-actions">
+          <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20ordenar%20mi%20negocio">Quiero ordenar mi negocio {% include icon.html name="arrow-right" size=16 %}</a>
+          <a class="button button--ghost" href="#servicios">Explorar soluciones</a>
+        </div>
+        <ul class="hero-assurances" aria-label="Cómo trabajo">
+          <li><span aria-hidden="true"></span> Diagnóstico directo</li>
+          <li><span aria-hidden="true"></span> Soluciones a tu medida</li>
+          <li><span aria-hidden="true"></span> Sin complicaciones innecesarias</li>
+        </ul>
+      </div>
+
+      <aside class="hero-diagnostic" aria-label="Mi proceso de trabajo">
+        <div class="diagnostic-bar" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <code>rm@negocio:~/orden</code>
+        </div>
+        <div class="diagnostic-body">
+          <p class="diagnostic-kicker">Un proceso claro</p>
+          <h2>Primero entiendo el problema. Luego construimos lo que sí necesitas.</h2>
+          <ol class="diagnostic-steps">
+            <li>
+              <span class="step-number">01</span>
+              <div><strong>Detectar</strong><small>Dónde se pierde tiempo, control o dinero.</small></div>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <div><strong>Resolver</strong><small>Con la herramienta adecuada, no la más complicada.</small></div>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <div><strong>Mejorar</strong><small>Con resultados medibles y espacio para crecer.</small></div>
+            </li>
+          </ol>
+          <p class="diagnostic-status"><span aria-hidden="true"></span> Atención directa de René</p>
+        </div>
+      </aside>
     </div>
   </section>
 

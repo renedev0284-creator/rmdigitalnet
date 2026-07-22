@@ -89,29 +89,39 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 76px 36px 68px;
-  text-align: center;
-  background-color: #f4f7f1;
-  background-image: linear-gradient(rgba(35, 107, 87, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.045) 1px, transparent 1px);
+  padding: 64px 48px;
+  background-color: #f1f7f2;
+  background-image: linear-gradient(rgba(35, 107, 87, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
   border-bottom: 1px solid var(--border);
 
   &::before,
   &::after {
     position: absolute;
-    width: 180px;
-    height: 180px;
+    width: 230px;
+    height: 230px;
     content: "";
     border: 1px solid rgba(35, 107, 87, 0.12);
     border-radius: 50%;
   }
 
-  &::before { top: -108px; left: 9%; }
-  &::after { right: 7%; bottom: -128px; }
+  &::before { top: -150px; left: 34%; }
+  &::after { right: -75px; bottom: -160px; }
 
-  .eyebrow {
+  .hero-inner {
     position: relative;
     z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr);
+    align-items: center;
+    gap: clamp(36px, 6vw, 72px);
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+
+  .hero-copy { min-width: 0; }
+
+  .eyebrow {
     display: inline-flex;
     margin: 0 0 16px;
     padding: 6px 10px;
@@ -120,32 +130,93 @@
     border: 1px solid #cbded5;
     border-radius: 999px;
     font-family: $font-mono;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 700;
   }
 
   .eyebrow span { margin-right: 5px; font-weight: 700; }
 
   .main {
-    position: relative;
-    z-index: 1;
-    max-width: 780px;
-    margin: 0 auto 16px;
-    font-size: clamp(38px, 6vw, 66px);
+    max-width: 650px;
+    margin: 0 0 20px;
+    font-size: clamp(44px, 5.2vw, 66px);
     letter-spacing: -0.045em;
-    line-height: 0.98;
+    line-height: 0.96;
   }
 
+  .main span { display: block; color: var(--accent); }
+
   .sub {
-    position: relative;
-    z-index: 1;
-    max-width: 650px;
-    margin: 0 auto;
+    max-width: 590px;
+    margin: 0;
     color: var(--text-secondary);
     font-size: 17px;
     line-height: 1.55;
   }
 
-  .hero-actions { position: relative; z-index: 1; display: flex; justify-content: center; gap: 10px; margin-top: 28px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+  .hero-assurances {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin: 24px 0 0;
+    padding: 0;
+    color: var(--text-secondary);
+    font-family: $font-mono;
+    font-size: 11px;
+    list-style: none;
+  }
+
+  .hero-assurances li { display: inline-flex; align-items: center; gap: 6px; }
+  .hero-assurances li > span { width: 5px; height: 5px; flex: 0 0 auto; background: var(--support); border-radius: 50%; }
+
+  .hero-diagnostic {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 253, 248, 0.96);
+    border: 1px solid #bdd5ca;
+    border-radius: 16px;
+    box-shadow: 12px 14px 0 rgba(35, 107, 87, 0.09), 0 24px 50px rgba(32, 35, 31, 0.1);
+  }
+
+  .hero-diagnostic::after {
+    position: absolute;
+    top: 44px;
+    right: -30px;
+    width: 96px;
+    height: 96px;
+    content: "";
+    background: #fff0e9;
+    border-radius: 50%;
+    opacity: 0.75;
+  }
+
+  .diagnostic-bar {
+    display: flex;
+    height: 39px;
+    align-items: center;
+    gap: 6px;
+    padding: 0 13px;
+    color: #dcebe4;
+    background: #194f40;
+  }
+
+  .diagnostic-bar > span { width: 7px; height: 7px; background: #8fb9a7; border-radius: 50%; }
+  .diagnostic-bar > span:nth-child(2) { background: #efba65; }
+  .diagnostic-bar > span:nth-child(3) { background: #ee8052; }
+  .diagnostic-bar code { margin-left: 5px; padding: 0; color: inherit; background: none; font-size: 10px; }
+
+  .diagnostic-body { position: relative; z-index: 1; padding: 27px; }
+  .diagnostic-kicker { margin: 0 0 8px; color: var(--support); font-family: $font-mono; font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+  .diagnostic-body h2 { max-width: 315px; margin: 0 0 22px; font-size: 22px; letter-spacing: -0.025em; line-height: 1.18; }
+  .diagnostic-steps { display: flex; flex-direction: column; gap: 0; margin: 0; padding: 0; list-style: none; }
+  .diagnostic-steps li { display: grid; grid-template-columns: 32px 1fr; gap: 11px; padding: 12px 0; border-top: 1px solid var(--border); }
+  .step-number { padding-top: 1px; color: var(--accent); font-family: $font-mono; font-size: 10px; font-weight: 700; }
+  .diagnostic-steps strong { display: block; font-size: 13px; }
+  .diagnostic-steps small { display: block; margin-top: 2px; color: var(--text-secondary); font-size: 11px; line-height: 1.4; }
+  .diagnostic-status { display: flex; align-items: center; gap: 7px; margin: 17px 0 0; color: var(--accent); font-family: $font-mono; font-size: 10px; font-weight: 700; }
+  .diagnostic-status span { width: 7px; height: 7px; background: #3a9a72; border-radius: 50%; box-shadow: 0 0 0 4px rgba(58, 154, 114, 0.12); }
 }
 
 .content {
@@ -378,6 +449,10 @@
   }
 
   .content { grid-template-columns: 54px minmax(0, 1fr) 168px; gap: 16px; padding-right: 18px; padding-left: 18px; }
+  .hero { padding-right: 30px; padding-left: 30px; }
+  .hero .hero-inner { grid-template-columns: minmax(0, 1.05fr) minmax(290px, 0.95fr); gap: 28px; }
+  .hero .main { font-size: clamp(40px, 5.4vw, 54px); }
+  .hero .diagnostic-body { padding: 22px; }
   .sidebar-right { padding: 10px; }
   .sidebar-right .avatar { width: min(128px, 100%); }
   .footer { grid-template-columns: 2fr 1fr 1fr; }
@@ -389,10 +464,14 @@
   .topnav { height: 60px; padding: 0 16px; }
   .topnav .menu { top: 59px; }
 
-  .hero { padding: 58px 20px 50px; }
-  .hero .main { font-size: clamp(38px, 12vw, 52px); }
+  .hero { padding: 48px 20px 44px; }
+  .hero .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero .main { font-size: clamp(41px, 12vw, 54px); }
   .hero .sub { font-size: 15px; }
-  .hero .hero-actions { flex-direction: column; align-items: stretch; max-width: 280px; margin-right: auto; margin-left: auto; }
+  .hero .hero-actions { align-items: stretch; flex-direction: column; }
+  .hero .hero-actions .button { width: 100%; }
+  .hero .hero-assurances { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .hero .hero-diagnostic { width: 100%; max-width: 440px; margin: 0 auto; box-shadow: 8px 10px 0 rgba(35, 107, 87, 0.09), 0 20px 40px rgba(32, 35, 31, 0.09); }
 
   .content { grid-template-columns: 1fr; gap: 24px; padding: 28px 16px 44px; }
 

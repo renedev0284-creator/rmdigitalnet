@@ -17,13 +17,17 @@
 .motion-ready .hero .eyebrow,
 .motion-ready .hero .main,
 .motion-ready .hero .sub,
-.motion-ready .hero .hero-actions {
+.motion-ready .hero .hero-actions,
+.motion-ready .hero .hero-assurances,
+.motion-ready .hero .hero-diagnostic {
   animation: hero-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 .motion-ready .hero .main { animation-delay: 0.08s; }
 .motion-ready .hero .sub { animation-delay: 0.16s; }
 .motion-ready .hero .hero-actions { animation-delay: 0.24s; }
+.motion-ready .hero .hero-assurances { animation-delay: 0.32s; }
+.motion-ready .hero .hero-diagnostic { animation-delay: 0.18s; }
 
 .motion-ready .services .service-card {
   opacity: 0;
