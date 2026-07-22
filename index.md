@@ -6,11 +6,11 @@ description: >-
   Creador de topoapp.net.
 permalink: /
 
-hero_title: "Ordeno lo complejo para que tu negocio avance."
-hero_sub: "Hojas de cálculo, sistemas y publicidad digital construidos con calma, criterio y atención al detalle."
+hero_title: "Organizo lo que haces para que puedas vender y administrar mejor."
+hero_sub: "Te ayudo a organizar procesos, controlar gastos, crear herramientas, mejorar tu marketing y tomar decisiones con mayor claridad."
 
 now_title: "Trabajando en topoapp.net"
-now_desc: "Mi plataforma para gestionar inventario, ventas y clientes. Actualizo este espacio conforme avanzo."
+now_desc: "Construí una plataforma para gestionar inventario, ventas y clientes. Aunque todos los días tiene mejoras, ya puedes usarlo y ordenar tu negocio."
 # Añade now_image y now_image_alt aquí cuando exista una captura real.
 
 about_summary: >-
