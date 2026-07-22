@@ -13,8 +13,8 @@ excerpt: >-
 
 planned_image: /assets/img/blog/publicidad-digital-medicion-resultados.webp
 planned_image_alt: "Medición de resultados de campañas de publicidad digital"
-image_width: 1200
-image_height: 630
+image_width: 1731
+image_height: 909
 
 categories: [marketing]
 tags: [meta ads, google ads, medición]
@@ -49,4 +49,3 @@ A veces la publicidad funciona, pero la página tarda demasiado, el mensaje no e
 Una revisión profesional contempla el recorrido completo: anuncio, página, contacto, seguimiento y resultado. Cuando estas etapas están conectadas, cada campaña deja un aprendizaje que permite ajustar mensajes, presupuesto y proceso comercial.
 
 Antes de aumentar la inversión, asegúrate de poder responder qué está funcionando y por qué. Si hoy solo ves actividad, pero no resultados claros, puedo ayudarte a organizar una estrategia de [marketing y publicidad digital]({{ '/servicios/publicidad-digital/' | relative_url }}) con objetivos, seguimiento y decisiones basadas en datos.
-

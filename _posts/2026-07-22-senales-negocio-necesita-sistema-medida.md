@@ -13,8 +13,8 @@ excerpt: >-
 
 planned_image: /assets/img/blog/sistema-a-medida-procesos-negocio.webp
 planned_image_alt: "Sistema a medida que conecta los procesos de un negocio"
-image_width: 1200
-image_height: 630
+image_width: 1731
+image_height: 909
 
 categories: [sistemas]
 tags: [automatización, desarrollo web, procesos]
@@ -51,4 +51,3 @@ Esa primera versión permite probar el flujo con información real y decidir qu�
 En algunos casos, una [hoja de cálculo bien diseñada]({{ '/servicios/hojas-de-calculo/' | relative_url }}) sigue siendo suficiente. En otros, conectar personas, datos y permisos requiere una herramienta propia. La clave es reconocer cuándo mantener el método actual ya cuesta más que mejorarlo.
 
 Si tu operación depende demasiado de copiar, pegar y preguntar, podemos revisar juntos si un [sistema a medida para tu negocio]({{ '/servicios/sistemas-a-medida/' | relative_url }}) sería una solución realista.
-

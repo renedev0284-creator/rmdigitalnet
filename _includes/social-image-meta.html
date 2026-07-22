@@ -1,5 +1,6 @@
-{% assign social_image = page.image | default: site.default_social_image %}
-{% assign social_image_alt = page.image_alt | default: site.default_social_image_alt %}
+{% assign social_image = page.image %}
+{% assign social_image_alt = page.image_alt | default: page.title %}
+{% if social_image %}
 {% assign social_image_width = page.image_width | default: 1200 %}
 {% assign social_image_height = page.image_height | default: 630 %}
 {% assign social_image_extension = social_image | split: '.' | last | downcase %}
@@ -16,3 +17,4 @@
 <meta property="og:image:height" content="{{ social_image_height }}">
 <meta property="og:image:alt" content="{{ social_image_alt | escape }}">
 <meta name="twitter:image:alt" content="{{ social_image_alt | escape }}">
+{% endif %}

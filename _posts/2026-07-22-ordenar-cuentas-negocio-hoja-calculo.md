@@ -13,8 +13,8 @@ excerpt: >-
 
 planned_image: /assets/img/blog/hoja-calculo-control-negocio.webp
 planned_image_alt: "Hoja de cálculo para controlar ventas, gastos e inventario de un negocio"
-image_width: 1200
-image_height: 630
+image_width: 1731
+image_height: 909
 
 categories: [hojas de cálculo]
 tags: [excel, google sheets, control de negocio]
@@ -51,4 +51,3 @@ Excel y Google Sheets son excelentes para organizar una operación pequeña, val
 La decisión correcta no depende de usar la herramienta más avanzada, sino de elegir la que puedas mantener y aprovechar hoy.
 
 Si tus números no coinciden y cada cierre se convierte en una investigación, puedo ayudarte a diseñar una [hoja de cálculo para tu negocio]({{ '/servicios/hojas-de-calculo/' | relative_url }}) con una estructura clara, controles útiles y reportes que faciliten las decisiones.
-

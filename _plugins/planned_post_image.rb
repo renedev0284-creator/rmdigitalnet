@@ -10,7 +10,7 @@ Jekyll::Hooks.register :posts, :pre_render do |post|
     post.data["image"] = planned_image
     post.data["image_alt"] = post.data["planned_image_alt"]
   else
-    post.data["image"] = post.site.config["default_social_image"]
-    post.data["image_alt"] = post.site.config["default_social_image_alt"]
+    post.data.delete("image")
+    post.data.delete("image_alt")
   end
 end
