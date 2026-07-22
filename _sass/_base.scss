@@ -3,7 +3,10 @@ html, body { margin: 0; padding: 0; }
 
 body {
   font-family: $font-sans;
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image: url("../img/pattern-tech.svg");
+  background-attachment: fixed;
+  background-size: 320px 220px;
   color: var(--text-primary);
   font-size: $fs-base;
   font-size: 15px;
@@ -77,4 +80,11 @@ pre {
   overflow-x: auto;
 
   code { background: none; padding: 0; }
+}
+
+@media (max-width: $bp-tablet) {
+  body {
+    background-attachment: scroll;
+    background-size: 280px 193px;
+  }
 }

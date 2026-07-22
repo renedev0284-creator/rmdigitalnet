@@ -5,7 +5,10 @@
   min-height: calc(100vh - 12px);
   margin: 12px auto 0;
   overflow: hidden;
-  background: var(--surface);
+  background-color: #faf9f4;
+  background-image: url("../img/pattern-tech.svg");
+  background-position: center top;
+  background-size: 320px 220px;
   border: 1px solid var(--border);
   border-radius: 18px 18px 0 0;
   box-shadow: 0 18px 60px rgba(32, 35, 31, 0.07);
@@ -345,7 +348,7 @@
 }
 
 @media (max-width: $bp-tablet) {
-  .frame { width: 100%; min-height: 100vh; margin: 0; border: 0; border-radius: 0; }
+  .frame { width: 100%; min-height: 100vh; margin: 0; background-size: 280px 193px; border: 0; border-radius: 0; }
   .topnav { height: 60px; padding: 0 16px; }
   .topnav .menu { top: 59px; }
 
