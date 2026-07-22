@@ -1,7 +1,7 @@
 <aside class="sidebar-left" aria-label="Redes y proyectos" data-reveal="left">
   {% for item in site.data.social.left_sidebar %}
     {% if item.kind == "primary" %}
-      <a class="icon-item" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}" data-label="{{ item.name }}">
+      <a class="icon-item{% if item.featured %} project-link{% endif %}" href="{{ item.url }}" target="_blank" rel="noopener" aria-label="{{ item.name }}" data-label="{{ item.name }}">
         {% include icon.html name=item.icon size=18 %}
       </a>
     {% endif %}

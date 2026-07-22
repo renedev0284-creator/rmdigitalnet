@@ -296,7 +296,7 @@
 
   .icon-item:hover::after,
   .icon-item:focus-visible::after { opacity: 1; transform: translateX(0); }
-  .icon-item:nth-of-type(4) { color: var(--accent); background: var(--accent-soft); }
+  .project-link { color: var(--accent); background: var(--accent-soft); }
   .spacer { flex: 1; }
   .coffee-mini { color: var(--support); background: #fff2eb; }
 }
@@ -481,7 +481,9 @@
     height: auto;
     min-height: 0;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
     padding: 0 0 20px;
     border-right: 0;
     border-bottom: 1px solid var(--border);
