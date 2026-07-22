@@ -1,0 +1,18 @@
+{% assign social_image = page.image | default: site.default_social_image %}
+{% assign social_image_alt = page.image_alt | default: site.default_social_image_alt %}
+{% assign social_image_width = page.image_width | default: 1200 %}
+{% assign social_image_height = page.image_height | default: 630 %}
+{% assign social_image_extension = social_image | split: '.' | last | downcase %}
+{% if social_image_extension == 'webp' %}
+  {% assign social_image_type = 'image/webp' %}
+{% elsif social_image_extension == 'jpg' or social_image_extension == 'jpeg' %}
+  {% assign social_image_type = 'image/jpeg' %}
+{% else %}
+  {% assign social_image_type = 'image/png' %}
+{% endif %}
+<meta property="og:image:secure_url" content="{{ social_image | absolute_url }}">
+<meta property="og:image:type" content="{{ social_image_type }}">
+<meta property="og:image:width" content="{{ social_image_width }}">
+<meta property="og:image:height" content="{{ social_image_height }}">
+<meta property="og:image:alt" content="{{ social_image_alt | escape }}">
+<meta name="twitter:image:alt" content="{{ social_image_alt | escape }}">

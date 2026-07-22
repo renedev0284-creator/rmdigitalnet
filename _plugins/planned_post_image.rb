@@ -6,10 +6,11 @@ Jekyll::Hooks.register :posts, :pre_render do |post|
   relative_path = planned_image.sub(%r{\A/}, "")
   source_path = File.join(post.site.source, relative_path)
 
-  post.data["image"] = if File.file?(source_path)
-                         planned_image
-                       else
-                         post.site.config["default_social_image"]
-                       end
-  post.data["image_alt"] ||= post.data["planned_image_alt"]
+  if File.file?(source_path)
+    post.data["image"] = planned_image
+    post.data["image_alt"] = post.data["planned_image_alt"]
+  else
+    post.data["image"] = post.site.config["default_social_image"]
+    post.data["image_alt"] = post.site.config["default_social_image_alt"]
+  end
 end

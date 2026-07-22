@@ -16,11 +16,17 @@ timezone: "America/Guatemala"
 author:
   name: "René Moya"
   email: "rene0284@msn.com"
+  twitter: "Rened_ev"
 
 lang: es
 
 logo: /assets/img/logo-rm-verde.png
-default_social_image: /assets/img/social-default.png
+default_social_image: /assets/img/og-rmdigital-negocios.png
+default_social_image_alt: "rmdigital.net: orden, sistemas y marketing para negocios"
+
+twitter:
+  username: "Rened_ev"
+  card: summary_large_image
 
 social:
   links:
@@ -51,7 +57,8 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-      image: /assets/img/social-default.png
+      image: /assets/img/og-rmdigital-negocios.png
+      image_alt: "rmdigital.net: orden, sistemas y marketing para negocios"
 
 # ------------------------------------------------------------------
 # Plugins soportados de forma nativa por GitHub Pages
