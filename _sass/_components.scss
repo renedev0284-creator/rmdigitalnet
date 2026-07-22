@@ -220,7 +220,24 @@
 .home-blog-copy .button { min-height: 40px; }
 
 .card { padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: $radius-md; }
-.coffee-button { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; color: var(--support); background: #fff2eb; border: 1px solid #ebc4b2; border-radius: 7px; font-size: 12px; }
+.coffee-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  color: var(--support);
+  background: #fff2eb;
+  border: 1px solid #ebc4b2;
+  border-radius: 7px;
+  font-size: 12px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.coffee-button:hover {
+  background: #ffe8dc;
+  border-color: #dca88f;
+  transform: translateY(-1px);
+}
 
 .blog-title { padding-top: 4px; }
 .post-list { display: flex; flex-direction: column; gap: 16px; }
