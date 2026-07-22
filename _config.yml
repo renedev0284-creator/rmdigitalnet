@@ -7,19 +7,26 @@
 title: "rmdigital.net"
 tagline: "Con calma, con orden, sin relleno."
 description: >-
-  René M. — hojas de cálculo, desarrollo de sistemas y pauta en Meta y Google.
-  Creador de topoapp.net, plataforma de gestión de negocios.
-url: "https://renedev0284-creator.github.io"
-baseurl: "/rmdigitalnet"             # proyecto GitHub Pages: dominio base + nombre del repo
+  René Moya ayuda a emprendedores y negocios con hojas de cálculo, sistemas a
+  medida, productos digitales, marketing y publicidad digital.
+url: "https://rmdigital.net"
+baseurl: ""
+timezone: "America/Guatemala"
 
 author:
-  name: "René M."
+  name: "René Moya"
   email: "rene0284@msn.com"
 
 lang: es
 
 logo: /assets/img/logo-rm-verde.png
-default_social_image: /assets/img/social-default.png   # placeholder para og:image
+
+social:
+  links:
+    - "https://github.com/renedev0284-creator"
+    - "https://x.com/Rened_ev"
+    - "https://www.facebook.com/profile.php?id=61579824642450"
+    - "https://tiktok.com/@renemoya_"
 
 paypal_email: "rene0284@msn.com"
 
@@ -43,6 +50,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+      image: /assets/img/social-default.png
 
 # ------------------------------------------------------------------
 # Plugins soportados de forma nativa por GitHub Pages

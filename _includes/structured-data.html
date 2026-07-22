@@ -1,0 +1,64 @@
+{% if page.url == '/' or page.url == '/acerca-de/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ '/#rene-moya' | absolute_url }}",
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "image": {{ '/assets/img/avatar-web-bw.webp' | absolute_url | jsonify }},
+  "jobTitle": "Desarrollador y marketer",
+  "email": {{ site.author.email | jsonify }},
+  "knowsAbout": ["Hojas de cálculo", "Sistemas a medida", "Productos digitales", "Marketing digital", "Publicidad digital"],
+  "sameAs": [{% for profile in site.social.links %}{{ profile | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
+}
+</script>
+{% endif %}
+
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "{{ '/#servicio-profesional' | absolute_url }}",
+  "name": {{ site.title | jsonify }},
+  "url": {{ '/' | absolute_url | jsonify }},
+  "logo": {{ site.logo | absolute_url | jsonify }},
+  "image": {{ page.image | absolute_url | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "email": {{ site.author.email | jsonify }},
+  "areaServed": { "@type": "Country", "name": "Guatemala" },
+  "founder": { "@id": "{{ '/#rene-moya' | absolute_url }}" },
+  "serviceType": ["Hojas de cálculo", "Sistemas personalizados", "Productos digitales", "Marketing y publicidad digital"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in site.data.home.faqs %}
+    {
+      "@type": "Question",
+      "name": {{ faq.question | jsonify }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ faq.answer | jsonify }} }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% if page.service_type %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": {{ page.service_type | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "areaServed": { "@type": "Country", "name": "Guatemala" },
+  "provider": { "@id": "{{ '/#servicio-profesional' | absolute_url }}" }
+}
+</script>
+{% endif %}

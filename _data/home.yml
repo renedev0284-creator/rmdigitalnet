@@ -4,16 +4,19 @@ services:
     title: "Hojas de cálculo"
     description: "Diseño archivos claros para controlar ventas, inventarios, costos y operación sin perder tiempo."
     tag: "Excel · Google Sheets"
+    url: "/servicios/hojas-de-calculo/"
   - icon: code
     number: "02"
     title: "Sistemas a medida"
     description: "Construyo herramientas web y automatizaciones que se adaptan a la forma real en que trabaja tu negocio."
     tag: "Web · automatización"
+    url: "/servicios/sistemas-a-medida/"
   - icon: target
     number: "03"
     title: "Publicidad digital"
     description: "Organizo campañas y medición para que Meta y Google trabajen con objetivos, datos y seguimiento."
     tag: "Meta Ads · Google Ads"
+    url: "/servicios/publicidad-digital/"
 
 faqs:
   - question: "¿Cómo empezamos a trabajar?"

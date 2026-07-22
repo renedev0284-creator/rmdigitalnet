@@ -30,7 +30,8 @@ layout: default
           <div class="announcement-visual">
             {% if page.now_image %}
               <img src="{{ page.now_image | relative_url }}"
-                   alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}">
+                   alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}"
+                   width="600" height="440" loading="lazy" decoding="async">
             {% else %}
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               {% include icon.html name="code" size=42 %}
@@ -67,7 +68,10 @@ layout: default
               </div>
               <h3>{{ service.title }}</h3>
               <p>{{ service.description }}</p>
-              <span class="service-tag">{{ service.tag }}</span>
+              <div class="service-footer">
+                <span class="service-tag">{{ service.tag }}</span>
+                <a class="service-link" href="{{ service.url | relative_url }}" aria-label="Conocer el servicio de {{ service.title }}">Ver más {% include icon.html name="arrow-right" size=14 %}</a>
+              </div>
             </article>
           {% endfor %}
         </div>
@@ -111,7 +115,7 @@ layout: default
           <article class="home-blog-card">
             <a class="home-blog-image" href="{{ latest_post.url | relative_url }}" tabindex="-1" aria-hidden="true">
               {% if latest_post.image %}
-                <img src="{{ latest_post.image | relative_url }}" alt="">
+                <img src="{{ latest_post.image | relative_url }}" alt="" width="{{ latest_post.image_width | default: 1200 }}" height="{{ latest_post.image_height | default: 630 }}" loading="lazy" decoding="async">
               {% else %}
                 {% include icon.html name="code" size=40 %}
               {% endif %}

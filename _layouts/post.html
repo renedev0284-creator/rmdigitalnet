@@ -27,7 +27,7 @@ layout: default
 
           {% if page.image %}
             <div class="post-cover">
-              <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}">
+              <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title }}" width="{{ page.image_width | default: 1200 }}" height="{{ page.image_height | default: 630 }}" decoding="async" fetchpriority="high">
             </div>
           {% endif %}
         </header>
