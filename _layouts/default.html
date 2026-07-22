@@ -18,7 +18,7 @@
       document.documentElement.classList.add("motion-ready");
     }
   </script>
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | absolute_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
 
@@ -31,6 +31,6 @@
   </div>
 
   {% include cookie-banner.html %}
-  <script src="{{ '/assets/js/main.js' | absolute_url }}" defer></script>
+  <script src="{{ '/assets/js/main.js' | absolute_url }}?v={{ site.time | date: '%s' }}" defer></script>
 </body>
 </html>
