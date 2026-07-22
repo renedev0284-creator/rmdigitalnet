@@ -254,7 +254,8 @@
     border-radius: 9px;
   }
 
-  .avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; transition: filter 0.35s ease, transform 0.35s ease; }
+  &:hover .avatar img { filter: contrast(1.05); transform: scale(1.025); }
   .name { margin: 0; font-size: 18px; font-weight: 700; line-height: 1.25; }
   .role { margin: 3px 0 0; color: var(--text-secondary); font-size: 12px; line-height: 1.4; }
   .profile-label { display: block; margin-bottom: 7px; color: var(--accent); font-family: $font-mono; font-size: 10px; text-transform: uppercase; }

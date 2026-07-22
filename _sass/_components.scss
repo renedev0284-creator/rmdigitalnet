@@ -22,6 +22,8 @@
 }
 
 .button:hover { transform: translateY(-2px); }
+.button .icon { transition: transform 0.18s ease; }
+.button:hover .icon { transform: translateX(3px); }
 .button--primary { color: #fff; background: var(--accent); box-shadow: 0 7px 0 #174c3d; }
 .button--primary:hover { background: #195844; }
 .button--ghost { color: var(--text-primary); background: var(--surface); border-color: var(--border); }
@@ -114,10 +116,11 @@
 }
 
 .service-card:hover { border-color: #afc9bd; transform: translateY(-4px); }
+.service-card:hover .service-icon { color: #fff; background: var(--accent); transform: rotate(-4deg) scale(1.06); }
 .service-card:nth-child(2) { background: var(--accent-soft); }
 .service-card:nth-child(3) { background: #fff2eb; }
 .service-top { display: flex; width: 100%; align-items: center; justify-content: space-between; }
-.service-icon { display: flex; width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--accent); background: var(--surface); border: 1px solid var(--border); border-radius: 9px; }
+.service-icon { display: flex; width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--accent); background: var(--surface); border: 1px solid var(--border); border-radius: 9px; transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease; }
 .service-number { color: var(--text-muted); font-family: $font-mono; font-size: 12px; }
 .service-card h3 { margin: 24px 0 9px; font-size: 18px; }
 .service-card > p { margin: 0 0 20px; color: var(--text-secondary); font-size: 13px; }

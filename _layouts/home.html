@@ -17,7 +17,7 @@ layout: default
 
     <main id="main-content" class="main-col">
 
-      <section id="anuncios" class="home-section announcements" aria-labelledby="announcements-title">
+      <section id="anuncios" class="home-section announcements" aria-labelledby="announcements-title" data-reveal>
         <div class="section-heading">
           <div>
             <p class="section-kicker">Actualidad</p>
@@ -49,7 +49,7 @@ layout: default
         </article>
       </section>
 
-      <section id="servicios" class="home-section services" aria-labelledby="services-title">
+      <section id="servicios" class="home-section services" aria-labelledby="services-title" data-reveal>
         <div class="section-heading">
           <div>
             <p class="section-kicker">Lo que puedo resolver</p>
@@ -73,7 +73,7 @@ layout: default
         </div>
       </section>
 
-      <section class="home-cta" aria-labelledby="cta-title">
+      <section class="home-cta" aria-labelledby="cta-title" data-reveal>
         <div>
           <p class="section-kicker">Tu siguiente mejora puede empezar aquí</p>
           <h2 id="cta-title">¿Hay algo en tu negocio que todavía haces a mano?</h2>
@@ -82,7 +82,7 @@ layout: default
         <a class="button button--light" href="mailto:{{ site.author.email }}">Cuéntame tu proyecto {% include icon.html name="arrow-right" size=16 %}</a>
       </section>
 
-      <section id="faqs" class="home-section faq-section" aria-labelledby="faq-title">
+      <section id="faqs" class="home-section faq-section" aria-labelledby="faq-title" data-reveal>
         <div class="section-heading">
           <div>
             <p class="section-kicker">Antes de escribir</p>
@@ -99,7 +99,7 @@ layout: default
 
       {% assign latest_post = site.posts.first %}
       {% if latest_post %}
-        <section class="home-section home-blog" aria-labelledby="home-blog-title">
+        <section class="home-section home-blog" aria-labelledby="home-blog-title" data-reveal>
           <div class="section-heading">
             <div>
               <p class="section-kicker">Ideas, procesos y aprendizajes</p>

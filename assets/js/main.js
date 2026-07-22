@@ -82,6 +82,23 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach(function (section) { sectionObserver.observe(section); });
   }
 
+  // ---------------- Aparicion progresiva ----------------
+  var revealItems = document.querySelectorAll("[data-reveal]");
+
+  if (revealItems.length && document.documentElement.classList.contains("motion-ready")) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+
+    revealItems.forEach(function (item) { revealObserver.observe(item); });
+  } else {
+    revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+  }
+
   // ---------------- Preferencias de cookies ----------------
   var cookieBanner = document.getElementById("cookie-banner");
   var cookieAccept = document.getElementById("cookie-accept");
