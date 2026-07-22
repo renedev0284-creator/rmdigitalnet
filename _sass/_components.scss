@@ -43,7 +43,20 @@
   line-height: 1.2;
 }
 
-.home-section { scroll-margin-top: 88px; }
+.home-section {
+  position: relative;
+  padding: 30px;
+  overflow: hidden;
+  background: #f7f7f2;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  scroll-margin-top: 88px;
+}
+
+.announcements { background: #f1f7f3; border-color: #d6e5dc; }
+.services { background: #fff8ed; border-color: #ecdfcb; }
+.faq-section { background: #eef6f4; border-color: #d2e4df; }
+.home-blog { background: #fff3ed; border-color: #efd9ce; }
 
 .section-heading {
   display: flex;
@@ -363,6 +376,7 @@
 }
 
 @media (max-width: $bp-tablet) {
+  .home-section { padding: 22px; }
   .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
   .section-rule { display: none; }
   .announcement-copy { padding: 22px; }
@@ -375,6 +389,7 @@
 }
 
 @media (max-width: $bp-mobile) {
+  .home-section { padding: 18px; border-radius: 14px; }
   .announcement-visual { min-height: 170px; }
   .post-preview { flex-direction: column; }
   .post-preview .post-preview-img { width: 100%; height: 170px; }
