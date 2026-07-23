@@ -58,32 +58,57 @@ layout: default
       <section id="anuncios" class="home-section announcements" aria-labelledby="announcements-title" data-reveal>
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Actualidad</p>
-            <h2 id="announcements-title">Anuncios</h2>
+            <p class="section-kicker">Caso real / producto propio</p>
+            <h2 id="announcements-title">Construido para vender con orden</h2>
           </div>
           <span class="section-rule" aria-hidden="true"></span>
         </div>
 
         <article class="announcement-card">
-          <div class="announcement-visual">
+          <div class="announcement-visual{% if page.now_image %} has-image{% endif %}">
             {% if page.now_image %}
               <img src="{{ page.now_image | relative_url }}"
                    alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}"
                    width="600" height="440" loading="lazy" decoding="async">
             {% else %}
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              {% include icon.html name="code" size=42 %}
-              <span class="visual-caption">topoapp.net</span>
+              <div class="topo-preview" aria-hidden="true">
+                <div class="topo-preview-head">
+                  <span class="topo-mark">T</span>
+                  <strong>TopoApp</strong>
+                  <small>ventas en orden</small>
+                </div>
+                <div class="topo-stats">
+                  <div><strong>12</strong><span>pedidos hoy</span></div>
+                  <div><strong>Q 3,840</strong><span>ventas del mes</span></div>
+                  <div><strong>5</strong><span>por entregar</span></div>
+                </div>
+                <div class="topo-orders">
+                  <span><i></i> Pedido confirmado <b>Q250</b></span>
+                  <span><i></i> Enviado <b>Q180</b></span>
+                  <span><i></i> Entregado <b>Q320</b></span>
+                </div>
+              </div>
+              <span class="visual-caption">topoapp.net · SaaS para ventas</span>
             {% endif %}
           </div>
           <div class="announcement-copy">
             <div class="announcement-meta">
               <span class="status-dot" aria-hidden="true"></span>
-              En desarrollo
+              {{ page.now_status }}
             </div>
             <h3>{{ page.now_title }}</h3>
             <p>{{ page.now_desc }}</p>
-            <a class="text-link" href="https://topoapp.net" target="_blank" rel="noopener">Visitar proyecto {% include icon.html name="arrow-right" size=15 %}</a>
+            <ul class="announcement-features" aria-label="Funciones principales">
+              {% for feature in page.now_features %}<li>{{ feature }}</li>{% endfor %}
+            </ul>
+            <div class="announcement-facts" aria-label="Datos del producto">
+              {% for fact in page.now_facts %}<span>{{ fact }}</span>{% endfor %}
+            </div>
+            <div class="announcement-actions">
+              <a class="button button--primary" href="{{ page.now_url }}" target="_blank" rel="noopener">Conocer TopoApp {% include icon.html name="arrow-right" size=15 %}</a>
+              <a class="text-link" href="{{ page.now_trial_url }}" target="_blank" rel="noopener">Probar gratis</a>
+            </div>
           </div>
         </article>
       </section>
