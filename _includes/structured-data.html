@@ -62,3 +62,33 @@
 }
 </script>
 {% endif %}
+
+{% if page.project_schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TopoApp",
+  "url": {{ page.product_url | jsonify }},
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": {{ page.description | jsonify }},
+  "creator": { "@id": "{{ '/#rene-moya' | absolute_url }}" },
+  "sameAs": {{ page.product_url | jsonify }},
+  "featureList": [
+    "Gestión de pedidos e inventario",
+    "Catálogo público para ventas por redes sociales",
+    "Empresas, guías y seguimiento de envíos",
+    "Vendedores, comisiones y liquidaciones",
+    "Finanzas, depósitos COD y reportes"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "url": {{ page.trial_url | jsonify }},
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Prueba gratuita de 14 días sin tarjeta"
+  }
+}
+</script>
+{% endif %}
