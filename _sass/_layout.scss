@@ -89,7 +89,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 64px 48px;
+  padding: 78px 48px 82px;
   background-color: #f1f7f2;
   background-image: linear-gradient(rgba(35, 107, 87, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -112,10 +112,10 @@
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(390px, 0.95fr);
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 0.92fr);
     align-items: center;
-    gap: clamp(36px, 6vw, 72px);
-    max-width: 1100px;
+    gap: clamp(54px, 7vw, 82px);
+    max-width: 1040px;
     margin: 0 auto;
   }
 
@@ -137,30 +137,30 @@
   .eyebrow span { margin-right: 5px; font-weight: 700; }
 
   .main {
-    max-width: 650px;
+    max-width: 570px;
     margin: 0 0 20px;
-    font-size: clamp(42px, 4.7vw, 61px);
-    letter-spacing: -0.045em;
-    line-height: 0.96;
+    font-size: clamp(40px, 4vw, 52px);
+    letter-spacing: -0.04em;
+    line-height: 1.01;
   }
 
   .main span { display: block; color: var(--accent); }
 
   .sub {
-    max-width: 590px;
+    max-width: 545px;
     margin: 0;
     color: var(--text-secondary);
-    font-size: 17px;
-    line-height: 1.55;
+    font-size: 15px;
+    line-height: 1.62;
   }
 
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 
   .hero-assurances {
     display: flex;
     flex-wrap: wrap;
     gap: 8px 16px;
-    margin: 24px 0 0;
+    margin: 28px 0 0;
     padding: 0;
     color: var(--text-secondary);
     font-family: $font-mono;
@@ -174,7 +174,7 @@
   .hero-control {
     position: relative;
     min-width: 0;
-    padding: 44px 10px 40px 42px;
+    padding: 42px 8px 38px 40px;
   }
 
   .control-window {
@@ -561,9 +561,9 @@
   }
 
   .content { grid-template-columns: 54px minmax(0, 1fr) 168px; gap: 16px; padding-right: 18px; padding-left: 18px; }
-  .hero { padding-right: 30px; padding-left: 30px; }
-  .hero .hero-inner { grid-template-columns: minmax(0, 1.05fr) minmax(290px, 0.95fr); gap: 28px; }
-  .hero .main { font-size: clamp(40px, 5.4vw, 54px); }
+  .hero { padding-right: 34px; padding-left: 34px; }
+  .hero .hero-inner { grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr); gap: 38px; }
+  .hero .main { font-size: clamp(38px, 4.8vw, 48px); }
   .hero .hero-control { padding-left: 34px; }
   .sidebar-right { padding: 10px; }
   .sidebar-right .avatar { width: min(128px, 100%); }
@@ -576,14 +576,15 @@
   .topnav { height: 60px; padding: 0 16px; }
   .topnav .menu { top: 59px; }
 
-  .hero { padding: 48px 20px 44px; }
-  .hero .hero-inner { grid-template-columns: 1fr; gap: 36px; }
-  .hero .main { font-size: clamp(41px, 12vw, 54px); }
+  .hero { padding: 58px 28px 62px; }
+  .hero .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 44px; max-width: 560px; }
+  .hero .hero-copy { width: 100%; max-width: 520px; margin: 0 auto; }
+  .hero .main { font-size: clamp(38px, 10.8vw, 48px); line-height: 1.02; }
   .hero .sub { font-size: 15px; }
   .hero .hero-actions { align-items: stretch; flex-direction: column; }
   .hero .hero-actions .button { width: 100%; }
   .hero .hero-assurances { align-items: flex-start; flex-direction: column; gap: 8px; }
-  .hero .hero-control { width: 100%; max-width: 500px; margin: 0 auto; padding-right: 18px; }
+  .hero .hero-control { width: 100%; max-width: 480px; margin: 0 auto; padding-right: 18px; }
   .hero .control-window { box-shadow: 9px 11px 0 rgba(35, 107, 87, 0.08), 0 20px 40px rgba(32, 35, 31, 0.1); }
 
   .content { grid-template-columns: 1fr; gap: 24px; padding: 28px 16px 44px; }
@@ -623,6 +624,10 @@
 }
 
 @media (max-width: $bp-mobile) {
+  .hero { padding-right: 22px; padding-left: 22px; }
+  .hero .hero-inner { gap: 38px; }
+  .hero .main { font-size: clamp(36px, 10.5vw, 44px); }
+  .hero .sub { line-height: 1.65; }
   .hero .hero-control { padding: 42px 0 44px; }
   .hero .control-tools,
   .hero .control-connector--side { display: none; }
