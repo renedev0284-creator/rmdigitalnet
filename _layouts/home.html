@@ -21,29 +21,58 @@ layout: default
         </ul>
       </div>
 
-      <aside class="hero-diagnostic" aria-label="Mi proceso de trabajo">
-        <div class="diagnostic-bar" aria-hidden="true">
-          <span></span><span></span><span></span>
-          <code>rm@negocio:~/orden</code>
+      <aside class="hero-control" aria-label="Soluciones conectadas para ordenar un negocio">
+        <div class="control-connector control-connector--top" aria-hidden="true"></div>
+        <div class="control-connector control-connector--side" aria-hidden="true"></div>
+
+        <div class="control-tools" aria-hidden="true">
+          <span>{% include icon.html name="spreadsheet" size=18 %}</span>
+          <span>{% include icon.html name="target" size=18 %}</span>
+          <span>{% include icon.html name="code" size=18 %}</span>
         </div>
-        <div class="diagnostic-body">
-          <p class="diagnostic-kicker">Así trabajo contigo</p>
-          <h2>Primero vemos qué te está frenando. Después decidimos si realmente necesitas construir algo.</h2>
-          <ol class="diagnostic-steps">
-            <li>
-              <span class="step-number">01</span>
-              <div><strong>Escuchar</strong><small>Me cuentas cómo trabajas y dónde se complica.</small></div>
-            </li>
-            <li>
-              <span class="step-number">02</span>
-              <div><strong>Ordenar</strong><small>Buscamos una mejora realista con lo que ya tienes.</small></div>
-            </li>
-            <li>
-              <span class="step-number">03</span>
-              <div><strong>Construir</strong><small>Solo si hace falta, hacemos la herramienta correcta.</small></div>
-            </li>
-          </ol>
-          <p class="diagnostic-status"><span aria-hidden="true"></span> Hablamos directamente, sin presión</p>
+
+        <div class="control-window">
+          <div class="control-window-bar" aria-hidden="true">
+            <span></span><span></span><span></span>
+            <strong>vista general</strong>
+            <small>Todo conectado</small>
+          </div>
+          <div class="control-formula" aria-hidden="true">
+            <span>fx</span>
+            <p>orden + estrategia + solución correcta</p>
+          </div>
+          <div class="control-sheet" aria-hidden="true">
+            <div class="sheet-head"><span>Área</span><span>Solución</span><span>Estado</span></div>
+            <div class="sheet-row">
+              <i>{% include icon.html name="target" size=17 %}</i>
+              <div><strong>Estrategia</strong><small>Prioridades claras</small></div>
+              <b><span></span> Lista</b>
+            </div>
+            <div class="sheet-row">
+              <i>{% include icon.html name="spreadsheet" size=17 %}</i>
+              <div><strong>Control</strong><small>Datos en orden</small></div>
+              <b><span></span> Activo</b>
+            </div>
+            <div class="sheet-row">
+              <i>{% include icon.html name="code" size=17 %}</i>
+              <div><strong>Sistema</strong><small>Trabajo conectado</small></div>
+              <b><span></span> Medible</b>
+            </div>
+          </div>
+          <div class="control-summary" aria-hidden="true">
+            <div><span>Ruido</span><strong>menos</strong></div>
+            <div><span>Control</span><strong>más</strong></div>
+            <div><span>Siguiente paso</span><strong>claro</strong></div>
+          </div>
+        </div>
+
+        <div class="control-float control-float--campaign" aria-hidden="true">
+          <span>{% include icon.html name="chart" size=18 %}</span>
+          <div><strong>Publicidad</strong><small><i></i> Con propósito</small></div>
+        </div>
+        <div class="control-float control-float--system" aria-hidden="true">
+          <span>{% include icon.html name="code" size=18 %}</span>
+          <div><strong>Solución a medida</strong><small>solo si hace falta</small></div>
         </div>
       </aside>
     </div>

@@ -5,9 +5,9 @@ description: >-
   René Moya ayuda a emprendedores, micro y medianas empresas a organizar procesos, controlar gastos, crear herramientas, mejorar su marketing y tomar decisiones con mayor claridad.
 permalink: /
 
-hero_title: "El desorden también cobra."
-hero_highlight: "Yo te ayudo a poner tu negocio en orden."
-hero_sub: "Primero entendemos qué te está frenando. Luego vemos si hace falta una hoja, un sistema, publicidad o simplemente una mejor forma de trabajar. Sin venderte lo que no necesitas."
+hero_title: "Tu negocio no necesita más herramientas."
+hero_highlight: "Necesita una solución que tenga sentido."
+hero_sub: "Analizo qué está causando el desorden y te ayudo a resolverlo desde la raíz. Puede ser una mejor estrategia, una hoja de control, publicidad, una landing page o un sistema personalizado. Primero entendemos; después construimos."
 
 now_status: "Producto propio · disponible"
 now_title: "TopoApp: orden para negocios que venden por WhatsApp"
