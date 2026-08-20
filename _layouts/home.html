@@ -4,20 +4,20 @@ layout: default
   <section id="inicio" class="hero" aria-labelledby="hero-title">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow"><span aria-hidden="true">~/</span> primero entendemos, después construimos</p>
+        <p class="eyebrow"><span aria-hidden="true">~/</span> René Moya · orden operativo y sistemas</p>
         <h1 id="hero-title" class="main">
           {{ page.hero_title }}
           <span>{{ page.hero_highlight }}</span>
         </h1>
         <p class="sub">{{ page.hero_sub }}</p>
         <div class="hero-actions">
-          <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20contarte%20qué%20pasa%20en%20mi%20negocio">Cuéntame qué está pasando {% include icon.html name="arrow-right" size=16 %}</a>
-          <a class="button button--ghost" href="#servicios">Ver cómo puedo ayudarte</a>
+          <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20de%20mi%20negocio">Solicita una revisión {% include icon.html name="arrow-right" size=16 %}</a>
+          <a class="button button--ghost" href="#anuncios">Ver un caso real</a>
         </div>
         <ul class="hero-assurances" aria-label="Cómo trabajo">
-          <li><span aria-hidden="true"></span> Primero escucho</li>
-          <li><span aria-hidden="true"></span> No te vendo de más</li>
-          <li><span aria-hidden="true"></span> Construimos si tiene sentido</li>
+          <li><span aria-hidden="true"></span> Revisamos el proceso</li>
+          <li><span aria-hidden="true"></span> Priorizamos una mejora útil</li>
+          <li><span aria-hidden="true"></span> Construimos sin complicarte</li>
         </ul>
       </div>
 
@@ -39,23 +39,23 @@ layout: default
           </div>
           <div class="control-formula" aria-hidden="true">
             <span>fx</span>
-            <p>orden + estrategia + solución correcta</p>
+            <p>ventas + inventario + costos + seguimiento</p>
           </div>
           <div class="control-sheet" aria-hidden="true">
             <div class="sheet-head"><span>Área</span><span>Solución</span><span>Estado</span></div>
             <div class="sheet-row">
               <i>{% include icon.html name="target" size=17 %}</i>
-              <div><strong>Estrategia</strong><small>Prioridades claras</small></div>
+              <div><strong>Proceso</strong><small>Pasos y responsables</small></div>
               <b><span></span> Lista</b>
             </div>
             <div class="sheet-row">
               <i>{% include icon.html name="spreadsheet" size=17 %}</i>
-              <div><strong>Control</strong><small>Datos en orden</small></div>
+              <div><strong>Control</strong><small>Ventas, stock y costos</small></div>
               <b><span></span> Activo</b>
             </div>
             <div class="sheet-row">
               <i>{% include icon.html name="code" size=17 %}</i>
-              <div><strong>Sistema</strong><small>Trabajo conectado</small></div>
+              <div><strong>Sistema</strong><small>Operación conectada</small></div>
               <b><span></span> Medible</b>
             </div>
           </div>
@@ -87,8 +87,8 @@ layout: default
       <section id="anuncios" class="home-section announcements" aria-labelledby="announcements-title" data-reveal>
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Caso real / producto propio</p>
-            <h2 id="announcements-title">Construido para vender con orden</h2>
+            <p class="section-kicker">La propuesta, llevada a la práctica</p>
+            <h2 id="announcements-title">Un sistema propio para controlar una operación completa</h2>
           </div>
           <span class="section-rule" aria-hidden="true"></span>
         </div>
@@ -145,24 +145,24 @@ layout: default
       <section id="servicios" class="home-section services" aria-labelledby="services-title" data-reveal>
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Lo que puedo resolver</p>
-            <h2 id="services-title">Servicios</h2>
+            <p class="section-kicker">Una especialidad, distintas escalas</p>
+            <h2 id="services-title">Primero ordenamos. Luego elegimos cómo resolverlo.</h2>
           </div>
-          <p class="section-intro">Soluciones pequeñas o completas, pensadas para quitar fricción y darte control.</p>
+          <p class="section-intro">No empiezo vendiéndote una herramienta. Reviso el proceso y propongo la solución más sencilla que pueda darte control.</p>
         </div>
 
         <div class="service-grid">
           {% for service in site.data.home.services %}
-            <article class="service-card">
+            <article class="service-card{% if service.primary %} service-card--primary{% endif %}">
               <div class="service-top">
                 <span class="service-icon">{% include icon.html name=service.icon size=23 %}</span>
-                <span class="service-number">{{ service.number }}</span>
+                <span class="service-number">{{ service.role }} · {{ service.number }}</span>
               </div>
               <h3>{{ service.title }}</h3>
               <p>{{ service.description }}</p>
               <div class="service-footer">
                 <span class="service-tag">{{ service.tag }}</span>
-                <a class="service-link" href="{{ service.url | relative_url }}" aria-label="Conocer el servicio de {{ service.title }}">Ver más {% include icon.html name="arrow-right" size=14 %}</a>
+                <a class="service-link" href="{{ service.url | relative_url }}" aria-label="Conocer el servicio de {{ service.title }}">Conocer solución {% include icon.html name="arrow-right" size=14 %}</a>
               </div>
             </article>
           {% endfor %}
@@ -171,11 +171,11 @@ layout: default
 
       <section class="home-cta" aria-labelledby="cta-title" data-reveal>
         <div>
-          <p class="section-kicker">Tu siguiente mejora puede empezar aquí</p>
-          <h2 id="cta-title">¿Hay algo en tu negocio que todavía haces a mano?</h2>
-          <p>Revisemos si se puede ordenar, automatizar o convertir en una herramienta más simple.</p>
+          <p class="section-kicker">Una conversación antes que una cotización</p>
+          <h2 id="cta-title">Muéstrame el proceso que hoy te quita tiempo o control.</h2>
+          <p>Te ayudaré a identificar dónde está la fricción y cuál sería el siguiente paso más sensato, sin empezar por venderte una solución.</p>
         </div>
-        <a class="button button--light" href="mailto:{{ site.author.email }}">Cuéntame tu proyecto {% include icon.html name="arrow-right" size=16 %}</a>
+        <a class="button button--light" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20de%20mi%20negocio">Solicita una revisión {% include icon.html name="arrow-right" size=16 %}</a>
       </section>
 
       <section id="faqs" class="home-section faq-section" aria-labelledby="faq-title" data-reveal>

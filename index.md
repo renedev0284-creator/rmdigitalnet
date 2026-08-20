@@ -1,15 +1,17 @@
 ---
 layout: home
-title: "Sistemas, hojas de cálculo y publicidad digital"
+title: "Orden operativo y sistemas para negocios pequeños"
 description: >-
-  René Moya ayuda a emprendedores, micro y medianas empresas a organizar procesos, controlar gastos, crear herramientas, mejorar su marketing y tomar decisiones con mayor claridad.
+  René Moya ayuda a emprendedores y equipos pequeños a ordenar ventas,
+  inventario, costos y seguimiento mediante hojas de cálculo, automatizaciones
+  y sistemas a medida.
 permalink: /
 
-hero_title: "Tu negocio no necesita más herramientas."
-hero_highlight: "Necesita una solución que tenga sentido."
-hero_sub: "Analizo qué está causando el desorden y te ayudo a resolverlo desde la raíz. Puede ser una mejor estrategia, una hoja de control, publicidad, una landing page o un sistema personalizado. Primero entendemos; después construimos."
+hero_title: "Ordeno la operación de negocios pequeños."
+hero_highlight: "Para que vendas y crezcas con más control."
+hero_sub: "Soy René Moya, desarrollador y marketer. Ayudo a emprendedores y equipos pequeños a conectar ventas, inventario, costos y seguimiento. Primero ordenamos el proceso; después construyo la hoja, automatización o sistema que realmente necesitas."
 
-now_status: "Producto propio · disponible"
+now_status: "Producto propio · prueba de cómo trabajo"
 now_title: "TopoApp: orden para negocios que venden por WhatsApp"
 now_desc: "Diseñé y desarrollé una plataforma que reúne pedidos, inventario, catálogo, envíos, comisiones y finanzas para que vender por chat no signifique perder el control."
 now_features:

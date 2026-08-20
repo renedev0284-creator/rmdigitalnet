@@ -146,7 +146,11 @@
 .text-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 13px; font-weight: 700; }
 .text-link:hover { gap: 9px; }
 
-.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.services .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
+.services .section-heading > div { max-width: 680px; }
+.services .section-intro { max-width: 680px; font-size: 14px; line-height: 1.6; }
+
+.service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 
 .service-card {
   position: relative;
@@ -164,11 +168,30 @@
 
 .service-card:hover { border-color: #afc9bd; transform: translateY(-4px); }
 .service-card:hover .service-icon { color: #fff; background: var(--accent); transform: rotate(-4deg) scale(1.06); }
-.service-card:nth-child(2) { background: var(--accent-soft); }
+.service-card:nth-child(2) { background: #f8f6f0; }
 .service-card:nth-child(3) { background: #fff2eb; }
+.service-card--primary {
+  grid-column: 1 / -1;
+  min-height: 220px;
+  background: var(--accent-soft);
+  border-color: #bdd5ca;
+  box-shadow: 0 12px 30px rgba(35, 107, 87, 0.08);
+}
+.service-card--primary::after {
+  position: absolute;
+  top: -70px;
+  right: -42px;
+  width: 180px;
+  height: 180px;
+  content: "";
+  border: 1px solid rgba(35, 107, 87, 0.12);
+  border-radius: 50%;
+}
+.service-card--primary h3 { max-width: 560px; font-size: 24px; letter-spacing: -0.025em; }
+.service-card--primary > p { max-width: 650px; font-size: 14px; line-height: 1.6; }
 .service-top { display: flex; width: 100%; align-items: center; justify-content: space-between; }
 .service-icon { display: flex; width: 42px; height: 42px; align-items: center; justify-content: center; color: var(--accent); background: var(--surface); border: 1px solid var(--border); border-radius: 9px; transition: color 0.22s ease, background 0.22s ease, transform 0.22s ease; }
-.service-number { color: var(--text-muted); font-family: $font-mono; font-size: 12px; }
+.service-number { color: var(--text-muted); font-family: $font-mono; font-size: 9px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
 .service-card h3 { margin: 24px 0 9px; font-size: 18px; }
 .service-card > p { margin: 0 0 20px; color: var(--text-secondary); font-size: 13px; }
 .service-tag { margin-top: auto; }

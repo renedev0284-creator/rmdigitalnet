@@ -1,20 +1,24 @@
 services:
-  - icon: spreadsheet
+  - icon: code
     number: "01"
-    title: "Hojas de cálculo"
-    description: "Diseño archivos claros para controlar ventas, inventarios, costos y operación sin perder tiempo."
+    role: "Solución principal"
+    primary: true
+    title: "Sistemas y automatización de procesos"
+    description: "Conecto ventas, inventario, costos, clientes y tareas repetidas en una herramienta adaptada a la operación real de tu negocio."
+    tag: "Sistemas web · automatización"
+    url: "/servicios/sistemas-a-medida/"
+  - icon: spreadsheet
+    number: "02"
+    role: "Punto de entrada"
+    title: "Control con hojas de cálculo"
+    description: "Organizo ventas, inventarios, costos y reportes cuando una hoja clara todavía es la solución más práctica."
     tag: "Excel · Google Sheets"
     url: "/servicios/hojas-de-calculo/"
-  - icon: code
-    number: "02"
-    title: "Sistemas a medida"
-    description: "Construyo herramientas web y automatizaciones que se adaptan a la forma real en que trabaja tu negocio."
-    tag: "Web · automatización"
-    url: "/servicios/sistemas-a-medida/"
   - icon: target
     number: "03"
-    title: "Publicidad digital"
-    description: "Organizo campañas y medición para que Meta y Google trabajen con objetivos, datos y seguimiento."
+    role: "Servicio de apoyo"
+    title: "Publicidad conectada al negocio"
+    description: "Organizo campañas y medición cuando necesitas atraer oportunidades y saber cuáles terminan produciendo resultados."
     tag: "Meta Ads · Google Ads"
     url: "/servicios/publicidad-digital/"
 
