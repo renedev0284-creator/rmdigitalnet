@@ -156,25 +156,10 @@
 
   .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
 
-  .hero-assurances {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 16px;
-    margin: 28px 0 0;
-    padding: 0;
-    color: var(--text-secondary);
-    font-family: $font-mono;
-    font-size: 11px;
-    list-style: none;
-  }
-
-  .hero-assurances li { display: inline-flex; align-items: center; gap: 6px; }
-  .hero-assurances li > span { width: 5px; height: 5px; flex: 0 0 auto; background: var(--support); border-radius: 50%; }
-
   .hero-control {
     position: relative;
     min-width: 0;
-    padding: 42px 8px 38px 40px;
+    padding: 14px 8px 38px 40px;
   }
 
   .control-window {
@@ -317,7 +302,6 @@
   .control-float strong { font-size: 10px; }
   .control-float small { margin-top: 2px; color: var(--text-muted); font-size: 8px; }
   .control-float small i { display: inline-block; width: 5px; height: 5px; margin-right: 4px; background: #3c9872; border-radius: 50%; }
-  .control-float--campaign { top: 5px; right: -10px; }
   .control-float--system { right: -14px; bottom: 2px; }
 
   .control-connector {
@@ -327,7 +311,6 @@
     border-style: dashed;
   }
 
-  .control-connector--top { top: 28px; right: 92px; width: 84px; height: 30px; border-width: 1px 0 0 1px; border-radius: 10px 0 0; }
   .control-connector--side { top: 146px; left: 25px; width: 42px; height: 132px; border-width: 1px 0 1px 1px; border-radius: 10px 0 0 10px; }
 }
 
@@ -583,7 +566,6 @@
   .hero .sub { font-size: 15px; }
   .hero .hero-actions { align-items: stretch; flex-direction: column; }
   .hero .hero-actions .button { width: 100%; }
-  .hero .hero-assurances { align-items: flex-start; flex-direction: column; gap: 8px; }
   .hero .hero-control { width: 100%; max-width: 480px; margin: 0 auto; padding-right: 18px; }
   .hero .control-window { box-shadow: 9px 11px 0 rgba(35, 107, 87, 0.08), 0 20px 40px rgba(32, 35, 31, 0.1); }
 
@@ -628,10 +610,9 @@
   .hero .hero-inner { gap: 38px; }
   .hero .main { font-size: clamp(36px, 10.5vw, 44px); }
   .hero .sub { line-height: 1.65; }
-  .hero .hero-control { padding: 42px 0 44px; }
+  .hero .hero-control { padding: 12px 0 44px; }
   .hero .control-tools,
   .hero .control-connector--side { display: none; }
-  .hero .control-float--campaign { right: 6px; }
   .hero .control-float--system { right: 6px; }
   .hero .sheet-head,
   .hero .sheet-row { grid-template-columns: 42px minmax(0, 1fr) 66px; }

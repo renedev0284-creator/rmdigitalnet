@@ -1,14 +1,14 @@
 ---
 layout: page
-title: "Sistemas a medida para negocios"
-description: "Desarrollo sistemas web y automatizaciones adaptados a los procesos reales de tu negocio, con alcance claro y crecimiento por etapas."
+title: "Sistemas para conectar la operación de tu negocio"
+description: "Desarrollo sistemas web y automatizaciones para conectar ventas, inventario, costos, clientes y seguimiento en negocios pequeños."
 permalink: /servicios/sistemas-a-medida/
 breadcrumb: "servicios|/#servicios;sistemas a medida"
 page_class: "service-page service-page--systems"
-service_type: "Desarrollo de sistemas a medida para negocios"
+service_type: "Sistemas para ordenar y conectar operaciones de negocios"
 ---
 
-Desarrollo **sistemas web y automatizaciones** para negocios que necesitan dejar atrás tareas repetidas, información dispersa o herramientas que ya no se adaptan a su forma de trabajar.
+Esta es mi solución principal para negocios cuya operación ya superó las hojas y herramientas aisladas. Desarrollo **sistemas web y automatizaciones** que conectan ventas, inventario, costos, clientes y seguimiento en un mismo flujo de trabajo.
 
 Un sistema a medida no empieza por el código. Empieza por entender el proceso, las personas que participan y las decisiones que necesitan tomar. Con esa información podemos construir una solución útil sin añadir complejidad innecesaria.
 
@@ -41,5 +41,5 @@ Al finalizar acordamos entrega, soporte y posibles mejoras según las necesidade
 <div class="page-cta">
   <p><strong>¿Tu operación ya superó las herramientas que utilizas?</strong></p>
   <p>Explícame el proceso que quieres mejorar y definamos una primera versión realista.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Consulta%20sobre%20un%20sistema%20a%20medida">Hablemos del sistema</a>
+  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20si%20mi%20negocio%20necesita%20un%20sistema">Solicita una revisión</a>
 </div>

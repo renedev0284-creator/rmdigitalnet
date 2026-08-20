@@ -7,9 +7,9 @@ description: >-
   y sistemas a medida.
 permalink: /
 
-hero_title: "Ordeno la operación de negocios pequeños."
-hero_highlight: "Para que vendas y crezcas con más control."
-hero_sub: "Soy René Moya, desarrollador y marketer. Ayudo a emprendedores y equipos pequeños a conectar ventas, inventario, costos y seguimiento. Primero ordenamos el proceso; después construyo la hoja, automatización o sistema que realmente necesitas."
+hero_title: "Ordeno tu operación."
+hero_highlight: "Vende y crece con más control."
+hero_sub: "Ayudo a emprendedores y equipos pequeños a conectar ventas, inventario, costos y seguimiento con una hoja, automatización o sistema hecho para su proceso."
 
 now_status: "Producto propio · prueba de cómo trabajo"
 now_title: "TopoApp: orden para negocios que venden por WhatsApp"

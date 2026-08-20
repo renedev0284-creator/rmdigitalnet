@@ -1,15 +1,15 @@
 ---
 layout: page
 title: "Acerca de René Moya"
-description: "Conoce a René Moya, desarrollador y marketer que crea hojas de cálculo, sistemas, productos digitales y estrategias para negocios."
+description: "Conoce a René Moya, desarrollador y marketer que ayuda a negocios pequeños a ordenar ventas, inventario, costos y seguimiento con soluciones prácticas."
 permalink: /acerca-de/
 breadcrumb: "acerca de"
 page_class: "about-page"
 ---
 
-Soy **René Moya, desarrollador y marketer**. Ayudo a emprendedores y negocios a ordenar sus procesos, aprovechar mejor sus recursos y convertir sus ideas en soluciones prácticas.
+Soy **René Moya, desarrollador y marketer**. Ayudo a emprendedores y equipos pequeños a poner en orden ventas, inventario, costos y seguimiento para que puedan trabajar y crecer con más control.
 
-Mi trabajo puede tomar distintas formas según el problema: **hojas de cálculo claras**, [sistemas personalizados]({{ '/servicios/sistemas-a-medida/' | relative_url }}), productos digitales o estrategias de [marketing y publicidad]({{ '/servicios/publicidad-digital/' | relative_url }}). No se trata de sumar herramientas porque sí, sino de encontrar la que realmente facilite el trabajo.
+Mi especialidad es entender una operación dispersa y convertirla en un proceso claro. A veces basta con una [hoja de cálculo bien diseñada]({{ '/servicios/hojas-de-calculo/' | relative_url }}); cuando el negocio necesita conectar más personas, datos o tareas, puedo construir un [sistema a medida]({{ '/servicios/sistemas-a-medida/' | relative_url }}). La [publicidad digital]({{ '/servicios/publicidad-digital/' | relative_url }}) entra como apoyo cuando también hace falta atraer oportunidades y medir qué sucede después.
 
 ## Primero, entender qué está frenando el negocio
 
@@ -21,11 +21,12 @@ También puedo acompañarte durante la implementación. La meta no es entregar a
 
 ## Construir con calma y criterio
 
-Me pongo a tu disposición para crear soluciones que **simplifiquen tu trabajo y generen resultados medibles**. Puedo ayudarte con [hojas de cálculo para negocios]({{ '/servicios/hojas-de-calculo/' | relative_url }}), sistemas a medida, productos digitales y campañas en medios digitales.
+Me pongo a tu disposición para crear soluciones que **simplifiquen el trabajo y devuelvan control sobre la operación**. La herramienta puede cambiar, pero el criterio se mantiene: resolver el problema con el nivel de complejidad justo.
 
 Si tienes una idea, un proceso desordenado o una tarea que consume demasiado tiempo, podemos empezar por conversar. No necesitas llegar con la solución definida; basta con contarme qué está pasando y qué te gustaría mejorar.
 
 <div class="page-cta">
-  <p><strong>¿Hay algo en tu negocio que podría funcionar mejor?</strong></p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}">Cuéntame tu proyecto</a>
+  <p><strong>¿Hay un proceso que hoy te quita tiempo o control?</strong></p>
+  <p>Muéstrame cómo funciona y revisemos cuál sería el siguiente paso más sensato.</p>
+  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20de%20mi%20negocio">Solicita una revisión</a>
 </div>

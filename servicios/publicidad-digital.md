@@ -1,14 +1,16 @@
 ---
 layout: page
-title: "Marketing y publicidad digital"
-description: "Organizo estrategias y campañas de marketing en Meta y Google con objetivos claros, medición útil y decisiones basadas en datos."
+title: "Publicidad conectada a ventas y resultados"
+description: "Organizo publicidad en Meta y Google para negocios que necesitan atraer oportunidades, darles seguimiento y medir cuáles producen resultados."
 permalink: /servicios/publicidad-digital/
 breadcrumb: "servicios|/#servicios;publicidad digital"
 page_class: "service-page service-page--marketing"
-service_type: "Marketing y publicidad digital para negocios"
+service_type: "Publicidad digital conectada al proceso comercial"
 ---
 
-El marketing digital funciona mejor cuando cada acción responde a un objetivo y existe una forma clara de medir lo que ocurre. Puedo ayudarte a organizar estrategias y campañas en **Meta y Google** para que la publicidad deje información útil, no solo impresiones y clics.
+La publicidad es un servicio de apoyo dentro de una operación ordenada. Puedo ayudarte a organizar campañas en **Meta y Google** cuando necesitas atraer oportunidades, darles seguimiento y saber cuáles terminan produciendo resultados, no solo impresiones y clics.
+
+Antes de invertir más, revisamos la oferta, la página de destino y la forma en que el negocio atiende cada contacto. Una campaña no puede corregir por sí sola un proceso comercial que pierde oportunidades después del anuncio.
 
 ## En qué puedo apoyarte
 
@@ -37,5 +39,5 @@ Quiero que sepas dónde se invierte, qué se está probando y qué aprendimos. E
 <div class="page-cta">
   <p><strong>¿Estás invirtiendo en publicidad sin tener claro qué está funcionando?</strong></p>
   <p>Revisemos tus objetivos, medición y próximos pasos con calma.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Consulta%20sobre%20publicidad%20digital">Revisemos tu estrategia</a>
+  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20mi%20publicidad%20y%20seguimiento%20de%20ventas">Solicita una revisión</a>
 </div>

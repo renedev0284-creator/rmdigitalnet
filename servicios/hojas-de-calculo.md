@@ -1,14 +1,14 @@
 ---
 layout: page
-title: "Hojas de cálculo para negocios"
-description: "Diseño hojas de cálculo en Excel y Google Sheets para controlar ventas, inventarios, costos y procesos con información clara y útil."
+title: "Control de ventas, inventario y costos con hojas de cálculo"
+description: "Diseño hojas de cálculo en Excel y Google Sheets para que negocios pequeños controlen ventas, inventario, costos y seguimiento sin sistemas innecesarios."
 permalink: /servicios/hojas-de-calculo/
 breadcrumb: "servicios|/#servicios;hojas de cálculo"
 page_class: "service-page service-page--sheets"
-service_type: "Diseño de hojas de cálculo para negocios"
+service_type: "Control operativo con hojas de cálculo para negocios"
 ---
 
-Una hoja de cálculo puede ser una herramienta sencilla y poderosa cuando responde a un proceso real. Diseño archivos en **Excel y Google Sheets** para que negocios y equipos pequeños puedan registrar, consultar y entender su información sin depender de documentos improvisados.
+Una hoja de cálculo es un buen punto de partida cuando necesitas **poner en orden la operación sin construir todavía un sistema completo**. Diseño archivos en Excel y Google Sheets para que negocios y equipos pequeños controlen ventas, inventario, costos y seguimiento desde una estructura clara.
 
 ## Qué podemos organizar
 
@@ -38,5 +38,5 @@ La entrega puede incluir instrucciones breves y acompañamiento para que el arch
 <div class="page-cta">
   <p><strong>¿Tu información está repartida entre archivos que ya nadie entiende?</strong></p>
   <p>Cuéntame qué necesitas controlar y revisemos si una hoja de cálculo es el siguiente paso correcto.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Consulta%20sobre%20hojas%20de%20cálculo">Revisemos tu proceso</a>
+  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20con%20una%20hoja%20de%20cálculo">Solicita una revisión</a>
 </div>
