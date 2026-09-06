@@ -43,7 +43,7 @@ whatsapp:
 # Deja vacío hasta crear la propiedad en analytics.google.com.
 # Formato esperado: "G-XXXXXXXXXX". Solo se carga si el visitante acepta
 # cookies de medición en el banner (ver assets/js/main.js).
-google_analytics: ""
+google_analytics: "G-04DD4EN38N"
 
 # ------------------------------------------------------------------
 # Colecciones y permalinks
