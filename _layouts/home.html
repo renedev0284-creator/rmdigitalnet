@@ -20,55 +20,14 @@ layout: default
         <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
       </div>
 
-      <aside class="hero-control" aria-label="Soluciones conectadas para ordenar un negocio">
-        <div class="control-connector control-connector--side" aria-hidden="true"></div>
-
-        <div class="control-tools" aria-hidden="true">
-          <span>{% include icon.html name="spreadsheet" size=18 %}</span>
-          <span>{% include icon.html name="target" size=18 %}</span>
-          <span>{% include icon.html name="code" size=18 %}</span>
+      {% if page.now_image %}
+        <div class="hero-shot">
+          <img src="{{ page.now_image | relative_url }}"
+               alt="{{ page.now_image_alt | default: 'Panel de TopoApp' }}"
+               width="{{ page.now_image_width | default: 1600 }}" height="{{ page.now_image_height | default: 251 }}"
+               loading="eager" decoding="async" fetchpriority="high">
         </div>
-
-        <div class="control-window">
-          <div class="control-window-bar" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <strong>vista general</strong>
-            <small>Todo conectado</small>
-          </div>
-          <div class="control-formula" aria-hidden="true">
-            <span>fx</span>
-            <p>ventas + inventario + costos + seguimiento</p>
-          </div>
-          <div class="control-sheet" aria-hidden="true">
-            <div class="sheet-head"><span>Área</span><span>Solución</span><span>Estado</span></div>
-            <div class="sheet-row">
-              <i>{% include icon.html name="target" size=17 %}</i>
-              <div><strong>Proceso</strong><small>Pasos y responsables</small></div>
-              <b><span></span> Lista</b>
-            </div>
-            <div class="sheet-row">
-              <i>{% include icon.html name="spreadsheet" size=17 %}</i>
-              <div><strong>Control</strong><small>Ventas, stock y costos</small></div>
-              <b><span></span> Activo</b>
-            </div>
-            <div class="sheet-row">
-              <i>{% include icon.html name="code" size=17 %}</i>
-              <div><strong>Sistema</strong><small>Operación conectada</small></div>
-              <b><span></span> Medible</b>
-            </div>
-          </div>
-          <div class="control-summary" aria-hidden="true">
-            <div><span>Ruido</span><strong>menos</strong></div>
-            <div><span>Control</span><strong>más</strong></div>
-            <div><span>Siguiente paso</span><strong>claro</strong></div>
-          </div>
-        </div>
-
-        <div class="control-float control-float--system" aria-hidden="true">
-          <span>{% include icon.html name="code" size=18 %}</span>
-          <div><strong>Solución a medida</strong><small>solo si hace falta</small></div>
-        </div>
-      </aside>
+      {% endif %}
     </div>
   </section>
 
@@ -95,34 +54,7 @@ layout: default
           <span class="section-rule" aria-hidden="true"></span>
         </div>
 
-        <article class="announcement-card{% if page.now_image %} announcement-card--image{% endif %}">
-          <div class="announcement-visual{% if page.now_image %} has-image{% endif %}">
-            {% if page.now_image %}
-              <img src="{{ page.now_image | relative_url }}"
-                   alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}"
-                   width="{{ page.now_image_width | default: 600 }}" height="{{ page.now_image_height | default: 440 }}" loading="lazy" decoding="async">
-            {% else %}
-              <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-              <div class="topo-preview" aria-hidden="true">
-                <div class="topo-preview-head">
-                  <span class="topo-mark">T</span>
-                  <strong>TopoApp</strong>
-                  <small>ventas en orden</small>
-                </div>
-                <div class="topo-stats">
-                  <div><strong>12</strong><span>pedidos hoy</span></div>
-                  <div><strong>Q 3,840</strong><span>ventas del mes</span></div>
-                  <div><strong>5</strong><span>por entregar</span></div>
-                </div>
-                <div class="topo-orders">
-                  <span><i></i> Pedido confirmado <b>Q250</b></span>
-                  <span><i></i> Enviado <b>Q180</b></span>
-                  <span><i></i> Entregado <b>Q320</b></span>
-                </div>
-              </div>
-              <span class="visual-caption">topoapp.net · SaaS para ventas</span>
-            {% endif %}
-          </div>
+        <article class="announcement-card">
           <div class="announcement-copy">
             <div class="announcement-meta">
               <span class="status-dot" aria-hidden="true"></span>

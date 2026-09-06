@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ---------------- Parallax sutil en el hero ----------------
   var heroSection = document.querySelector(".hero");
-  var heroControl = document.querySelector(".hero-control");
+  var heroControl = document.querySelector(".hero-shot");
 
   if (
     heroSection &&
