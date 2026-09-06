@@ -1,15 +1,15 @@
 ---
 layout: home
-title: "Orden operativo y sistemas para negocios pequeños"
+title: "Sistemas y automatización para negocios pequeños"
 description: >-
-  René Moya ayuda a emprendedores y equipos pequeños a ordenar ventas,
-  inventario, costos y seguimiento mediante hojas de cálculo, automatizaciones
-  y sistemas a medida.
+  René Moya ayuda a negocios pequeños de Guatemala a ordenar ventas,
+  inventario, costos y seguimiento con hojas, automatización y sistemas a
+  medida.
 permalink: /
 
-hero_title: "Ordeno tu operación."
-hero_highlight: "Vende y crece con más control."
-hero_sub: "Ayudo a emprendedores y equipos pequeños a conectar ventas, inventario, costos y seguimiento con una hoja, automatización o sistema hecho para su proceso."
+hero_title: "Tu negocio no necesita más herramientas."
+hero_highlight: "Necesita un sistema que las conecte."
+hero_sub: "Conecto ventas, inventario, costos y seguimiento en una hoja, una automatización o un sistema a medida, para que el desorden deje de costarte tiempo y dinero."
 
 now_status: "Producto propio · prueba de cómo trabajo"
 now_title: "TopoApp: orden para negocios que venden por WhatsApp"
