@@ -1,0 +1,33 @@
+{% comment %}
+  Se muestra solo si _data/testimonials.yml tiene al menos un elemento en "items".
+{% endcomment %}
+<section id="testimonios" class="home-section testimonials" aria-labelledby="testimonials-title" data-reveal>
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">Lo que dicen quienes ya ordenaron su operación</p>
+      <h2 id="testimonials-title">Resultados, en palabras de quienes los vivieron</h2>
+    </div>
+    <span class="section-rule" aria-hidden="true"></span>
+  </div>
+
+  <div class="testimonial-grid">
+    {% for testimonial in site.data.testimonials.items %}
+      <figure class="testimonial-card">
+        <blockquote>
+          <p>&ldquo;{{ testimonial.quote }}&rdquo;</p>
+        </blockquote>
+        <figcaption>
+          {% if testimonial.avatar %}
+            <img src="{{ testimonial.avatar | relative_url }}" alt="" width="44" height="44" loading="lazy" decoding="async">
+          {% else %}
+            <span class="testimonial-initial" aria-hidden="true">{{ testimonial.name | slice: 0 }}</span>
+          {% endif %}
+          <span>
+            <strong>{{ testimonial.name }}</strong>
+            <small>{{ testimonial.role }}</small>
+          </span>
+        </figcaption>
+      </figure>
+    {% endfor %}
+  </div>
+</section>

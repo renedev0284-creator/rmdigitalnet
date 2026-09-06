@@ -13,8 +13,8 @@ excerpt: >-
 
 planned_image: /assets/img/blog/sistema-a-medida-procesos-negocio.webp
 planned_image_alt: "Sistema a medida que conecta los procesos de un negocio"
-image_width: 1731
-image_height: 909
+image_width: 1200
+image_height: 630
 
 categories: [sistemas]
 tags: [automatización, desarrollo web, procesos]

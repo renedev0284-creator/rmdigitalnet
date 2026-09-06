@@ -35,8 +35,8 @@ Primero revisamos qué registras hoy, quién utiliza la información y qué preg
 
 La entrega puede incluir instrucciones breves y acompañamiento para que el archivo no dependa únicamente de quien lo creó. Una buena hoja debe ayudarte a trabajar, no convertirse en otro misterio dentro del negocio.
 
-<div class="page-cta">
-  <p><strong>¿Tu información está repartida entre archivos que ya nadie entiende?</strong></p>
-  <p>Cuéntame qué necesitas controlar y revisemos si una hoja de cálculo es el siguiente paso correcto.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20con%20una%20hoja%20de%20cálculo">Solicita una revisión</a>
-</div>
+{% include page-cta.html
+  title="¿Tu información está repartida entre archivos que ya nadie entiende?"
+  text="Cuéntame qué necesitas controlar y revisemos si una hoja de cálculo es el siguiente paso correcto."
+  whatsapp_message="Hola René, quiero revisar un proceso con una hoja de cálculo."
+  mail_subject="Quiero revisar un proceso con una hoja de cálculo" %}

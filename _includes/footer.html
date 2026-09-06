@@ -20,6 +20,7 @@
 
   <div class="footer-column footer-contact">
     <p class="footer-title">Contacto</p>
+    <a href="https://wa.me/{{ site.whatsapp.number }}?text={{ site.whatsapp.default_message | url_encode }}" target="_blank" rel="noopener">{{ site.whatsapp.display }}</a>
     <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
     <div class="footer-socials">
       {% for item in site.data.social.right_sidebar %}

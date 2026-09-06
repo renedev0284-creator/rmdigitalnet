@@ -13,8 +13,8 @@ excerpt: >-
 
 planned_image: /assets/img/blog/publicidad-digital-medicion-resultados.webp
 planned_image_alt: "Medición de resultados de campañas de publicidad digital"
-image_width: 1731
-image_height: 909
+image_width: 1200
+image_height: 630
 
 categories: [marketing]
 tags: [meta ads, google ads, medición]

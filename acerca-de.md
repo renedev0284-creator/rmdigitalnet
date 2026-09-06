@@ -25,8 +25,7 @@ Me pongo a tu disposición para crear soluciones que **simplifiquen el trabajo y
 
 Si tienes una idea, un proceso desordenado o una tarea que consume demasiado tiempo, podemos empezar por conversar. No necesitas llegar con la solución definida; basta con contarme qué está pasando y qué te gustaría mejorar.
 
-<div class="page-cta">
-  <p><strong>¿Hay un proceso que hoy te quita tiempo o control?</strong></p>
-  <p>Muéstrame cómo funciona y revisemos cuál sería el siguiente paso más sensato.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20de%20mi%20negocio">Solicita una revisión</a>
-</div>
+{% include page-cta.html
+  title="¿Hay un proceso que hoy te quita tiempo o control?"
+  text="Muéstrame cómo funciona y revisemos cuál sería el siguiente paso más sensato."
+  mail_subject="Quiero revisar un proceso de mi negocio" %}

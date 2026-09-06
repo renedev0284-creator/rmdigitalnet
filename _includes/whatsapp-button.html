@@ -1,0 +1,11 @@
+{% comment %}
+  Uso: {% include whatsapp-button.html class="button button--primary" label="Escríbeme por WhatsApp" message="Texto opcional" %}
+  "message" es opcional; si no se pasa, usa site.whatsapp.default_message.
+{% endcomment %}
+{% assign wa_message = include.message | default: site.whatsapp.default_message %}
+<a class="{{ include.class | default: 'button button--primary' }}"
+   href="https://wa.me/{{ site.whatsapp.number }}?text={{ wa_message | url_encode }}"
+   target="_blank" rel="noopener">
+  {% include icon.html name="whatsapp" size=include.icon_size %}
+  {{ include.label | default: "Escríbeme por WhatsApp" }}
+</a>

@@ -118,6 +118,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // ---------------- Google Analytics 4 (solo si hay consentimiento) ----------------
+  function loadAnalytics() {
+    if (!window.RM_GA_ID || window.__rmGaLoaded) return;
+    window.__rmGaLoaded = true;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag("js", new Date());
+    window.gtag("config", window.RM_GA_ID, { anonymize_ip: true });
+
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + window.RM_GA_ID;
+    document.head.appendChild(script);
+  }
+
   function showCookieBanner() {
     if (!cookieBanner) return;
     cookieBanner.hidden = false;
@@ -141,10 +157,13 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       // El banner puede cerrarse aunque el navegador bloquee localStorage.
     }
+    if (choice === "accepted") loadAnalytics();
     hideCookieBanner();
   }
 
-  if (cookieBanner && !readConsent()) showCookieBanner();
+  var existingConsent = readConsent();
+  if (existingConsent && existingConsent.choice === "accepted") loadAnalytics();
+  if (cookieBanner && !existingConsent) showCookieBanner();
   if (cookieAccept) cookieAccept.addEventListener("click", function () { saveConsent("accepted"); });
   if (cookieNecessary) cookieNecessary.addEventListener("click", function () { saveConsent("necessary"); });
 

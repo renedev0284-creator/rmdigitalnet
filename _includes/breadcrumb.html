@@ -17,3 +17,21 @@
     {% endfor %}
   {% endif %}
 </nav>
+
+{% if include.trail %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "inicio", "item": {{ '/' | absolute_url | jsonify }} }
+    {% for part in parts %}
+      {% assign piece = part | split: "|" %}
+      {% assign crumb_url = page.url %}
+      {% if piece.size == 2 %}{% assign crumb_url = piece[1] %}{% endif %}
+      , { "@type": "ListItem", "position": {{ forloop.index | plus: 1 }}, "name": {{ piece[0] | jsonify }}, "item": {{ crumb_url | absolute_url | jsonify }} }
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}

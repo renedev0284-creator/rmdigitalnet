@@ -1,0 +1,13 @@
+{% comment %}
+  Uso: {% include page-cta.html title="..." text="..." whatsapp_message="..." mail_subject="..." %}
+{% endcomment %}
+<div class="page-cta">
+  <p><strong>{{ include.title }}</strong></p>
+  <p>{{ include.text }}</p>
+  <div class="page-cta-actions">
+    {% include whatsapp-button.html message=include.whatsapp_message %}
+    <a class="text-link" href="mailto:{{ site.author.email }}?subject={{ include.mail_subject | default: 'Quiero revisar un proceso de mi negocio' | url_encode }}">
+      {% include icon.html name="mail" size=15 %} o escríbeme por correo
+    </a>
+  </div>
+</div>

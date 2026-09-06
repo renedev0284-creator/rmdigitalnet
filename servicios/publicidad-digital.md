@@ -36,8 +36,8 @@ Cuando hace falta, también puedo apoyar con herramientas para ordenar contactos
 
 Quiero que sepas dónde se invierte, qué se está probando y qué aprendimos. El marketing no debería sentirse como una caja cerrada. Una estrategia profesional también debe dejar criterios que permitan tomar mejores decisiones en el futuro.
 
-<div class="page-cta">
-  <p><strong>¿Estás invirtiendo en publicidad sin tener claro qué está funcionando?</strong></p>
-  <p>Revisemos tus objetivos, medición y próximos pasos con calma.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20mi%20publicidad%20y%20seguimiento%20de%20ventas">Solicita una revisión</a>
-</div>
+{% include page-cta.html
+  title="¿Estás invirtiendo en publicidad sin tener claro qué está funcionando?"
+  text="Revisemos tus objetivos, medición y próximos pasos con calma."
+  whatsapp_message="Hola René, quiero revisar mi publicidad y seguimiento de ventas."
+  mail_subject="Quiero revisar mi publicidad y seguimiento de ventas" %}

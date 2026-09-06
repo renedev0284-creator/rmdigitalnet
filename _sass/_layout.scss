@@ -54,6 +54,9 @@
     a.active { color: var(--accent); background: var(--accent-soft); font-weight: 700; }
 
     .menu-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       margin-left: 7px;
       padding: 10px 15px;
       color: #fff;
@@ -155,6 +158,7 @@
   }
 
   .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .hero-mail-link { margin-top: 14px; }
 
   .hero-control {
     position: relative;
@@ -539,7 +543,7 @@
 
       &.is-open { display: flex; }
       a { padding: 11px 12px; }
-      .menu-contact { margin: 4px 0 0; text-align: center; }
+      .menu-contact { margin: 4px 0 0; justify-content: center; }
     }
   }
 

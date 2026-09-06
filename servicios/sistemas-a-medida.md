@@ -38,8 +38,8 @@ Primero definimos el problema, los usuarios y el resultado esperado. Después or
 
 Al finalizar acordamos entrega, soporte y posibles mejoras según las necesidades del proyecto. La intención es que el sistema acompañe al negocio y pueda evolucionar sin perder claridad.
 
-<div class="page-cta">
-  <p><strong>¿Tu operación ya superó las herramientas que utilizas?</strong></p>
-  <p>Explícame el proceso que quieres mejorar y definamos una primera versión realista.</p>
-  <a class="button button--primary" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20si%20mi%20negocio%20necesita%20un%20sistema">Solicita una revisión</a>
-</div>
+{% include page-cta.html
+  title="¿Tu operación ya superó las herramientas que utilizas?"
+  text="Explícame el proceso que quieres mejorar y definamos una primera versión realista."
+  whatsapp_message="Hola René, quiero revisar si mi negocio necesita un sistema a medida."
+  mail_subject="Quiero revisar si mi negocio necesita un sistema" %}

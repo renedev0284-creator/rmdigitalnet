@@ -35,6 +35,16 @@ social:
 
 paypal_email: "rene0284@msn.com"
 
+whatsapp:
+  number: "50245610507"
+  display: "+502 4561 0507"
+  default_message: "Hola René, quiero revisar un proceso de mi negocio."
+
+# Deja vacío hasta crear la propiedad en analytics.google.com.
+# Formato esperado: "G-XXXXXXXXXX". Solo se carga si el visitante acepta
+# cookies de medición en el banner (ver assets/js/main.js).
+google_analytics: ""
+
 # ------------------------------------------------------------------
 # Colecciones y permalinks
 # ------------------------------------------------------------------

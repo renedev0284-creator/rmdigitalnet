@@ -1,0 +1,12 @@
+# Testimonios reales de clientes (con su permiso) para la home.
+#
+# Mientras "items" esté vacío, la sección de testimonios no se muestra
+# en el sitio — no hay nada que reemplazar ni ocultar más tarde.
+#
+# Formato de cada entrada:
+# - name: "Nombre completo"
+#   role: "Cargo · Nombre del negocio"
+#   quote: "Cita textual del cliente, en sus palabras."
+#   avatar: "/assets/img/testimonials/archivo.webp"  # opcional, foto o logo cuadrado
+
+items: []
