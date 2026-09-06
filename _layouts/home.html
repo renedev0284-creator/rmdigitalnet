@@ -17,6 +17,7 @@ layout: default
         <a class="text-link hero-mail-link" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20de%20mi%20negocio">
           {% include icon.html name="mail" size=15 %} o escríbeme por correo
         </a>
+        <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
       </div>
 
       <aside class="hero-control" aria-label="Soluciones conectadas para ordenar un negocio">
@@ -71,6 +72,14 @@ layout: default
     </div>
   </section>
 
+  <div class="trust-strip">
+    <div class="trust-strip-inner">
+      {% for fact in page.now_facts %}
+        <span>{% include icon.html name="check" size=13 %} {{ fact }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
   <div class="content">
 
     {% include sidebar-left.html %}
@@ -86,12 +95,12 @@ layout: default
           <span class="section-rule" aria-hidden="true"></span>
         </div>
 
-        <article class="announcement-card">
+        <article class="announcement-card{% if page.now_image %} announcement-card--image{% endif %}">
           <div class="announcement-visual{% if page.now_image %} has-image{% endif %}">
             {% if page.now_image %}
               <img src="{{ page.now_image | relative_url }}"
                    alt="{{ page.now_image_alt | default: 'Imagen del proyecto en el que estoy trabajando' }}"
-                   width="600" height="440" loading="lazy" decoding="async">
+                   width="{{ page.now_image_width | default: 600 }}" height="{{ page.now_image_height | default: 440 }}" loading="lazy" decoding="async">
             {% else %}
               <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
               <div class="topo-preview" aria-hidden="true">

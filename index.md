@@ -24,5 +24,8 @@ now_facts:
   - "Disponible en 7 países"
 now_url: "https://topoapp.net"
 now_trial_url: "https://topoapp.net/registro"
-# Añade now_image y now_image_alt aquí cuando exista una captura real.
+now_image: /assets/img/topoapp-dashboard.webp
+now_image_alt: "Centro de mando de TopoApp con pedidos por enviar y liquidar en un solo panel"
+now_image_width: 1600
+now_image_height: 251
 ---
