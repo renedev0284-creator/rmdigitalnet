@@ -19,15 +19,6 @@ layout: default
         </a>
         <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
       </div>
-
-      {% if page.now_image %}
-        <div class="hero-shot">
-          <img src="{{ page.now_image | relative_url }}"
-               alt="{{ page.now_image_alt | default: 'Panel de TopoApp' }}"
-               width="{{ page.now_image_width | default: 1600 }}" height="{{ page.now_image_height | default: 251 }}"
-               loading="eager" decoding="async" fetchpriority="high">
-        </div>
-      {% endif %}
     </div>
   </section>
 
@@ -55,6 +46,14 @@ layout: default
         </div>
 
         <article class="announcement-card">
+          {% if page.now_image %}
+            <div class="announcement-visual">
+              <img src="{{ page.now_image | relative_url }}"
+                   alt="{{ page.now_image_alt | default: 'Panel de TopoApp' }}"
+                   width="{{ page.now_image_width | default: 1600 }}" height="{{ page.now_image_height | default: 251 }}"
+                   loading="lazy" decoding="async">
+            </div>
+          {% endif %}
           <div class="announcement-copy">
             <div class="announcement-meta">
               <span class="status-dot" aria-hidden="true"></span>

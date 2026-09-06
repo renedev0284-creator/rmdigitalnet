@@ -18,14 +18,16 @@
 .motion-ready .hero .main,
 .motion-ready .hero .sub,
 .motion-ready .hero .hero-actions,
-.motion-ready .hero .hero-shot {
+.motion-ready .hero .hero-mail-link,
+.motion-ready .hero .hero-note {
   animation: hero-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 .motion-ready .hero .main { animation-delay: 0.08s; }
 .motion-ready .hero .sub { animation-delay: 0.16s; }
 .motion-ready .hero .hero-actions { animation-delay: 0.24s; }
-.motion-ready .hero .hero-shot { animation-delay: 0.3s; }
+.motion-ready .hero .hero-mail-link { animation-delay: 0.3s; }
+.motion-ready .hero .hero-note { animation-delay: 0.34s; }
 
 .motion-ready .services .service-card {
   opacity: 0;

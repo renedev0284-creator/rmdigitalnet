@@ -114,14 +114,11 @@
   .hero-inner {
     position: relative;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 44px;
-    max-width: 1040px;
+    max-width: 720px;
     margin: 0 auto;
   }
 
-  .hero-copy { min-width: 0; }
+  .hero-copy { min-width: 0; text-align: center; }
 
   .eyebrow {
     display: inline-flex;
@@ -139,8 +136,8 @@
   .eyebrow span { margin-right: 5px; font-weight: 700; }
 
   .main {
-    max-width: 600px;
-    margin: 0 0 20px;
+    max-width: 100%;
+    margin: 0 auto 20px;
     font-size: clamp(44px, 5vw, 60px);
     letter-spacing: -0.04em;
     line-height: 1.01;
@@ -150,29 +147,15 @@
 
   .sub {
     max-width: 545px;
-    margin: 0;
+    margin: 0 auto;
     color: var(--text-secondary);
     font-size: 15px;
     line-height: 1.62;
   }
 
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+  .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 26px; }
   .hero-mail-link { margin-top: 14px; }
   .hero-note { margin: 10px 0 0; color: var(--text-muted); font-size: 12px; }
-
-  .hero-shot {
-    position: relative;
-    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
-  }
-
-  .hero-shot img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    box-shadow: 0 24px 60px rgba(32, 35, 31, 0.18);
-  }
 }
 
 .trust-strip { padding: 14px 48px; background: var(--surface); border-bottom: 1px solid var(--border); }
@@ -440,14 +423,12 @@
 
   .trust-strip { padding: 12px 20px; }
   .trust-strip-inner { gap: 8px 18px; font-size: 10px; }
-  .hero { padding: 58px 28px 62px; }
-  .hero .hero-inner { gap: 34px; max-width: 560px; margin: 0 auto; }
-  .hero .hero-copy { width: 100%; max-width: 520px; margin: 0 auto; }
+  .hero { padding: 52px 28px 56px; }
+  .hero .hero-inner { max-width: 480px; }
   .hero .main { font-size: clamp(38px, 10.8vw, 48px); line-height: 1.02; }
   .hero .sub { font-size: 15px; }
   .hero .hero-actions { align-items: stretch; flex-direction: column; }
   .hero .hero-actions .button { width: 100%; }
-  .hero .hero-shot { width: 100%; max-width: 560px; margin: 0 auto; }
 
   .content { grid-template-columns: 1fr; gap: 24px; padding: 28px 16px 44px; }
 
@@ -486,8 +467,7 @@
 }
 
 @media (max-width: $bp-mobile) {
-  .hero { padding-right: 22px; padding-left: 22px; }
-  .hero .hero-inner { gap: 30px; }
+  .hero { padding: 44px 20px 48px; }
   .hero .main { font-size: clamp(36px, 10.5vw, 44px); }
   .hero .sub { line-height: 1.65; }
 

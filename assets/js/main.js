@@ -82,34 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
     sections.forEach(function (section) { sectionObserver.observe(section); });
   }
 
-  // ---------------- Parallax sutil en el hero ----------------
-  var heroSection = document.querySelector(".hero");
-  var heroControl = document.querySelector(".hero-shot");
-
-  if (
-    heroSection &&
-    heroControl &&
-    document.documentElement.classList.contains("motion-ready") &&
-    window.matchMedia("(pointer: fine)").matches
-  ) {
-    var parallaxFrame = null;
-
-    heroSection.addEventListener("mousemove", function (event) {
-      if (parallaxFrame) return;
-      parallaxFrame = requestAnimationFrame(function () {
-        var rect = heroSection.getBoundingClientRect();
-        var x = (event.clientX - rect.left) / rect.width - 0.5;
-        var y = (event.clientY - rect.top) / rect.height - 0.5;
-        heroControl.style.transform = "translate(" + (x * -12) + "px, " + (y * -8) + "px)";
-        parallaxFrame = null;
-      });
-    });
-
-    heroSection.addEventListener("mouseleave", function () {
-      heroControl.style.transform = "";
-    });
-  }
-
   // ---------------- Aparicion progresiva ----------------
   var revealItems = document.querySelectorAll("[data-reveal]");
 
