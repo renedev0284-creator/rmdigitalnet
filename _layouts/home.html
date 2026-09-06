@@ -24,8 +24,8 @@ layout: default
 
   <div class="trust-strip">
     <div class="trust-strip-inner">
-      {% for fact in page.now_facts %}
-        <span>{% include icon.html name="check" size=13 %} {{ fact }}</span>
+      {% for service in site.data.home.services %}
+        <span>{% include icon.html name=service.icon size=13 %} {{ service.tag }}</span>
       {% endfor %}
     </div>
   </div>
