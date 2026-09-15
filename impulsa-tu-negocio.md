@@ -136,6 +136,12 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
     <div><span>05</span><p><strong>No tienes un proceso de seguimiento.</strong> Cada consulta se atiende distinto, según quién responda o el día que sea.</p></div>
     <div><span>06</span><p><strong>No sabes qué acciones digitales generan resultados.</strong> Publicas, respondes, inviertes en anuncios, pero es difícil saber qué realmente ayuda a vender.</p></div>
   </div>
+  {% include page-cta.html
+    title="¿Reconoces dos o tres de estas señales en tu negocio?"
+    text="Cuéntame qué está pasando hoy y revisemos juntos si ya es momento de ordenarlo."
+    whatsapp_message="Hola René, reconozco varias de estas señales en mi negocio y quiero platicar."
+    mail_subject="Reconozco señales de que necesito ordenar mi presencia digital"
+    email="rmoya0284@gmail.com" %}
 </section>
 
 <section class="project-section project-flow" aria-labelledby="process-title" data-reveal>
