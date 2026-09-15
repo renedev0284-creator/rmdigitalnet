@@ -102,6 +102,43 @@ layout: default
         </div>
       </section>
 
+      <section id="proceso" class="home-section process" aria-labelledby="process-title" data-reveal>
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Cómo trabajo</p>
+            <h2 id="process-title">Un proceso de cuatro pasos, sin sorpresas</h2>
+          </div>
+          <p class="section-intro">Antes de construir algo, entendemos juntos el punto de partida y qué resultado importa primero.</p>
+        </div>
+
+        <ol class="operation-flow">
+          <li>
+            <span class="operation-number">01</span>
+            <span class="operation-icon">{% include icon.html name="target" size=22 %}</span>
+            <h3>Diagnóstico inicial</h3>
+            <p>Reviso cómo funciona tu proceso hoy y dónde se pierde tiempo o control.</p>
+          </li>
+          <li>
+            <span class="operation-number">02</span>
+            <span class="operation-icon">{% include icon.html name="chart" size=22 %}</span>
+            <h3>Definición de objetivos y prioridades</h3>
+            <p>Definimos juntos qué resultado importa primero y cuál sería el alcance realista.</p>
+          </li>
+          <li>
+            <span class="operation-number">03</span>
+            <span class="operation-icon">{% include icon.html name="code" size=22 %}</span>
+            <h3>Implementación de la solución</h3>
+            <p>Construyo o ajusto lo necesario: una hoja, un sistema, una página o una campaña.</p>
+          </li>
+          <li>
+            <span class="operation-number">04</span>
+            <span class="operation-icon">{% include icon.html name="check" size=22 %}</span>
+            <h3>Seguimiento y mejora</h3>
+            <p>Revisamos qué está funcionando y ajustamos con datos reales, no con suposiciones.</p>
+          </li>
+        </ol>
+      </section>
+
       {% if site.data.testimonials.items.size > 0 %}
         {% include testimonials.html %}
       {% endif %}

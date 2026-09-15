@@ -21,6 +21,13 @@ services:
     description: "Organizo campañas y medición cuando necesitas atraer oportunidades y saber cuáles terminan produciendo resultados."
     tag: "Meta Ads · Google Ads"
     url: "/servicios/publicidad-digital/"
+  - icon: world
+    number: "04"
+    role: "Presencia digital"
+    title: "Páginas y landing pages"
+    description: "Diseño y construyo páginas claras para presentar tu negocio o captar clientes, como esta misma página."
+    tag: "Sitios · landing pages"
+    url: "/impulsa-tu-negocio/"
 
 faqs:
   - question: "¿Cómo empezamos a trabajar?"
