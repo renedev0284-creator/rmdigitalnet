@@ -7,6 +7,19 @@
 # - name: "Nombre completo"
 #   role: "Cargo · Nombre del negocio"
 #   quote: "Cita textual del cliente, en sus palabras."
+#   rating: 5  # opcional, 1-5, se muestra como estrellas
 #   avatar: "/assets/img/testimonials/archivo.webp"  # opcional, foto o logo cuadrado
 
-items: []
+items:
+  - name: "Kimberly Villeda"
+    role: "Nails & Salon Hair LA"
+    quote: "Trabajar con René ha sido muy bueno porque su atención es personalizada, ayuda en cada detalle y aunque en el contrato dice que hay número limitado de modificaciones, él siempre le apoya a uno de más..."
+    rating: 5
+  - name: "Valentina Moreira"
+    role: "Nudo de Bruja"
+    quote: "Yo adquirí el paquete de redes sociales, sin embargo luego me di cuenta que aunque soy muy ordenada en mi negocio tenía deficiencias que René arregló con un sistema a medida para mí."
+    rating: 5
+  - name: "Roberto Hernández"
+    role: "Librería Renacer Jutiapa"
+    quote: "Yo creía mucho en mis controles de Excel, pero con la ayuda de René no sabía que un sistema hecho a medida me ahorraría mucho tiempo, tanto mío como de mi personal. Ahora todo fluye como debe ser y del inventario ni me preocupo, ya que tengo todo bajo control."
+    rating: 5

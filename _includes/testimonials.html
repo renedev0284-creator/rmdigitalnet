@@ -13,6 +13,13 @@
   <div class="testimonial-grid">
     {% for testimonial in site.data.testimonials.items %}
       <figure class="testimonial-card">
+        {% if testimonial.rating %}
+          <div class="testimonial-rating" aria-label="Calificación: {{ testimonial.rating }} de 5 estrellas">
+            {% for i in (1..5) %}
+              <span class="{% if i <= testimonial.rating %}is-filled{% endif %}">{% include icon.html name="star" size=14 %}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
         <blockquote>
           <p>&ldquo;{{ testimonial.quote }}&rdquo;</p>
         </blockquote>

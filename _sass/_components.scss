@@ -182,6 +182,9 @@
   border-radius: 12px;
 }
 
+.testimonial-rating { display: flex; gap: 2px; margin-bottom: 10px; color: var(--border); }
+.testimonial-rating .icon { fill: currentColor; stroke: none; }
+.testimonial-rating .is-filled { color: var(--support); }
 .testimonial-card blockquote { margin: 0; }
 .testimonial-card blockquote p { margin: 0; color: var(--text-primary); font-size: 14px; line-height: 1.6; }
 .testimonial-card figcaption { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
