@@ -532,6 +532,21 @@
 .cookie-button--secondary { color: var(--text-secondary); background: var(--surface); border: 1px solid var(--border); }
 .cookie-button--secondary:hover { color: var(--accent); border-color: #afc9bd; }
 
+.benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.benefit-item .benefit-icon { display: flex; flex-shrink: 0; width: 30px; height: 30px; align-items: center; justify-content: center; color: var(--accent); background: var(--accent-soft); border-radius: 8px; }
+.benefit-item p { margin: 0; color: var(--text-primary); font-size: 13px; font-weight: 600; line-height: 1.5; }
+
 @media (max-width: 1040px) {
   .service-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 210px; }
