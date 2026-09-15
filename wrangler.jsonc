@@ -6,6 +6,7 @@
     "command": "npm run build:cloudflare"
   },
   "assets": {
-    "directory": "./_site"
+    "directory": "./_site",
+    "not_found_handling": "404-page"
   }
 }
