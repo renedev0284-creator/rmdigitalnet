@@ -43,8 +43,12 @@
   transition-delay: calc(var(--i, 0) * 80ms);
 }
 
-.motion-ready .is-visible [data-stagger] > * { opacity: 1; transform: translateY(0); }
-.motion-ready .is-visible [data-stagger] > .is-settled { transition-delay: 0s; }
+// La marca "is-visible" puede estar en una sección padre o en el propio
+// contenedor (cuando lleva data-reveal y data-stagger a la vez, como el blog).
+.motion-ready .is-visible [data-stagger] > *,
+.motion-ready [data-stagger].is-visible > * { opacity: 1; transform: translateY(0); }
+.motion-ready .is-visible [data-stagger] > .is-settled,
+.motion-ready [data-stagger].is-visible > .is-settled { transition-delay: 0s; }
 .motion-ready .is-visible .service-grid > .service-card:hover,
 .motion-ready .is-visible .testimonial-grid > .testimonial-card:hover { transform: translateY(-4px); }
 
