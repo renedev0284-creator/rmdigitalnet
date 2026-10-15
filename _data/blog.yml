@@ -1,0 +1,39 @@
+# Llamada a la acción al final de cada artículo, según su primera categoría.
+# Si la categoría no aparece aquí, se usa "default".
+
+ctas:
+  ventas:
+    kicker: "¿Vendes por WhatsApp o redes?"
+    title: "Ordenemos pedidos, inventario y cobros en un solo sistema."
+    text: "Es lo que construí con TopoApp. Cuéntame cómo vendes hoy y te digo qué parte conviene ordenar primero."
+    url: "/servicios/sistemas-a-medida/"
+    link: "Ver sistemas a medida"
+    message: "Hola René, leí tu artículo sobre ventas por WhatsApp y quiero ordenar mis pedidos."
+  sistemas:
+    kicker: "¿Te viste en estas señales?"
+    title: "Revisemos si tu negocio ya necesita un sistema propio."
+    text: "En una primera conversación te digo si conviene un sistema, una automatización o todavía una buena hoja."
+    url: "/servicios/sistemas-a-medida/"
+    link: "Ver sistemas a medida"
+    message: "Hola René, leí tu artículo sobre sistemas a medida y quiero revisar mi caso."
+  marketing:
+    kicker: "¿Inviertes en anuncios sin saber qué funciona?"
+    title: "Conectemos tu publicidad con ventas reales."
+    text: "Reviso tus campañas y tu seguimiento para que sepas qué produce clientes y qué solo produce clics."
+    url: "/servicios/publicidad-digital/"
+    link: "Ver publicidad digital"
+    message: "Hola René, leí tu artículo sobre publicidad y quiero medir mejor mis campañas."
+  hojas de cálculo:
+    kicker: "¿Tus cuentas no cuadran?"
+    title: "Armemos una hoja que te dé control real."
+    text: "Ventas, inventario y costos en una hoja clara de Excel o Google Sheets, pensada para cómo trabajas."
+    url: "/servicios/hojas-de-calculo/"
+    link: "Ver hojas de cálculo"
+    message: "Hola René, leí tu artículo sobre hojas de cálculo y quiero ordenar mis cuentas."
+  default:
+    kicker: "¿Hay un proceso que te quita tiempo?"
+    title: "Muéstrame cómo funciona y buscamos el siguiente paso."
+    text: "Sin empezar por venderte una herramienta: primero entendemos dónde está la fricción."
+    url: "/#servicios"
+    link: "Ver servicios"
+    message: "Hola René, leí tu blog y quiero revisar un proceso de mi negocio."

@@ -7,19 +7,38 @@ layout: default
 
     {% include sidebar-left.html %}
 
-    <main id="main-content" class="main-col">
-      <h1 class="blog-title">{{ page.title }}</h1>
+    <main id="main-content" class="main-col" data-reveal>
+      <header class="blog-header">
+        <h1 class="blog-title">{{ page.title }}</h1>
+        {% if page.description %}<p class="blog-intro">{{ page.description }}</p>{% endif %}
+      </header>
 
-      <div class="post-list">
+      {% comment %} Filtro por tema: funciona sin recargar y también con /blog/?tag=slug {% endcomment %}
+      {% assign all_topics = "" | split: "" %}
+      {% for post in site.posts %}
+        {% assign all_topics = all_topics | concat: post.categories %}
+      {% endfor %}
+      {% assign all_topics = all_topics | uniq | sort %}
+      <div class="blog-filter" role="group" aria-label="Filtrar artículos por tema" data-blog-filter>
+        <button type="button" class="blog-filter-chip is-active" data-filter="" aria-pressed="true">Todos</button>
+        {% for topic in all_topics %}
+          <button type="button" class="blog-filter-chip" data-filter="{{ topic | slugify: "latin" }}" aria-pressed="false">{{ topic }}</button>
+        {% endfor %}
+      </div>
+      <p class="blog-filter-status" data-blog-status aria-live="polite" hidden></p>
+
+      <div class="post-list" data-stagger>
         {% for post in site.posts %}
-          <a class="post-preview" href="{{ post.url | relative_url }}">
+          {% assign post_topics = post.categories | concat: post.tags %}
+          <a class="post-preview" href="{{ post.url | relative_url }}" data-topics="{% for t in post_topics %}{{ t | slugify: "latin" }} {% endfor %}">
             {% if post.image %}
               <div class="post-preview-img">
                 <img src="{{ post.image | relative_url }}" alt="{{ post.image_alt | default: post.title }}" width="{{ post.image_width | default: 1200 }}" height="{{ post.image_height | default: 630 }}" loading="lazy" decoding="async">
               </div>
             {% endif %}
             <div class="post-preview-body">
-              <p class="post-preview-date">{% include date-es.html date=post.date %}</p>
+              {% assign post_minutes = post.content | strip_html | number_of_words | divided_by: 200 | at_least: 1 %}
+              <p class="post-preview-date">{% include date-es.html date=post.date %} · {{ post_minutes }} min</p>
               <h2>{{ post.title }}</h2>
               <p class="post-preview-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
               {% if post.tags.size > 0 %}

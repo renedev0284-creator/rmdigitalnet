@@ -109,23 +109,84 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ---------------- Filtro del blog ----------------
+  var blogFilter = document.querySelector("[data-blog-filter]");
+
+  if (blogFilter) {
+    var chips = blogFilter.querySelectorAll("[data-filter]");
+    var previews = document.querySelectorAll(".post-preview[data-topics]");
+    var status = document.querySelector("[data-blog-status]");
+
+    function applyFilter(slug, updateUrl) {
+      var shown = 0;
+      previews.forEach(function (preview) {
+        var match = !slug || (" " + preview.getAttribute("data-topics") + " ").indexOf(" " + slug + " ") !== -1;
+        preview.hidden = !match;
+        if (match) shown++;
+      });
+
+      chips.forEach(function (chip) {
+        var active = chip.getAttribute("data-filter") === slug;
+        chip.classList.toggle("is-active", active);
+        chip.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+
+      if (status) {
+        status.hidden = !slug;
+        status.textContent = slug ? shown + (shown === 1 ? " artículo sobre " : " artículos sobre ") + "#" + slug.replace(/-/g, " ") : "";
+      }
+
+      if (updateUrl && window.history.replaceState) {
+        var url = new URL(window.location.href);
+        if (slug) url.searchParams.set("tag", slug); else url.searchParams.delete("tag");
+        window.history.replaceState(null, "", url);
+      }
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () { applyFilter(chip.getAttribute("data-filter"), true); });
+    });
+
+    var initialTag = new URL(window.location.href).searchParams.get("tag");
+    if (initialTag) applyFilter(initialTag, false);
+  }
+
+  // ---------------- Barra de progreso de lectura ----------------
+  var progressBar = document.querySelector(".reading-progress span");
+  var postBody = document.querySelector(".post-body");
+
+  function updateReadingProgress() {
+    if (!progressBar || !postBody) return;
+    var rect = postBody.getBoundingClientRect();
+    var total = rect.height - window.innerHeight * 0.6;
+    var progress = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 1;
+    progressBar.style.transform = "scaleX(" + progress.toFixed(3) + ")";
+  }
+
   // ---------------- Menú con sombra y CTA fijo en móvil ----------------
   var topnav = document.querySelector(".topnav");
   var mobileCta = document.querySelector(".mobile-cta");
   var hero = document.querySelector(".hero, .project-hero");
   var footer = document.querySelector(".footer");
+  // Bloques que ya tienen su propio botón de WhatsApp: el CTA fijo se aparta.
+  var inlineCtas = Array.from(document.querySelectorAll(".home-cta, .post-cta, .project-final-cta"));
   var scrollTicking = false;
 
   function updateOnScroll() {
     scrollTicking = false;
     var y = window.scrollY;
     if (topnav) topnav.classList.toggle("is-scrolled", y > 8);
+    updateReadingProgress();
 
     if (mobileCta) {
       var pastHero = hero ? hero.getBoundingClientRect().bottom < 0 : y > 480;
       var nearFooter = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
       var bannerOpen = cookieBanner && !cookieBanner.hidden;
-      mobileCta.classList.toggle("is-visible", pastHero && !nearFooter && !bannerOpen);
+      var overInlineCta = inlineCtas.some(function (block) {
+        var rect = block.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      });
+      mobileCta.classList.toggle("is-visible", pastHero && !nearFooter && !bannerOpen && !overInlineCta);
     }
   }
 

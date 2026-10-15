@@ -2,6 +2,11 @@
 layout: default
 ---
 {% assign post_trail = "blog|/blog/;" | append: page.title %}
+{% assign reading_minutes = content | strip_html | number_of_words | divided_by: 200 | at_least: 1 %}
+{% assign main_category = page.categories | first %}
+{% assign cta = site.data.blog.ctas[main_category] | default: site.data.blog.ctas.default %}
+  <div class="reading-progress" aria-hidden="true"><span></span></div>
+
   {% include breadcrumb.html trail=post_trail %}
 
   <div class="content content--page">
@@ -12,17 +17,17 @@ layout: default
       <article class="post">
 
         <header class="post-header">
+          {% if main_category %}<a class="post-kicker" href="{{ '/blog/' | relative_url }}?tag={{ main_category | slugify: "latin" }}">{{ main_category }}</a>{% endif %}
           <h1>{{ page.title }}</h1>
           <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">
-              {% include date-es.html date=page.date %}
-            </time>
-            {% if page.categories.size > 0 %}
-              <span class="dot" aria-hidden="true">·</span>
-              {% for cat in page.categories %}
-                <span class="post-category">{{ cat }}</span>
-              {% endfor %}
-            {% endif %}
+            <span class="post-author">
+              <img src="{{ '/assets/img/avatar-web-bw.webp' | relative_url }}" alt="" width="28" height="28">
+              {{ site.author.name }}
+            </span>
+            <span class="dot" aria-hidden="true">·</span>
+            <time datetime="{{ page.date | date_to_xmlschema }}">{% include date-es.html date=page.date %}</time>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>{{ reading_minutes }} min de lectura</span>
           </p>
 
           {% if page.image %}
@@ -39,9 +44,52 @@ layout: default
         {% if page.tags.size > 0 %}
           <div class="post-tags">
             {% for tag in page.tags %}
-              <a class="rtag" href="{{ '/blog/' | relative_url }}?tag={{ tag | slugify }}">#{{ tag }}</a>
+              <a class="rtag" href="{{ '/blog/' | relative_url }}?tag={{ tag | slugify: "latin" }}">#{{ tag }}</a>
             {% endfor %}
           </div>
+        {% endif %}
+
+        <aside class="post-cta" aria-label="Siguiente paso">
+          <p class="section-kicker">{{ cta.kicker }}</p>
+          <p class="post-cta-title">{{ cta.title }}</p>
+          <p>{{ cta.text }}</p>
+          <div class="post-cta-actions">
+            {% include whatsapp-button.html class="button button--light" label="Escríbeme por WhatsApp" message=cta.message %}
+            <a class="text-link" href="{{ cta.url | relative_url }}">{{ cta.link }} {% include icon.html name="arrow-right" size=15 %}</a>
+          </div>
+        </aside>
+
+        <aside class="post-author-box" aria-label="Sobre el autor">
+          <img src="{{ '/assets/img/avatar-web-bw.webp' | relative_url }}" alt="{{ site.author.name }}" width="72" height="72" loading="lazy" decoding="async">
+          <div>
+            <p class="post-author-name">Escrito por {{ site.author.name }}</p>
+            <p>Desarrollador y marketer en Guatemala. Ayudo a negocios pequeños a ordenar ventas, inventario y seguimiento con hojas, automatizaciones y sistemas a medida.</p>
+            <a class="text-link" href="{{ '/acerca-de/' | relative_url }}">Conoce cómo trabajo {% include icon.html name="arrow-right" size=15 %}</a>
+          </div>
+        </aside>
+
+        {% comment %} Relacionados: primero los de la misma categoría, luego los más recientes. {% endcomment %}
+        {% assign related = "" | split: "" %}
+        {% for post in site.posts %}
+          {% if post.url != page.url and post.categories contains main_category %}{% assign related = related | push: post %}{% endif %}
+        {% endfor %}
+        {% for post in site.posts %}
+          {% if related.size >= 2 %}{% break %}{% endif %}
+          {% unless post.url == page.url or related contains post %}{% assign related = related | push: post %}{% endunless %}
+        {% endfor %}
+        {% if related.size > 0 %}
+          <section class="post-related" aria-labelledby="related-title">
+            <h2 id="related-title">Sigue leyendo</h2>
+            <div class="post-related-grid">
+              {% for post in related limit: 2 %}
+                <a class="post-related-card" href="{{ post.url | relative_url }}">
+                  {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" width="1200" height="630" loading="lazy" decoding="async">{% endif %}
+                  <span class="post-related-meta">{% include date-es.html date=post.date %}</span>
+                  <strong>{{ post.title }}</strong>
+                </a>
+              {% endfor %}
+            </div>
+          </section>
         {% endif %}
 
         <div class="post-support">

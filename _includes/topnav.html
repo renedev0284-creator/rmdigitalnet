@@ -12,8 +12,12 @@
 
   <nav id="main-menu" class="menu" aria-label="Navegación principal">
     {% for item in site.nav %}
-      <a href="{{ item.url | relative_url }}"
-         {% if item.url == '/' and page.url == '/' %}class="active" aria-current="page"{% elsif item.url == page.url %}class="active" aria-current="page"{% endif %}>
+      {% comment %} Activo si es la página actual o una subpágina (ej. un post dentro de /blog/). {% endcomment %}
+      {% assign nav_prefix = page.url | slice: 0, item.url.size %}
+      {% assign nav_active = false %}
+      {% if item.url == page.url %}{% assign nav_active = true %}{% endif %}
+      {% if item.url != '/' and nav_prefix == item.url %}{% unless item.url contains '#' %}{% assign nav_active = true %}{% endunless %}{% endif %}
+      <a href="{{ item.url | relative_url }}"{% if nav_active %} class="active"{% endif %}{% if item.url == page.url %} aria-current="page"{% endif %}>
         {{ item.text }}
       </a>
     {% endfor %}

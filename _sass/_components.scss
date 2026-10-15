@@ -370,24 +370,88 @@
   transform: translateY(-1px);
 }
 
-.blog-title { padding-top: 4px; }
+.blog-header { padding-top: 4px; }
+.blog-title { margin-bottom: 8px; }
+.blog-intro { max-width: 620px; margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+
+.blog-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+.blog-filter-chip {
+  padding: 7px 13px;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: $font-mono;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.blog-filter-chip:hover { color: var(--accent); border-color: #afc9bd; }
+.blog-filter-chip.is-active { color: #fff; background: var(--accent); border-color: var(--accent); }
+.blog-filter-status { margin: -4px 0 0; color: var(--text-muted); font-size: 12px; }
+.post-preview[hidden] { display: none; }
+.post-preview { transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+.post-preview:hover { box-shadow: 0 12px 26px rgba(36, 48, 42, 0.08); transform: translateY(-2px); }
+.post-preview .post-preview-img img { transition: transform 0.35s ease; }
+.post-preview:hover .post-preview-img img { transform: scale(1.04); }
 .post-list { display: flex; flex-direction: column; gap: 16px; }
 .post-preview { display: flex; gap: 18px; padding: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: $radius-md; }
 .post-preview:hover { border-color: var(--accent); }
-.post-preview .post-preview-img { width: 190px; aspect-ratio: 1200 / 630; flex-shrink: 0; overflow: hidden; background: var(--surface-alt); border-radius: 8px; }
+.post-preview .post-preview-img { align-self: flex-start; width: 190px; aspect-ratio: 1200 / 630; flex-shrink: 0; overflow: hidden; background: var(--surface-alt); border-radius: 8px; }
 .post-preview .post-preview-img img { width: 100%; height: 100%; object-fit: cover; }
 .post-preview h2 { margin: 2px 0 6px; font-size: 18px; }
 .post-preview-date { margin: 0 0 4px; color: var(--text-muted); font-family: $font-mono; font-size: 11px; }
 .post-preview-excerpt { margin: 0 0 8px; color: var(--text-secondary); font-size: 13px; }
 .post-preview-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .post-header { margin-bottom: 18px; }
-.post-meta { color: var(--text-muted); font-size: 12px; }
+.post-kicker { display: inline-block; margin-bottom: 10px; color: var(--accent); font-family: $font-mono; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.post-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; color: var(--text-muted); font-size: 12px; }
+.post-author { display: inline-flex; align-items: center; gap: 8px; color: var(--text-primary); font-weight: 700; }
+.post-author img { width: 28px; height: 28px; object-fit: cover; border-radius: 50%; }
 .post-meta .dot { margin: 0 6px; }
 .post-meta .post-category { color: var(--accent); }
 .post-cover { aspect-ratio: 1200 / 630; margin-top: 18px; overflow: hidden; border-radius: $radius-md; }
 .post-cover img { width: 100%; height: 100%; object-fit: cover; }
-.post-body { color: var(--text-primary); font-size: 15px; }
+// ~70 caracteres por línea: el largo cómodo para leer textos extensos.
+.post-body { max-width: 70ch; color: var(--text-primary); font-size: 16px; line-height: 1.75; }
+.post-body h2 { margin-top: 1.8em; scroll-margin-top: 90px; }
+.post-body h3 { scroll-margin-top: 90px; }
 .post-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.post-cta {
+  position: relative;
+  overflow: hidden;
+  margin-top: 32px;
+  padding: 28px;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 14px;
+  box-shadow: 0 8px 0 #174c3d;
+}
+.post-cta .section-kicker { margin: 0 0 8px; color: #cce5da; }
+.post-cta-title { max-width: 560px; margin: 0 0 8px; color: #fff; font-size: clamp(20px, 3vw, 26px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+.post-cta p:not(.section-kicker):not(.post-cta-title) { max-width: 560px; margin: 0; color: #dcebe5; font-size: 14px; }
+.post-cta-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 20px; }
+.post-cta .text-link { color: #cce5da; }
+.post-cta .text-link:hover { color: #fff; }
+
+.post-author-box { display: flex; align-items: flex-start; gap: 16px; margin-top: 28px; padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+.post-author-box img { width: 72px; height: 72px; flex-shrink: 0; object-fit: cover; border-radius: 50%; }
+.post-author-box p { margin: 0 0 8px; color: var(--text-secondary); font-size: 13px; line-height: 1.55; }
+.post-author-box .post-author-name { margin-bottom: 4px; color: var(--text-primary); font-size: 15px; font-weight: 700; }
+
+.post-related { margin-top: 32px; }
+.post-related h2 { margin: 0 0 14px; font-size: 20px; }
+.post-related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.post-related-card { display: flex; flex-direction: column; gap: 6px; padding: 12px; color: var(--text-primary); background: var(--surface); border: 1px solid var(--border); border-radius: 12px; transition: border-color 0.18s ease, transform 0.18s ease; }
+.post-related-card:hover { border-color: #afc9bd; transform: translateY(-2px); }
+.post-related-card img { width: 100%; height: auto; aspect-ratio: 1200 / 630; object-fit: cover; border-radius: 8px; }
+.post-related-card strong { font-size: 14px; line-height: 1.35; }
+.post-related-meta { color: var(--text-muted); font-family: $font-mono; font-size: 11px; }
+
+.reading-progress { position: fixed; z-index: 50; top: 0; right: 0; left: 0; height: 3px; pointer-events: none; }
+.reading-progress span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), #3a9a72); transform: scaleX(0); transform-origin: left; }
+
 .post-support { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--border); }
 .post-support p { margin-bottom: 6px; color: var(--text-secondary); font-size: 13px; }
 
