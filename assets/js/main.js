@@ -58,7 +58,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // ---------------- Sección activa en la navegación ----------------
-  var navLinks = Array.from(document.querySelectorAll(".menu a:not(.menu-contact)"));
+  // Solo cuentan los enlaces de esta misma página: "/" (inicio) y "/#seccion".
+  // Los que van a otra página, como /blog/, no deben marcarse al hacer scroll.
+  var navLinks = Array.from(document.querySelectorAll(".menu a:not(.menu-contact)")).filter(function (link) {
+    return new URL(link.href, window.location.href).pathname === window.location.pathname;
+  });
   var sections = navLinks
     .map(function (link) {
       var hash = new URL(link.href, window.location.href).hash;
