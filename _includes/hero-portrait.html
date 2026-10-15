@@ -1,0 +1,16 @@
+{% comment %}
+  Retrato del hero. Va dentro de .hero-inner junto a .hero-copy; la sección
+  .hero necesita la clase "hero--split" para el diseño en dos columnas.
+  Es la imagen principal de la página, por eso carga sin lazy y con prioridad.
+{% endcomment %}
+<figure class="hero-portrait">
+  <img src="{{ '/assets/img/rene-moya-retrato-800.webp' | relative_url }}"
+       srcset="{{ '/assets/img/rene-moya-retrato-480.webp' | relative_url }} 480w, {{ '/assets/img/rene-moya-retrato-800.webp' | relative_url }} 800w"
+       sizes="(max-width: 680px) 240px, 380px"
+       alt="{{ site.author.name }} en su escritorio de trabajo"
+       width="800" height="1000" fetchpriority="high" decoding="async">
+  <figcaption>
+    <span class="status-dot" aria-hidden="true"></span>
+    <span><strong>{{ site.author.name }}</strong> Desarrollador y marketer · Guatemala</span>
+  </figcaption>
+</figure>

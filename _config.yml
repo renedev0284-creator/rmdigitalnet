@@ -60,7 +60,7 @@ defaults:
     values:
       # Se usa como og:image / twitter:image cuando la página no define
       # su propia "image" (posts de blog casi siempre sí la definen).
-      image: /assets/img/social-default.png
+      image: /assets/img/social-default.jpg
   - scope:
       path: ""
       type: "posts"

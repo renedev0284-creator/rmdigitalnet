@@ -6,7 +6,7 @@ permalink: /impulsa-tu-negocio/
 service_type: "Presencia digital, automatización y publicidad para negocios pequeños"
 ---
 
-<section class="hero" id="pitch-hero" aria-labelledby="hero-title">
+<section class="hero hero--split" id="pitch-hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="eyebrow"><span aria-hidden="true">~/</span> René Moya · páginas y sistemas para negocios que venden</p>
@@ -21,6 +21,7 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
       </div>
       <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
     </div>
+    {% include hero-portrait.html %}
   </div>
 </section>
 

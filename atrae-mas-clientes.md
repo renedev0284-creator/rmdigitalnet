@@ -6,7 +6,7 @@ permalink: /atrae-mas-clientes/
 service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
 ---
 
-<section class="hero" id="pitch-hero" aria-labelledby="hero-title">
+<section class="hero hero--split" id="pitch-hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="eyebrow"><span aria-hidden="true">~/</span> René Moya · publicidad en Meta y Google Ads</p>
@@ -21,6 +21,7 @@ service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
       </div>
       <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
     </div>
+    {% include hero-portrait.html %}
   </div>
 </section>
 

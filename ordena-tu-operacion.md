@@ -6,7 +6,7 @@ permalink: /ordena-tu-operacion/
 service_type: "Sistemas web a medida con base de datos para negocios pequeños"
 ---
 
-<section class="hero" id="pitch-hero" aria-labelledby="hero-title">
+<section class="hero hero--split" id="pitch-hero" aria-labelledby="hero-title">
   <div class="hero-inner">
     <div class="hero-copy">
       <p class="eyebrow"><span aria-hidden="true">~/</span> René Moya · sistemas web y bases de datos para negocios</p>
@@ -21,6 +21,7 @@ service_type: "Sistemas web a medida con base de datos para negocios pequeños"
       </div>
       <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
     </div>
+    {% include hero-portrait.html %}
   </div>
 </section>
 
