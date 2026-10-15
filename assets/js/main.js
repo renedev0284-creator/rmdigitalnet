@@ -29,31 +29,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // ---------------- Acordeón de FAQs ----------------
+  // La animación vive en CSS (.faq-item.is-open); aquí solo se cambia el estado.
   var faqItems = document.querySelectorAll(".faq-item");
+
+  function setFaqOpen(item, open) {
+    item.classList.toggle("is-open", open);
+    var button = item.querySelector(".faq-question");
+    if (button) button.setAttribute("aria-expanded", open ? "true" : "false");
+  }
 
   faqItems.forEach(function (item) {
     var button = item.querySelector(".faq-question");
-    var answer = item.querySelector(".faq-answer");
-
-    if (!button || !answer) return;
+    if (!button) return;
 
     button.addEventListener("click", function () {
-      var isOpen = item.classList.contains("is-open");
-
+      var willOpen = !item.classList.contains("is-open");
       // Cierra los demás para mantener el acordeón ordenado
-      faqItems.forEach(function (other) {
-        other.classList.remove("is-open");
-        var otherAnswer = other.querySelector(".faq-answer");
-        var otherButton = other.querySelector(".faq-question");
-        if (otherAnswer) otherAnswer.hidden = true;
-        if (otherButton) otherButton.setAttribute("aria-expanded", "false");
-      });
-
-      if (!isOpen) {
-        item.classList.add("is-open");
-        answer.hidden = false;
-        button.setAttribute("aria-expanded", "true");
-      }
+      faqItems.forEach(function (other) { setFaqOpen(other, false); });
+      setFaqOpen(item, willOpen);
     });
   });
 
@@ -98,10 +91,49 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
 
-    revealItems.forEach(function (item) { revealObserver.observe(item); });
+      revealItems.forEach(function (item) { revealObserver.observe(item); });
   } else {
     revealItems.forEach(function (item) { item.classList.add("is-visible"); });
   }
+
+  // Tarjetas escalonadas: cada hijo recibe su índice; al terminar su entrada
+  // se marca "is-settled" para que el hover no herede el retraso.
+  document.querySelectorAll("[data-stagger]").forEach(function (group) {
+    Array.prototype.forEach.call(group.children, function (child, index) {
+      child.style.setProperty("--i", index);
+      child.addEventListener("transitionend", function settle(event) {
+        if (event.propertyName !== "opacity") return;
+        child.classList.add("is-settled");
+        child.removeEventListener("transitionend", settle);
+      });
+    });
+  });
+
+  // ---------------- Menú con sombra y CTA fijo en móvil ----------------
+  var topnav = document.querySelector(".topnav");
+  var mobileCta = document.querySelector(".mobile-cta");
+  var hero = document.querySelector(".hero, .project-hero");
+  var footer = document.querySelector(".footer");
+  var scrollTicking = false;
+
+  function updateOnScroll() {
+    scrollTicking = false;
+    var y = window.scrollY;
+    if (topnav) topnav.classList.toggle("is-scrolled", y > 8);
+
+    if (mobileCta) {
+      var pastHero = hero ? hero.getBoundingClientRect().bottom < 0 : y > 480;
+      var nearFooter = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
+      var bannerOpen = cookieBanner && !cookieBanner.hidden;
+      mobileCta.classList.toggle("is-visible", pastHero && !nearFooter && !bannerOpen);
+    }
+  }
+
+  window.addEventListener("scroll", function () {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(updateOnScroll);
+  }, { passive: true });
 
   // ---------------- Preferencias de cookies ----------------
   var cookieBanner = document.getElementById("cookie-banner");
@@ -165,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var section = link.closest("section[id], aside, header, footer");
     window.gtag("event", "contact", {
       method: method,
-      cta_location: section ? (section.id || section.tagName.toLowerCase()) : "page",
+      cta_location: link.classList.contains("mobile-cta") ? "mobile_sticky" : section ? (section.id || section.tagName.toLowerCase()) : "page",
       cta_text: link.textContent.replace(/\s+/g, " ").trim().slice(0, 80)
     });
   });
@@ -174,12 +206,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!cookieBanner) return;
     cookieBanner.hidden = false;
     requestAnimationFrame(function () { cookieBanner.classList.add("is-visible"); });
+    updateOnScroll();
   }
 
   function hideCookieBanner() {
     if (!cookieBanner) return;
     cookieBanner.classList.remove("is-visible");
-    window.setTimeout(function () { cookieBanner.hidden = true; }, 220);
+    window.setTimeout(function () { cookieBanner.hidden = true; updateOnScroll(); }, 220);
   }
 
   function saveConsent(choice) {
@@ -203,6 +236,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (cookieBanner && !existingConsent) showCookieBanner();
   if (cookieAccept) cookieAccept.addEventListener("click", function () { saveConsent("accepted"); });
   if (cookieNecessary) cookieNecessary.addEventListener("click", function () { saveConsent("necessary"); });
+
+  updateOnScroll();
 
   cookieSettings.forEach(function (button) {
     button.addEventListener("click", function () {

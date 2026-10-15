@@ -85,7 +85,7 @@ layout: default
           <p class="section-intro">No empiezo vendiéndote una herramienta. Reviso el proceso y propongo la solución más sencilla que pueda darte control.</p>
         </div>
 
-        <div class="service-grid">
+        <div class="service-grid" data-stagger>
           {% for service in site.data.home.services %}
             <article class="service-card{% if service.primary %} service-card--primary{% endif %}">
               <div class="service-top">
@@ -112,7 +112,7 @@ layout: default
           <p class="section-intro">Antes de construir algo, entendemos juntos el punto de partida y qué resultado importa primero.</p>
         </div>
 
-        <ol class="operation-flow">
+        <ol class="operation-flow operation-flow--four" data-stagger>
           <li>
             <span class="operation-number">01</span>
             <span class="operation-icon">{% include icon.html name="target" size=22 %}</span>

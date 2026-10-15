@@ -43,7 +43,7 @@ service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
     <p class="section-intro">Según la etapa de tu negocio, el trabajo puede incluir uno o varios de estos frentes.</p>
   </div>
 
-  <div class="service-grid">
+  <div class="service-grid" data-stagger>
     <article class="service-card">
       <div class="service-top">
         <span class="service-icon">{% include icon.html name="target" size=23 %}</span>
@@ -153,7 +153,7 @@ service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
     <p>Antes de invertir más, revisamos la oferta, la página de destino y cómo tu negocio atiende cada contacto.</p>
   </div>
 
-  <ol class="operation-flow">
+  <ol class="operation-flow operation-flow--four" data-stagger>
     <li>
       <span class="operation-number">01</span>
       <span class="operation-icon">{% include icon.html name="target" size=22 %}</span>

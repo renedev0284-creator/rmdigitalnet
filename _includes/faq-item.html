@@ -2,12 +2,15 @@
   Uso:
   {% include faq-item.html question="¿Pregunta?" answer="Respuesta." open=true %}
 {% endcomment %}
+{% assign faq_id = include.question | slugify | prepend: 'faq-' %}
 <div class="faq-item {% if include.open %}is-open{% endif %}">
-  <button class="faq-question" aria-expanded="{% if include.open %}true{% else %}false{% endif %}">
+  <button class="faq-question" type="button" aria-expanded="{% if include.open %}true{% else %}false{% endif %}" aria-controls="{{ faq_id }}">
     <span>{{ include.question }}</span>
-    <span class="chev">{% include icon.html name="chevron-down" size=14 %}</span>
+    <span class="chev" aria-hidden="true">{% include icon.html name="chevron-down" size=14 %}</span>
   </button>
-  <div class="faq-answer" {% unless include.open %}hidden{% endunless %}>
-    <p>{{ include.answer }}</p>
+  <div class="faq-answer" id="{{ faq_id }}" role="region" aria-label="{{ include.question | escape }}">
+    <div class="faq-answer-inner">
+      <p>{{ include.answer }}</p>
+    </div>
   </div>
 </div>

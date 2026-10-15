@@ -115,7 +115,22 @@
 .services .section-heading > div { max-width: 680px; }
 .services .section-intro { max-width: 680px; font-size: 14px; line-height: 1.6; }
 
-.service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+// Las grillas se adaptan al ancho de su sección (container queries), no al de
+// la pantalla: la columna central cambia de ancho según las barras laterales.
+.home-section,
+.project-section { container-type: inline-size; }
+
+.service-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+@container (min-width: 520px) {
+  .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+// Con 3 columnas, la tarjeta principal ocupa la fila completa y las otras
+// tres quedan alineadas debajo, sin tarjetas sueltas.
+@container (min-width: 680px) {
+  .service-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 
 .service-card {
   position: relative;
@@ -160,7 +175,7 @@
 .service-card h3 { margin: 24px 0 9px; font-size: 18px; }
 .service-card > p { margin: 0 0 20px; color: var(--text-secondary); font-size: 13px; }
 .service-tag { margin-top: auto; }
-.service-footer { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
+.service-footer { display: flex; width: 100%; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; }
 .service-footer .service-tag { margin-top: 0; }
 .service-link { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); font-size: 12px; font-weight: 700; white-space: nowrap; }
 .service-link .icon { transition: transform 0.18s ease; }
@@ -168,7 +183,11 @@
 
 .testimonials { background: #f4f1fb; border-color: #ddd5f0; }
 
-.testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.testimonial-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+@container (min-width: 680px) {
+  .testimonial-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 
 .testimonial-card {
   display: flex;
@@ -185,8 +204,21 @@
 .testimonial-rating { display: flex; gap: 2px; margin-bottom: 10px; color: var(--border); }
 .testimonial-rating .icon { fill: currentColor; stroke: none; }
 .testimonial-rating .is-filled { color: var(--support); }
-.testimonial-card blockquote { margin: 0; }
-.testimonial-card blockquote p { margin: 0; color: var(--text-primary); font-size: 14px; line-height: 1.6; }
+.testimonial-card { position: relative; transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease; }
+.testimonial-card:hover { border-color: #cfc4ea; box-shadow: 0 14px 30px rgba(60, 45, 110, 0.08); transform: translateY(-3px); }
+.testimonial-card::before {
+  position: absolute;
+  top: 6px;
+  right: 16px;
+  color: #e4ddf4;
+  content: "\201D";
+  font-family: Georgia, serif;
+  font-size: 72px;
+  line-height: 1;
+  pointer-events: none;
+}
+.testimonial-card blockquote { flex: 1; margin: 0; padding: 0; border: 0; font-style: normal; }
+.testimonial-card blockquote p { margin: 0; color: var(--text-primary); font-size: 13.5px; font-style: normal; line-height: 1.65; }
 .testimonial-card figcaption { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
 .testimonial-card figcaption img { width: 44px; height: 44px; object-fit: cover; border-radius: 50%; }
 
@@ -253,8 +285,19 @@
 .faq-question .chev { display: flex; flex-shrink: 0; color: var(--text-muted); transition: transform 0.2s ease; }
 .faq-question[aria-expanded="true"] { color: var(--accent); font-weight: 700; }
 .faq-question[aria-expanded="true"] .chev { transform: rotate(180deg); }
-.faq-answer { overflow: hidden; padding: 0 56px 18px 18px; color: var(--text-secondary); font-size: 13px; }
-.faq-answer p { margin: 0; }
+// Apertura animada: la fila pasa de 0fr a 1fr. "visibility" saca del árbol de
+// accesibilidad el contenido cerrado, igual que hacía el atributo hidden.
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  visibility: hidden;
+  color: var(--text-secondary);
+  font-size: 13px;
+  transition: grid-template-rows 0.28s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.28s;
+}
+.faq-answer-inner { min-height: 0; overflow: hidden; }
+.faq-answer p { margin: 0; padding: 0 56px 18px 18px; }
+.faq-item.is-open .faq-answer { grid-template-rows: 1fr; visibility: visible; }
 
 .home-blog-card {
   display: grid;
@@ -557,9 +600,7 @@
 .benefit-item p { margin: 0; color: var(--text-primary); font-size: 13px; font-weight: 600; line-height: 1.5; }
 
 @media (max-width: 1040px) {
-  .service-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 210px; }
-  .testimonial-grid { grid-template-columns: 1fr; }
   .home-cta { grid-template-columns: 1fr; }
   .home-cta .button { justify-self: start; }
   .home-blog-card { grid-template-columns: 1fr; }
@@ -593,4 +634,35 @@
   .cookie-icon { display: none; }
   .cookie-actions { grid-column: auto; flex-direction: column; }
   .cookie-button { width: 100%; }
+}
+
+// Botón de WhatsApp fijo en móvil: aparece al pasar el hero y se oculta cerca
+// del footer o mientras el banner de cookies está abierto (ver main.js).
+.mobile-cta { display: none; }
+
+@media (max-width: $bp-tablet) {
+  .mobile-cta {
+    position: fixed;
+    z-index: 40;
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    left: 16px;
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    background: var(--accent);
+    border-radius: 12px;
+    box-shadow: 0 5px 0 #174c3d, 0 16px 32px rgba(23, 76, 61, 0.28);
+    font-size: 15px;
+    font-weight: 700;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(calc(100% + 24px));
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease, visibility 0.35s;
+  }
+
+  .mobile-cta.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 }

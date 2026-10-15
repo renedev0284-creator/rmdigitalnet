@@ -81,7 +81,7 @@ service_type: "Sistemas web a medida con base de datos para negocios pequeños"
     <p class="section-intro">Cada proyecto es distinto: definimos juntos qué módulos tienen sentido para tu operación real.</p>
   </div>
 
-  <div class="service-grid">
+  <div class="service-grid" data-stagger>
     <article class="service-card">
       <div class="service-top">
         <span class="service-icon">{% include icon.html name="store" size=23 %}</span>
@@ -191,7 +191,7 @@ service_type: "Sistemas web a medida con base de datos para negocios pequeños"
     <p>No empiezo por el código: primero entiendo el proceso, las personas que participan y las decisiones que necesitan tomar.</p>
   </div>
 
-  <ol class="operation-flow">
+  <ol class="operation-flow operation-flow--four" data-stagger>
     <li>
       <span class="operation-number">01</span>
       <span class="operation-icon">{% include icon.html name="target" size=22 %}</span>

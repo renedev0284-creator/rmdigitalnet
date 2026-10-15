@@ -43,7 +43,7 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
     <p class="section-intro">Según el punto de partida de tu negocio, el trabajo puede enfocarse en uno o varios de estos frentes.</p>
   </div>
 
-  <div class="service-grid">
+  <div class="service-grid" data-stagger>
     <article class="service-card">
       <div class="service-top">
         <span class="service-icon">{% include icon.html name="code" size=23 %}</span>
@@ -153,7 +153,7 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
     <p>Antes de construir algo, entendemos juntos el punto de partida y qué resultado importa primero.</p>
   </div>
 
-  <ol class="operation-flow">
+  <ol class="operation-flow operation-flow--four" data-stagger>
     <li>
       <span class="operation-number">01</span>
       <span class="operation-icon">{% include icon.html name="target" size=22 %}</span>

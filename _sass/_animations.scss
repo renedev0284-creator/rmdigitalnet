@@ -29,17 +29,19 @@
 .motion-ready .hero .hero-mail-link { animation-delay: 0.3s; }
 .motion-ready .hero .hero-note { animation-delay: 0.34s; }
 
-.motion-ready .services .service-card {
+// Aparición escalonada de tarjetas dentro de una sección. main.js asigna
+// --i (0, 1, 2...) a cada hijo directo de [data-stagger].
+.motion-ready [data-stagger] > * {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s ease;
+  transform: translateY(16px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.18s ease, box-shadow 0.18s ease;
+  transition-delay: calc(var(--i, 0) * 80ms);
 }
 
-.motion-ready .services.is-visible .service-card { opacity: 1; transform: translateY(0); }
-.motion-ready .services.is-visible .service-card:nth-child(2) { transition-delay: 0.09s; }
-.motion-ready .services.is-visible .service-card:nth-child(3) { transition-delay: 0.18s; }
-
-.motion-ready .services.is-visible .service-card:hover { transform: translateY(-4px); }
+.motion-ready .is-visible [data-stagger] > * { opacity: 1; transform: translateY(0); }
+.motion-ready .is-visible [data-stagger] > .is-settled { transition-delay: 0s; }
+.motion-ready .is-visible .service-grid > .service-card:hover,
+.motion-ready .is-visible .testimonial-grid > .testimonial-card:hover { transform: translateY(-4px); }
 
 .motion-ready .section-rule { transform: scaleX(0); transform-origin: left; transition: transform 0.8s 0.15s cubic-bezier(0.22, 1, 0.36, 1); }
 .motion-ready .is-visible .section-rule { transform: scaleX(1); }
@@ -90,10 +92,6 @@
   100% { transform: translateX(420%) skewX(-16deg); }
 }
 
-.faq-answer {
-  transition: grid-template-rows 0.2s ease;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -104,7 +102,7 @@
   .motion-ready [data-reveal],
   .motion-ready [data-reveal="left"],
   .motion-ready [data-reveal="right"],
-  .motion-ready .services .service-card {
+  .motion-ready [data-stagger] > * {
     opacity: 1;
     transform: none;
   }

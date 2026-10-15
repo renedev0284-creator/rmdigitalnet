@@ -126,6 +126,25 @@
 .operation-flow h3 { margin: 25px 0 8px; font-size: 17px; }
 .operation-flow p { margin: 0; color: var(--text-secondary); font-size: 12px; line-height: 1.55; }
 
+// Variante de 4 pasos: 1 columna, 2x2 o 4 en fila según el ancho de la
+// sección (nunca 3 + 1). Define sus propios conectores entre pasos.
+.operation-flow.operation-flow--four { grid-template-columns: 1fr; }
+.operation-flow.operation-flow--four li { min-height: 0; }
+.operation-flow.operation-flow--four li::after { top: auto; right: auto; bottom: -13px; left: 42px; display: block; width: 1px; height: 13px; }
+.operation-flow.operation-flow--four li:last-child::after { display: none; }
+
+@container (min-width: 520px) {
+  .operation-flow.operation-flow--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .operation-flow.operation-flow--four li::after { top: 50%; right: -13px; bottom: auto; left: auto; width: 13px; height: 1px; }
+  .operation-flow.operation-flow--four li:nth-child(even)::after { display: none; }
+}
+
+@container (min-width: 980px) {
+  .operation-flow.operation-flow--four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .operation-flow.operation-flow--four li:nth-child(even)::after { display: block; }
+  .operation-flow.operation-flow--four li:last-child::after { display: none; }
+}
+
 .depth-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .depth-card { display: flex; min-height: 470px; align-items: flex-start; flex-direction: column; padding: 26px; overflow: hidden; background: var(--surface); border: 1px solid var(--border); border-radius: 15px; }
 .depth-card--shipping { background: #f5f9f6; border-color: #d3e2da; }
