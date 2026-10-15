@@ -10,12 +10,12 @@ page_class: "policy-page"
 <div class="policy-intro">
   <p class="policy-kicker">Transparencia antes que letra pequeña</p>
   <p>Este documento explica quién está detrás de rmdigital.net, cómo trabajo y qué puedes esperar cuando visitas el sitio o colaboramos en un proyecto.</p>
-  <span>Última actualización: 21 de julio de 2026</span>
+  <span>Última actualización: 15 de octubre de 2026</span>
 </div>
 
 ## 1. Responsable del sitio
 
-rmdigital.net es el sitio profesional de **René Moya**, desarrollador independiente con sede en Guatemala. Puedes escribirme a [rene0284@msn.com](mailto:rene0284@msn.com) para consultas sobre el sitio, privacidad, propiedad intelectual o servicios.
+rmdigital.net es el sitio profesional de **René Moya**, desarrollador independiente con sede en Guatemala. Puedes escribirme a [{{ site.author.email }}](mailto:{{ site.author.email }}) para consultas sobre el sitio, privacidad, propiedad intelectual o servicios.
 
 ## 2. Código hecho con criterio humano y apoyo de IA
 
@@ -54,7 +54,7 @@ Los componentes de terceros conservan sus propias licencias. Ningún acuerdo pue
 
 No vendo datos personales. Cuando me escribes, puedo recibir tu nombre, correo, empresa, contenido del mensaje y la información que decidas compartir. Los utilizo para responder, preparar una propuesta, prestar el servicio, mantener seguridad básica y cumplir obligaciones legítimas relacionadas con nuestra comunicación o proyecto.
 
-Conservo la información solo durante el tiempo razonablemente necesario para esos fines, para mantener registros profesionales o atender responsabilidades legales. Este sitio se publica mediante Cloudflare Workers y carga la tipografía desde Google Fonts; esos proveedores pueden recibir información técnica de la conexión bajo sus propias políticas.
+Conservo la información solo durante el tiempo razonablemente necesario para esos fines, para mantener registros profesionales o atender responsabilidades legales. Este sitio se publica mediante Cloudflare Workers y carga la tipografía desde Google Fonts. Si aceptas la analítica en el banner de cookies, también se usa Google Analytics para medir de forma agregada qué páginas se visitan y cuántas visitas terminan en un contacto (ver la [política de cookies]({{ '/cookies/' | relative_url }})). Esos proveedores pueden recibir información técnica de la conexión bajo sus propias políticas.
 
 Puedes solicitar acceso, corrección o eliminación de la información que me hayas enviado escribiendo al correo indicado arriba. Evaluaré la solicitud conforme a la relación existente y la legislación aplicable.
 

@@ -105,7 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var cookieNecessary = document.getElementById("cookie-necessary");
   var cookieSettings = document.querySelectorAll("[data-cookie-settings]");
   var consentKey = "rmdigital_cookie_consent";
-  var consentVersion = 1;
+  // v2: el banner ahora informa de Google Analytics; las decisiones tomadas
+  // con el texto anterior ("sin analítica") se vuelven a preguntar.
+  var consentVersion = 2;
   var consentLifetime = 180 * 24 * 60 * 60 * 1000;
 
   function readConsent() {
@@ -120,7 +122,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ---------------- Google Analytics 4 (solo si hay consentimiento) ----------------
   function loadAnalytics() {
-    if (!window.RM_GA_ID || window.__rmGaLoaded) return;
+    if (!window.RM_GA_ID) return;
+    window["ga-disable-" + window.RM_GA_ID] = false;
+    if (window.__rmGaLoaded) return;
     window.__rmGaLoaded = true;
 
     window.dataLayer = window.dataLayer || [];
@@ -133,6 +137,34 @@ document.addEventListener("DOMContentLoaded", function () {
     script.src = "https://www.googletagmanager.com/gtag/js?id=" + window.RM_GA_ID;
     document.head.appendChild(script);
   }
+
+  // Si alguien retira el consentimiento, se detiene el envío de datos en esta
+  // misma visita (opt-out oficial de gtag.js); en las siguientes ya no se carga.
+  function disableAnalytics() {
+    if (window.RM_GA_ID) window["ga-disable-" + window.RM_GA_ID] = true;
+  }
+
+  // ---------------- Clics de contacto como conversiones ----------------
+  // Se envían solo si GA ya está cargado (es decir, hubo consentimiento).
+  // En GA4 conviene marcar el evento "contact" como evento clave.
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest && event.target.closest("a[href]");
+    if (!link || typeof window.gtag !== "function") return;
+
+    var href = link.getAttribute("href");
+    var method = null;
+    if (href.indexOf("https://wa.me/") === 0) method = "whatsapp";
+    else if (href.indexOf("mailto:") === 0) method = "email";
+    else if (href.indexOf("tel:") === 0) method = "phone";
+    if (!method) return;
+
+    var section = link.closest("section[id], aside, header, footer");
+    window.gtag("event", "contact", {
+      method: method,
+      cta_location: section ? (section.id || section.tagName.toLowerCase()) : "page",
+      cta_text: link.textContent.replace(/\s+/g, " ").trim().slice(0, 80)
+    });
+  });
 
   function showCookieBanner() {
     if (!cookieBanner) return;
@@ -158,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // El banner puede cerrarse aunque el navegador bloquee localStorage.
     }
     if (choice === "accepted") loadAnalytics();
+    else disableAnalytics();
     hideCookieBanner();
   }
 
