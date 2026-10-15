@@ -9,6 +9,7 @@
   overflow: hidden;
   overflow: clip;
   background-color: #faf9f4;
+  background-image: $texture-frame;
   border: 1px solid var(--border);
   border-radius: 18px 18px 0 0;
   box-shadow: 0 18px 60px rgba(32, 35, 31, 0.07);
@@ -99,8 +100,7 @@
 .breadcrumb:has(~ .hero) {
   padding-bottom: 4px;
   background-color: #f1f7f2;
-  background-image: linear-gradient(rgba(35, 107, 87, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: $texture-hero;
 }
 
 .hero {
@@ -108,8 +108,7 @@
   overflow: hidden;
   padding: 78px 48px 82px;
   background-color: #f1f7f2;
-  background-image: linear-gradient(rgba(35, 107, 87, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.05) 1px, transparent 1px);
-  background-size: 24px 24px;
+  background-image: $texture-hero;
   border-bottom: 1px solid var(--border);
 
   &::before,

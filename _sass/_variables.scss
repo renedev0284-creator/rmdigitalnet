@@ -49,3 +49,14 @@ $bp-mobile: 480px;
   --accent-soft: #{$color-accent-soft};
   --support: #{$color-support};
 }
+
+// Diagonal micro grid: a 10px SVG tile with two crossed lines, repeated.
+// SVG keeps the diagonal lines crisp (CSS gradients blur at 45 degrees).
+// $stroke is an rgba() string; tiles connect seamlessly at the corners.
+@function diagonal-grid($stroke, $size: 10) {
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='#{$size}' height='#{$size}'%3E%3Cpath d='M-1 -1L#{$size + 1} #{$size + 1}M#{$size + 1} -1L-1 #{$size + 1}' stroke='#{$stroke}' stroke-width='0.6' fill='none'/%3E%3C/svg%3E");
+}
+
+$texture-page: diagonal-grid("rgba(32,35,31,0.075)");
+$texture-frame: diagonal-grid("rgba(32,35,31,0.04)");
+$texture-hero: diagonal-grid("rgba(35,107,87,0.11)");
