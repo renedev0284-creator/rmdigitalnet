@@ -19,7 +19,7 @@ layout: default
               </div>
             {% endif %}
             <div class="post-preview-body">
-              <p class="post-preview-date">{{ post.date | date: "%d de %B de %Y" }}</p>
+              <p class="post-preview-date">{% include date-es.html date=post.date %}</p>
               <h2>{{ post.title }}</h2>
               <p class="post-preview-excerpt">{{ post.excerpt | strip_html | truncatewords: 28 }}</p>
               {% if post.tags.size > 0 %}

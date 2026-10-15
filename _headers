@@ -1,0 +1,21 @@
+# Cabeceras de Cloudflare Workers Static Assets.
+# https://developers.cloudflare.com/workers/static-assets/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000
+
+# CSS y JS llevan ?v=<fecha de build>, así que pueden guardarse un año.
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Las imágenes conservan su nombre al reemplazarse: una semana de caché.
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

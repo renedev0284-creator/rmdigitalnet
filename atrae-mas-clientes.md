@@ -2,8 +2,23 @@
 layout: project
 title: "Publicidad en redes sociales y Google Ads conectada a resultados"
 description: "Organizo campañas en Meta y Google Ads para negocios que quieren atraer clientes reales y saber qué campañas producen resultados, no solo clics o impresiones."
+seo_title: "Publicidad en Meta y Google Ads con resultados"
 permalink: /atrae-mas-clientes/
 service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
+faqs:
+  - question: "¿Cuánto necesito invertir en publicidad para empezar?"
+    answer: "Se define según tu negocio, tus objetivos y tu mercado. Antes de invertir revisamos juntos un presupuesto realista para tu situación."
+    open: true
+  - question: "¿Garantizas resultados o ventas?"
+    answer: "No. La publicidad depende de la oferta, el mercado y la experiencia después del clic. Mi compromiso es trabajar con datos, explicar cada decisión y mejorar de forma continua."
+  - question: "¿La primera conversación tiene costo?"
+    answer: "No. La primera conversación es para revisar tu situación actual y compartirte oportunidades de mejora concretas, sin compromiso."
+  - question: "¿Trabajas con negocios que nunca han pautado?"
+    answer: "Sí. Puedo ayudarte a empezar desde cero o a ordenar campañas que ya existen pero no tienen seguimiento claro."
+  - question: "¿Trabajas de forma remota?"
+    answer: "Sí. Trabajo de forma remota con negocios en Guatemala y otros países, coordinando por WhatsApp, correo o videollamada."
+  - question: "¿Puedes adaptar la estrategia a mi presupuesto?"
+    answer: "Sí. Antes de proponer una estrategia buscamos un punto de partida que se ajuste a tu presupuesto y a la prioridad real de tu negocio."
 ---
 
 <section class="hero hero--split" id="pitch-hero" aria-labelledby="hero-title">
@@ -228,12 +243,9 @@ service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
   </div>
 
   <div class="faq-list">
-    {% include faq-item.html question="¿Cuánto necesito invertir en publicidad para empezar?" answer="Se define según tu negocio, tus objetivos y tu mercado. Antes de invertir revisamos juntos un presupuesto realista para tu situación." open=true %}
-    {% include faq-item.html question="¿Garantizas resultados o ventas?" answer="No. La publicidad depende de la oferta, el mercado y la experiencia después del clic. Mi compromiso es trabajar con datos, explicar cada decisión y mejorar de forma continua." %}
-    {% include faq-item.html question="¿La primera conversación tiene costo?" answer="No. La primera conversación es para revisar tu situación actual y compartirte oportunidades de mejora concretas, sin compromiso." %}
-    {% include faq-item.html question="¿Trabajas con negocios que nunca han pautado?" answer="Sí. Puedo ayudarte a empezar desde cero o a ordenar campañas que ya existen pero no tienen seguimiento claro." %}
-    {% include faq-item.html question="¿Trabajas de forma remota?" answer="Sí. Trabajo de forma remota con negocios en Guatemala y otros países, coordinando por WhatsApp, correo o videollamada." %}
-    {% include faq-item.html question="¿Puedes adaptar la estrategia a mi presupuesto?" answer="Sí. Antes de proponer una estrategia buscamos un punto de partida que se ajuste a tu presupuesto y a la prioridad real de tu negocio." %}
+    {% for faq in page.faqs %}
+      {% include faq-item.html question=faq.question answer=faq.answer open=faq.open %}
+    {% endfor %}
   </div>
 
   <p class="policy-note">La información de esta página puede actualizarse según los servicios disponibles en cada momento.</p>

@@ -2,6 +2,7 @@
 layout: page
 title: "Sistemas para conectar la operación de tu negocio"
 description: "Desarrollo sistemas web y automatizaciones para conectar ventas, inventario, costos, clientes y seguimiento en negocios pequeños."
+seo_title: "Sistemas a medida y automatización para negocios"
 permalink: /servicios/sistemas-a-medida/
 breadcrumb: "servicios|/#servicios;sistemas a medida"
 page_class: "service-page service-page--systems"

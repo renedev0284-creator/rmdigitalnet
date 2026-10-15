@@ -44,9 +44,9 @@ right_sidebar:
 
 # Etiquetas de especialidad, sidebar derecho, cada una enlaza a servicios
 specialty_tags:
-  - text: "#procesos"
-    url: "/#servicios"
   - text: "#sistemas"
-    url: "/#servicios"
-  - text: "#control"
-    url: "/#servicios"
+    url: "/servicios/sistemas-a-medida/"
+  - text: "#hojas"
+    url: "/servicios/hojas-de-calculo/"
+  - text: "#publicidad"
+    url: "/servicios/publicidad-digital/"

@@ -1,6 +1,7 @@
 ---
 layout: home
 title: "Sistemas y automatización para negocios pequeños"
+seo_title: "Sistemas y automatización para pymes en Guatemala | René Moya"
 description: >-
   René Moya ayuda a negocios pequeños de Guatemala a ordenar ventas,
   inventario, costos y seguimiento con hojas, automatización y sistemas a

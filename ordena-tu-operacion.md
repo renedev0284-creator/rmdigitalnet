@@ -1,9 +1,24 @@
 ---
 layout: project
 title: "Sistemas web a medida con base de datos para tu negocio"
-description: "Diseño y desarrollo sistemas web con base de datos para negocios que ya superaron las hojas sueltas: ventas, inventario, clientes y reportes en un mismo lugar, como hice con TopoApp."
+description: "Sistemas web con base de datos para negocios que superaron las hojas sueltas: ventas, inventario, clientes y reportes en un solo lugar, como TopoApp."
+seo_title: "Sistemas web a medida con base de datos"
 permalink: /ordena-tu-operacion/
 service_type: "Sistemas web a medida con base de datos para negocios pequeños"
+faqs:
+  - question: "¿Necesito saber de tecnología para tener un sistema así?"
+    answer: "No. Yo me encargo de la parte técnica; tú solo me explicas cómo funciona tu negocio hoy y qué te gustaría mejorar."
+    open: true
+  - question: "¿Qué necesito para comenzar?"
+    answer: "Basta con contarme en qué situación está tu negocio hoy y qué te gustaría resolver. A partir de ahí definimos juntos el siguiente paso."
+  - question: "¿La primera conversación tiene costo?"
+    answer: "No. La primera conversación es para entender tu operación y compartirte si un sistema a medida tiene sentido para ti, sin compromiso."
+  - question: "¿Cuánto tarda un proyecto?"
+    answer: "Se define según el alcance del proyecto. Antes de empezar acordamos tiempos realistas según lo que necesitemos construir."
+  - question: "¿Qué pasa si mi negocio crece o cambia?"
+    answer: "El sistema se puede ampliar por etapas, agregando módulos según lo que tu negocio necesite en cada momento."
+  - question: "¿Puedes adaptar la solución a mi presupuesto?"
+    answer: "Sí. Antes de cotizar buscamos una primera versión útil que se ajuste a tu presupuesto y a la prioridad real de tu negocio."
 ---
 
 <section class="hero hero--split" id="pitch-hero" aria-labelledby="hero-title">
@@ -266,12 +281,9 @@ service_type: "Sistemas web a medida con base de datos para negocios pequeños"
   </div>
 
   <div class="faq-list">
-    {% include faq-item.html question="¿Necesito saber de tecnología para tener un sistema así?" answer="No. Yo me encargo de la parte técnica; tú solo me explicas cómo funciona tu negocio hoy y qué te gustaría mejorar." open=true %}
-    {% include faq-item.html question="¿Qué necesito para comenzar?" answer="Basta con contarme en qué situación está tu negocio hoy y qué te gustaría resolver. A partir de ahí definimos juntos el siguiente paso." %}
-    {% include faq-item.html question="¿La primera conversación tiene costo?" answer="No. La primera conversación es para entender tu operación y compartirte si un sistema a medida tiene sentido para ti, sin compromiso." %}
-    {% include faq-item.html question="¿Cuánto tarda un proyecto?" answer="Se define según el alcance del proyecto. Antes de empezar acordamos tiempos realistas según lo que necesitemos construir." %}
-    {% include faq-item.html question="¿Qué pasa si mi negocio crece o cambia?" answer="El sistema se puede ampliar por etapas, agregando módulos según lo que tu negocio necesite en cada momento." %}
-    {% include faq-item.html question="¿Puedes adaptar la solución a mi presupuesto?" answer="Sí. Antes de cotizar buscamos una primera versión útil que se ajuste a tu presupuesto y a la prioridad real de tu negocio." %}
+    {% for faq in page.faqs %}
+      {% include faq-item.html question=faq.question answer=faq.answer open=faq.open %}
+    {% endfor %}
   </div>
 
   <p class="policy-note">La información de esta página puede actualizarse según los servicios disponibles en cada momento.</p>

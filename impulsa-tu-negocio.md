@@ -1,9 +1,24 @@
 ---
 layout: project
 title: "Mejora tu presencia digital y convierte mejor tus consultas"
-description: "Te comparto cómo ayudo a negocios pequeños a mejorar su presencia digital, ordenar el seguimiento de sus consultas y convertir mejor cada contacto. Escríbeme y conversemos sin compromiso."
+description: "Páginas claras, seguimiento ordenado de consultas y publicidad medida para que tu negocio convierta más contactos en clientes. Diagnóstico sin costo."
+seo_title: "Presencia digital que convierte consultas en clientes"
 permalink: /impulsa-tu-negocio/
 service_type: "Presencia digital, automatización y publicidad para negocios pequeños"
+faqs:
+  - question: "¿Con qué tipo de negocios trabajas?"
+    answer: "Con negocios pequeños y emprendedores que venden productos o servicios y quieren ordenar cómo se presentan y cómo atienden sus consultas."
+    open: true
+  - question: "¿Qué necesito para comenzar?"
+    answer: "Basta con contarme en qué situación está tu negocio hoy y qué te gustaría mejorar. A partir de ahí definimos juntos el siguiente paso."
+  - question: "¿La primera conversación tiene costo?"
+    answer: "No. La primera conversación es para entender tu situación y compartirte oportunidades de mejora concretas, sin compromiso."
+  - question: "¿Cuánto tarda un proyecto?"
+    answer: "Se define según el alcance del proyecto. Antes de empezar acordamos tiempos realistas según lo que necesitemos construir."
+  - question: "¿Trabajas de forma remota?"
+    answer: "Sí. Trabajo de forma remota con negocios en Guatemala y otros países, coordinando por WhatsApp, correo o videollamada."
+  - question: "¿Puedes adaptar la solución a mi presupuesto?"
+    answer: "Sí. Antes de cotizar buscamos una primera versión útil que se ajuste a tu presupuesto y a la prioridad real de tu negocio."
 ---
 
 <section class="hero hero--split" id="pitch-hero" aria-labelledby="hero-title">
@@ -228,12 +243,9 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
   </div>
 
   <div class="faq-list">
-    {% include faq-item.html question="¿Con qué tipo de negocios trabajas?" answer="Con negocios pequeños y emprendedores que venden productos o servicios y quieren ordenar cómo se presentan y cómo atienden sus consultas." open=true %}
-    {% include faq-item.html question="¿Qué necesito para comenzar?" answer="Basta con contarme en qué situación está tu negocio hoy y qué te gustaría mejorar. A partir de ahí definimos juntos el siguiente paso." %}
-    {% include faq-item.html question="¿La primera conversación tiene costo?" answer="No. La primera conversación es para entender tu situación y compartirte oportunidades de mejora concretas, sin compromiso." %}
-    {% include faq-item.html question="¿Cuánto tarda un proyecto?" answer="Se define según el alcance del proyecto. Antes de empezar acordamos tiempos realistas según lo que necesitemos construir." %}
-    {% include faq-item.html question="¿Trabajas de forma remota?" answer="Sí. Trabajo de forma remota con negocios en Guatemala y otros países, coordinando por WhatsApp, correo o videollamada." %}
-    {% include faq-item.html question="¿Puedes adaptar la solución a mi presupuesto?" answer="Sí. Antes de cotizar buscamos una primera versión útil que se ajuste a tu presupuesto y a la prioridad real de tu negocio." %}
+    {% for faq in page.faqs %}
+      {% include faq-item.html question=faq.question answer=faq.answer open=faq.open %}
+    {% endfor %}
   </div>
 
   <p class="policy-note">La información de esta página puede actualizarse según los servicios disponibles en cada momento.</p>

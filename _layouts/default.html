@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  {% seo %}
+  {% comment %}
+    El <title> se arma aquí para poder usar "seo_title" (versión corta para
+    Google) sin cambiar el título visible de la página ni el de redes.
+  {% endcomment %}
+  {% assign seo_title = page.seo_title | default: page.title | default: site.title %}
+  <title>{% if seo_title contains ' | ' %}{{ seo_title }}{% else %}{{ seo_title }} | {{ site.title }}{% endif %}</title>
+  {% seo title=false %}
   {% include social-image-meta.html %}
   {% include structured-data.html %}
   <link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | absolute_url }}">
@@ -14,9 +20,8 @@
   <link rel="apple-touch-icon" href="{{ '/assets/img/logo-rm-verde.png' | absolute_url }}">
   <meta name="theme-color" content="#236b57">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preload" href="{{ '/assets/fonts/ubuntu-700.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ '/assets/fonts/ubuntu-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <script>
     if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.add("motion-ready");

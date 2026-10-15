@@ -1,7 +1,7 @@
 ---
 layout: project
 title: "TopoApp: un sistema de ventas para emprendedores"
-description: "Conoce cómo René Moya diseñó TopoApp para conectar pedidos, inventario, envíos, comisiones y finanzas en un solo flujo para negocios que venden por WhatsApp y redes sociales."
+description: "Cómo diseñé TopoApp para conectar pedidos, inventario, envíos, comisiones y finanzas en un solo flujo para negocios que venden por WhatsApp."
 permalink: /proyectos/topoapp/
 breadcrumb: "proyectos|/#anuncios;TopoApp"
 project_schema: true

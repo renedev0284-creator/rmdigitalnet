@@ -20,6 +20,7 @@ author:
   twitter: "Rened_ev"
 
 lang: es
+locale: es_GT
 
 logo: /assets/img/logo-rm-verde.png
 
@@ -106,6 +107,11 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# Cabeceras HTTP para Cloudflare (caché y seguridad); Jekyll ignora por
+# defecto los archivos que empiezan con "_".
+include:
+  - _headers
 
 exclude:
   - Gemfile

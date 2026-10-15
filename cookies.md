@@ -40,7 +40,7 @@ La preferencia de consentimiento no se usa para identificarte ni crear perfiles.
 
 ## 3. Servicios externos
 
-El sitio está alojado en **Cloudflare Workers** y utiliza **Google Fonts** para cargar la tipografía Ubuntu. Si aceptas la analítica, también se carga **Google Analytics** (Google LLC), que procesa los datos según la [política de privacidad de Google](https://policies.google.com/privacy). Al conectarte, esos proveedores pueden recibir datos técnicos habituales, como dirección IP, tipo de navegador, fecha de solicitud y registros de seguridad, de acuerdo con sus propias políticas.
+El sitio está alojado en **Cloudflare Workers**; la tipografía se sirve desde el propio dominio, sin conectar con Google Fonts. Si aceptas la analítica, también se carga **Google Analytics** (Google LLC), que procesa los datos según la [política de privacidad de Google](https://policies.google.com/privacy). Al conectarte, esos proveedores pueden recibir datos técnicos habituales, como dirección IP, tipo de navegador, fecha de solicitud y registros de seguridad, de acuerdo con sus propias políticas.
 
 Los enlaces a redes sociales, PayPal y topoapp.net no cargan contenido de esas plataformas dentro de esta página. Sus políticas empiezan a aplicar cuando decides abrir esos enlaces.
 

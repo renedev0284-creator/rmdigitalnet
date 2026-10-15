@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Vender por WhatsApp sin perder el control de pedidos e inventario"
+seo_title: "Vender por WhatsApp sin perder el control"
 slug: vender-por-whatsapp-sin-perder-el-control
 date: 2026-09-05 09:00:00 -0600
 

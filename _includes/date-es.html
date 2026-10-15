@@ -1,0 +1,4 @@
+{% comment %}
+  Fecha en español: {% include date-es.html date=page.date %} → "5 de septiembre de 2026".
+  El filtro date de Jekyll solo conoce los meses en inglés.
+{% endcomment %}{% assign date_es_months = "enero,febrero,marzo,abril,mayo,junio,julio,agosto,septiembre,octubre,noviembre,diciembre" | split: "," %}{% assign date_es_index = include.date | date: "%-m" | minus: 1 %}{{ include.date | date: "%-d" }} de {{ date_es_months[date_es_index] }} de {{ include.date | date: "%Y" }}

@@ -2,6 +2,7 @@
 layout: page
 title: "Control de ventas, inventario y costos con hojas de cálculo"
 description: "Diseño hojas de cálculo en Excel y Google Sheets para que negocios pequeños controlen ventas, inventario, costos y seguimiento sin sistemas innecesarios."
+seo_title: "Hojas de cálculo para controlar ventas e inventario"
 permalink: /servicios/hojas-de-calculo/
 breadcrumb: "servicios|/#servicios;hojas de cálculo"
 page_class: "service-page service-page--sheets"

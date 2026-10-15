@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Señales de que tu negocio necesita un sistema a medida"
+seo_title: "Señales de que necesitas un sistema a medida"
 slug: senales-negocio-necesita-sistema-medida
 date: 2026-07-22 08:10:00 -0600
 
