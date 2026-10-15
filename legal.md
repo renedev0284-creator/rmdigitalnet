@@ -5,6 +5,8 @@ description: "Aviso legal, privacidad, propiedad intelectual y principios profes
 permalink: /legal/
 breadcrumb: "legal"
 page_class: "policy-page"
+hero_eyebrow: "Transparencia"
+hero_cta: false
 ---
 
 <div class="policy-intro">

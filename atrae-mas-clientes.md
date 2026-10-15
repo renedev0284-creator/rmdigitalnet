@@ -234,6 +234,8 @@ faqs:
   </div>
 </section>
 
+{% if site.data.testimonials.items.size > 0 %}{% include testimonials.html %}{% endif %}
+
 <section class="home-section faq-section" id="faqs" aria-labelledby="faq-title" data-reveal>
   <div class="section-heading">
     <div>

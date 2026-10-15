@@ -95,6 +95,14 @@
   .sep { margin: 0 5px; }
 }
 
+// Si la página tiene hero, la ruta comparte su fondo para verse como una pieza.
+.breadcrumb:has(~ .hero) {
+  padding-bottom: 4px;
+  background-color: #f1f7f2;
+  background-image: linear-gradient(rgba(35, 107, 87, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 .hero {
   position: relative;
   overflow: hidden;
@@ -179,6 +187,37 @@
   .sub { margin: 0; }
   .hero-actions { justify-content: flex-start; }
 }
+
+// Hero de páginas internas: mismo fondo que la home, algo más compacto y
+// siempre alineado a la izquierda.
+.hero--page {
+  padding-top: 58px;
+  padding-bottom: 62px;
+
+  .hero-inner { max-width: 1080px; }
+  .hero-copy { max-width: 760px; text-align: left; }
+  .main { font-size: clamp(36px, 4.2vw, 52px); }
+  .sub { margin: 0; }
+  .hero-actions { justify-content: flex-start; }
+}
+
+.hero--page.hero--split .hero-copy { max-width: none; }
+.hero--page:not(.hero--split) { padding-top: 46px; padding-bottom: 52px; }
+
+.hero-points {
+  position: relative;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid #cbded5;
+  border-radius: 16px;
+  box-shadow: 0 0 0 6px rgba(255, 253, 248, 0.6), 0 24px 48px rgba(36, 48, 42, 0.1);
+
+  ul { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none; }
+  li { display: flex; align-items: flex-start; gap: 11px; color: var(--text-primary); font-size: 14px; font-weight: 500; line-height: 1.45; }
+}
+
+.hero-points-label { margin: 0 0 16px; padding-bottom: 12px; color: var(--accent); border-bottom: 1px dashed #cbded5; font-family: $font-mono; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+.hero-points-icon { display: flex; width: 24px; height: 24px; flex-shrink: 0; align-items: center; justify-content: center; color: #fff; background: var(--accent); border-radius: 7px; }
 
 .hero-portrait {
   position: relative;
@@ -492,6 +531,10 @@
   .hero .hero-actions .button { width: 100%; }
   .hero--split .hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero--split .hero-copy { text-align: center; }
+  .hero--page { padding-top: 40px; padding-bottom: 44px; }
+  .hero--page .hero-copy,
+  .hero--page.hero--split .hero-copy { text-align: left; }
+  .hero--page .hero-points { order: 2; }
   .hero--split .sub { margin: 0 auto; }
   .hero-portrait { order: -1; width: min(220px, 64%); margin: 0 auto; }
   .hero-portrait img { aspect-ratio: 1; object-position: 50% 22%; }

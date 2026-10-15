@@ -1,0 +1,19 @@
+{% comment %}
+  Sección de preguntas frecuentes. Usa include.items o, si no se pasa, page.faqs.
+  El schema FAQPage lo genera structured-data.html a partir de los mismos datos.
+{% endcomment %}
+{% assign faq_items = include.items | default: page.faqs %}
+<section id="faqs" class="home-section faq-section" aria-labelledby="faq-title" data-reveal>
+  <div class="section-heading">
+    <div>
+      <p class="section-kicker">{{ include.kicker | default: "Antes de escribir" }}</p>
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+    </div>
+  </div>
+
+  <div class="faq-list">
+    {% for faq in faq_items %}
+      {% include faq-item.html question=faq.question answer=faq.answer open=faq.open %}
+    {% endfor %}
+  </div>
+</section>

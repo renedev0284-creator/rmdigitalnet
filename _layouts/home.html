@@ -23,13 +23,7 @@ layout: default
     </div>
   </section>
 
-  <div class="trust-strip">
-    <div class="trust-strip-inner">
-      {% for service in site.data.home.services %}
-        <span>{% include icon.html name=service.icon size=13 %} {{ service.tag }}</span>
-      {% endfor %}
-    </div>
-  </div>
+  {% include trust-strip.html %}
 
   <div class="content">
 
@@ -103,75 +97,18 @@ layout: default
         </div>
       </section>
 
-      <section id="proceso" class="home-section process" aria-labelledby="process-title" data-reveal>
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Cómo trabajo</p>
-            <h2 id="process-title">Un proceso de cuatro pasos, sin sorpresas</h2>
-          </div>
-          <p class="section-intro">Antes de construir algo, entendemos juntos el punto de partida y qué resultado importa primero.</p>
-        </div>
-
-        <ol class="operation-flow operation-flow--four" data-stagger>
-          <li>
-            <span class="operation-number">01</span>
-            <span class="operation-icon">{% include icon.html name="target" size=22 %}</span>
-            <h3>Diagnóstico inicial</h3>
-            <p>Reviso cómo funciona tu proceso hoy y dónde se pierde tiempo o control.</p>
-          </li>
-          <li>
-            <span class="operation-number">02</span>
-            <span class="operation-icon">{% include icon.html name="chart" size=22 %}</span>
-            <h3>Definición de objetivos y prioridades</h3>
-            <p>Definimos juntos qué resultado importa primero y cuál sería el alcance realista.</p>
-          </li>
-          <li>
-            <span class="operation-number">03</span>
-            <span class="operation-icon">{% include icon.html name="code" size=22 %}</span>
-            <h3>Implementación de la solución</h3>
-            <p>Construyo o ajusto lo necesario: una hoja, un sistema, una página o una campaña.</p>
-          </li>
-          <li>
-            <span class="operation-number">04</span>
-            <span class="operation-icon">{% include icon.html name="check" size=22 %}</span>
-            <h3>Seguimiento y mejora</h3>
-            <p>Revisamos qué está funcionando y ajustamos con datos reales, no con suposiciones.</p>
-          </li>
-        </ol>
-      </section>
+      {% include process.html %}
 
       {% if site.data.testimonials.items.size > 0 %}
         {% include testimonials.html %}
       {% endif %}
 
-      <section class="home-cta" aria-labelledby="cta-title" data-reveal>
-        <div>
-          <p class="section-kicker">Una conversación antes que una cotización</p>
-          <h2 id="cta-title">Muéstrame el proceso que hoy te quita tiempo o control.</h2>
-          <p>Te ayudaré a identificar dónde está la fricción y cuál sería el siguiente paso más sensato, sin empezar por venderte una solución.</p>
-        </div>
-        <div class="home-cta-actions">
-          {% include whatsapp-button.html class="button button--light" label="Escríbeme por WhatsApp" %}
-          <a class="text-link home-cta-mail" href="mailto:{{ site.author.email }}?subject=Quiero%20revisar%20un%20proceso%20de%20mi%20negocio">
-            {% include icon.html name="mail" size=15 %} o escríbeme por correo
-          </a>
-        </div>
-      </section>
+      {% include cta-band.html
+        kicker="Una conversación antes que una cotización"
+        title="Muéstrame el proceso que hoy te quita tiempo o control."
+        text="Te ayudaré a identificar dónde está la fricción y cuál sería el siguiente paso más sensato, sin empezar por venderte una solución." %}
 
-      <section id="faqs" class="home-section faq-section" aria-labelledby="faq-title" data-reveal>
-        <div class="section-heading">
-          <div>
-            <p class="section-kicker">Antes de escribir</p>
-            <h2 id="faq-title">Preguntas frecuentes</h2>
-          </div>
-        </div>
-
-        <div class="faq-list">
-          {% for faq in site.data.home.faqs %}
-            {% include faq-item.html question=faq.question answer=faq.answer open=faq.open %}
-          {% endfor %}
-        </div>
-      </section>
+      {% include faq-section.html items=site.data.home.faqs %}
 
       {% assign latest_post = site.posts.first %}
       {% if latest_post %}

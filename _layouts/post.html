@@ -49,7 +49,7 @@ layout: default
           </div>
         {% endif %}
 
-        <aside class="post-cta" aria-label="Siguiente paso">
+        <aside class="post-cta" aria-label="Siguiente paso" data-reveal>
           <p class="section-kicker">{{ cta.kicker }}</p>
           <p class="post-cta-title">{{ cta.title }}</p>
           <p>{{ cta.text }}</p>
@@ -59,7 +59,7 @@ layout: default
           </div>
         </aside>
 
-        <aside class="post-author-box" aria-label="Sobre el autor">
+        <aside class="post-author-box" aria-label="Sobre el autor" data-reveal>
           <img src="{{ '/assets/img/avatar-web-bw.webp' | relative_url }}" alt="{{ site.author.name }}" width="72" height="72" loading="lazy" decoding="async">
           <div>
             <p class="post-author-name">Escrito por {{ site.author.name }}</p>
@@ -78,9 +78,9 @@ layout: default
           {% unless post.url == page.url or related contains post %}{% assign related = related | push: post %}{% endunless %}
         {% endfor %}
         {% if related.size > 0 %}
-          <section class="post-related" aria-labelledby="related-title">
+          <section class="post-related" aria-labelledby="related-title" data-reveal>
             <h2 id="related-title">Sigue leyendo</h2>
-            <div class="post-related-grid">
+            <div class="post-related-grid" data-stagger>
               {% for post in related limit: 2 %}
                 <a class="post-related-card" href="{{ post.url | relative_url }}">
                   {% if post.image %}<img src="{{ post.image | relative_url }}" alt="" width="1200" height="630" loading="lazy" decoding="async">{% endif %}

@@ -5,9 +5,21 @@ description: "Conoce a René Moya, desarrollador y marketer que ayuda a negocios
 permalink: /acerca-de/
 breadcrumb: "acerca de"
 page_class: "about-page"
+
+hero_eyebrow: "Acerca de · desarrollador y marketer en Guatemala"
+hero_title: "Hola, soy René."
+hero_highlight: "Ordeno negocios para que puedan crecer."
+hero_sub: "Ayudo a emprendedores y equipos pequeños a poner en orden ventas, inventario, costos y seguimiento, con la solución más sencilla que les dé control: una hoja, una automatización o un sistema a medida."
+hero_portrait: true
+show_process: true
+show_testimonials: true
+cta:
+  kicker: "Empecemos por conversar"
+  title: "¿Hay un proceso que hoy te quita tiempo o control?"
+  text: "No necesitas llegar con la solución definida. Muéstrame cómo funciona y revisemos cuál sería el siguiente paso más sensato."
 ---
 
-Soy **René Moya, desarrollador y marketer**. Ayudo a emprendedores y equipos pequeños a poner en orden ventas, inventario, costos y seguimiento para que puedan trabajar y crecer con más control.
+## Convertir una operación dispersa en un proceso claro
 
 Mi especialidad es entender una operación dispersa y convertirla en un proceso claro. A veces basta con una [hoja de cálculo bien diseñada]({{ '/servicios/hojas-de-calculo/' | relative_url }}); cuando el negocio necesita conectar más personas, datos o tareas, puedo construir un [sistema a medida]({{ '/servicios/sistemas-a-medida/' | relative_url }}). La [publicidad digital]({{ '/servicios/publicidad-digital/' | relative_url }}) entra como apoyo cuando también hace falta atraer oportunidades y medir qué sucede después.
 
@@ -24,8 +36,3 @@ También puedo acompañarte durante la implementación. La meta no es entregar a
 Me pongo a tu disposición para crear soluciones que **simplifiquen el trabajo y devuelvan control sobre la operación**. La herramienta puede cambiar, pero el criterio se mantiene: resolver el problema con el nivel de complejidad justo.
 
 Si tienes una idea, un proceso desordenado o una tarea que consume demasiado tiempo, podemos empezar por conversar. No necesitas llegar con la solución definida; basta con contarme qué está pasando y qué te gustaría mejorar.
-
-{% include page-cta.html
-  title="¿Hay un proceso que hoy te quita tiempo o control?"
-  text="Muéstrame cómo funciona y revisemos cuál sería el siguiente paso más sensato."
-  mail_subject="Quiero revisar un proceso de mi negocio" %}

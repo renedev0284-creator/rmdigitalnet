@@ -1,0 +1,7 @@
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    {% for service in site.data.home.services %}
+      <span>{% include icon.html name=service.icon size=13 %} {{ service.tag }}</span>
+    {% endfor %}
+  </div>
+</div>

@@ -1,17 +1,64 @@
 ---
 layout: default
 ---
+{% comment %}
+  Páginas internas (servicios, acerca de, legales). Secciones opcionales desde
+  el front matter, en este orden:
+    hero (por defecto sí; hero: false lo quita) → trust_strip → features →
+    contenido Markdown → show_process → show_testimonials → faqs → cta
+{% endcomment %}
   {% include breadcrumb.html trail=page.breadcrumb %}
+
+  {% unless page.hero == false %}
+    {% include page-hero.html %}
+    {% if page.trust_strip %}{% include trust-strip.html %}{% endif %}
+  {% endunless %}
 
   <div class="content content--page">
 
     {% include sidebar-left.html %}
 
     <main id="main-content" class="main-col">
-      <article class="page-body{% if page.page_class %} {{ page.page_class }}{% endif %}">
-        <h1>{{ page.title }}</h1>
+
+      {% if page.features %}
+        <section class="home-section services page-features" aria-labelledby="features-title" data-reveal>
+          <div class="section-heading">
+            <div>
+              <p class="section-kicker">{{ page.features_kicker | default: "Qué incluye" }}</p>
+              <h2 id="features-title">{{ page.features_title }}</h2>
+            </div>
+            {% if page.features_intro %}<p class="section-intro">{{ page.features_intro }}</p>{% endif %}
+          </div>
+          <div class="service-grid" data-stagger>
+            {% for feature in page.features %}
+              <article class="service-card">
+                <div class="service-top">
+                  <span class="service-icon">{% include icon.html name=feature.icon size=23 %}</span>
+                  <span class="service-number">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+                </div>
+                <h3>{{ feature.title }}</h3>
+                <p>{{ feature.text }}</p>
+              </article>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+
+      <article class="page-body{% if page.page_class %} {{ page.page_class }}{% endif %}" data-reveal>
+        {% if page.hero == false %}<h1>{{ page.title }}</h1>{% endif %}
         {{ content }}
       </article>
+
+      {% if page.show_process %}{% include process.html %}{% endif %}
+
+      {% if page.show_testimonials and site.data.testimonials.items.size > 0 %}{% include testimonials.html %}{% endif %}
+
+      {% if page.faqs %}{% include faq-section.html %}{% endif %}
+
+      {% if page.cta %}
+        {% include cta-band.html kicker=page.cta.kicker title=page.cta.title text=page.cta.text message=page.cta.message subject=page.cta.subject %}
+      {% endif %}
+
     </main>
 
     {% include sidebar-right.html %}

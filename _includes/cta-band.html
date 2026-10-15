@@ -1,0 +1,19 @@
+{% comment %}
+  Bloque verde de llamada a la acción.
+  Uso: {% include cta-band.html kicker="..." title="..." text="..." message="Mensaje de WhatsApp" subject="Asunto del correo" %}
+  "message" y "subject" son opcionales.
+{% endcomment %}
+{% assign cta_subject = include.subject | default: "Quiero revisar un proceso de mi negocio" %}
+<section class="home-cta" aria-labelledby="cta-title" data-reveal>
+  <div>
+    <p class="section-kicker">{{ include.kicker }}</p>
+    <h2 id="cta-title">{{ include.title }}</h2>
+    <p>{{ include.text }}</p>
+  </div>
+  <div class="home-cta-actions">
+    {% include whatsapp-button.html class="button button--light" label="Escríbeme por WhatsApp" message=include.message %}
+    <a class="text-link home-cta-mail" href="mailto:{{ site.author.email }}?subject={{ cta_subject | url_encode }}">
+      {% include icon.html name="mail" size=15 %} o escríbeme por correo
+    </a>
+  </div>
+</section>

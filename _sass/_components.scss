@@ -476,6 +476,9 @@
     letter-spacing: -0.02em;
   }
 
+  // Con el título en el hero, el contenido puede empezar directo en un h2.
+  > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+
   > p,
   > ul,
   > blockquote { max-width: 760px; }

@@ -2,16 +2,13 @@
 layout: default
 ---
   {% include breadcrumb.html trail="blog" %}
+  {% include page-hero.html %}
 
   <div class="content content--page">
 
     {% include sidebar-left.html %}
 
-    <main id="main-content" class="main-col" data-reveal>
-      <header class="blog-header">
-        <h1 class="blog-title">{{ page.title }}</h1>
-        {% if page.description %}<p class="blog-intro">{{ page.description }}</p>{% endif %}
-      </header>
+    <main id="main-content" class="main-col">
 
       {% comment %} Filtro por tema: funciona sin recargar y también con /blog/?tag=slug {% endcomment %}
       {% assign all_topics = "" | split: "" %}
@@ -27,7 +24,7 @@ layout: default
       </div>
       <p class="blog-filter-status" data-blog-status aria-live="polite" hidden></p>
 
-      <div class="post-list" data-stagger>
+      <div class="post-list" data-stagger data-reveal>
         {% for post in site.posts %}
           {% assign post_topics = post.categories | concat: post.tags %}
           <a class="post-preview" href="{{ post.url | relative_url }}" data-topics="{% for t in post_topics %}{{ t | slugify: "latin" }} {% endfor %}">
@@ -50,6 +47,12 @@ layout: default
           </a>
         {% endfor %}
       </div>
+
+      {% include cta-band.html
+        kicker="¿Te identificaste con algún artículo?"
+        title="Cuéntame qué está pasando en tu negocio."
+        text="Revisamos juntos el proceso y te digo cuál sería el siguiente paso más sensato, sin empezar por venderte una herramienta."
+        message="Hola René, leí tu blog y quiero revisar un proceso de mi negocio." %}
     </main>
 
     {% include sidebar-right.html %}

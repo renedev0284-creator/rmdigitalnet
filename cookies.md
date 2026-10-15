@@ -5,6 +5,8 @@ description: "Información clara sobre cookies, almacenamiento local y servicios
 permalink: /cookies/
 breadcrumb: "cookies"
 page_class: "policy-page"
+hero_eyebrow: "Privacidad"
+hero_cta: false
 ---
 
 <div class="policy-intro policy-intro--cookies">

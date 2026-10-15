@@ -6,25 +6,67 @@ permalink: /servicios/publicidad-digital/
 breadcrumb: "servicios|/#servicios;publicidad digital"
 page_class: "service-page service-page--marketing"
 service_type: "Publicidad digital conectada al proceso comercial"
+
+hero_eyebrow: "Servicio de apoyo · Meta Ads y Google Ads"
+hero_title: "Publicidad conectada"
+hero_highlight: "a ventas, no solo a clics."
+hero_sub: "Organizo campañas en Meta y Google para negocios que necesitan atraer oportunidades, darles seguimiento y saber cuáles terminan produciendo resultados."
+hero_points:
+  - "Campañas en Meta (Facebook e Instagram) y Google"
+  - "Medición de lo que realmente vende"
+  - "Revisión de la oferta y la página de destino"
+  - "Decisiones explicadas, sin caja negra"
+whatsapp_message: "Hola René, quiero revisar mi publicidad y seguimiento de ventas."
+trust_strip: true
+
+features_kicker: "En qué puedo apoyarte"
+features_title: "Del anuncio a la venta, cada paso con un propósito"
+features_intro: "Según la etapa de tu negocio, el trabajo puede incluir uno o varios de estos frentes."
+features:
+  - icon: target
+    title: "Objetivos y públicos"
+    text: "Definición de objetivos, públicos y mensajes antes de invertir el primer quetzal."
+  - icon: code
+    title: "Estructura de campañas"
+    text: "Configuración ordenada de campañas, conjuntos y anuncios para poder comparar y aprender."
+  - icon: world
+    title: "Recorrido del cliente"
+    text: "Revisión de anuncios, páginas y la forma de atender cada contacto después del clic."
+  - icon: chart
+    title: "Métricas y seguimiento"
+    text: "Medición de conversaciones, solicitudes y ventas, no solo de impresiones y me gusta."
+  - icon: check
+    title: "Pruebas continuas"
+    text: "Pruebas de audiencias, mensajes y formatos para mejorar con datos y no con suposiciones."
+  - icon: spreadsheet
+    title: "Documentación clara"
+    text: "Registro de qué se hizo y por qué, para que entiendas tu inversión y tomes mejores decisiones."
+
+show_process: true
+show_testimonials: true
+
+faqs:
+  - question: "¿Garantizas resultados o ventas?"
+    answer: "No prometo resultados instantáneos ni cifras sin contexto. La publicidad depende de la oferta, el mercado, el presupuesto y la atención después del clic. Mi enfoque es trabajar con datos, explicar las decisiones y mejorar de forma continua."
+    open: true
+  - question: "¿Cuánto necesito invertir para empezar?"
+    answer: "Se define según tu negocio, tus objetivos y tu mercado. Antes de invertir revisamos juntos un presupuesto realista para tu situación."
+  - question: "¿En qué plataformas trabajas?"
+    answer: "En Meta (Facebook e Instagram) y Google. Elegimos según dónde está tu cliente y qué tipo de resultado necesitas."
+  - question: "¿Qué necesito tener listo antes de anunciar?"
+    answer: "Una oferta clara, una página o canal de destino y una forma ordenada de atender cada contacto. Una campaña no puede corregir por sí sola un proceso comercial que pierde oportunidades después del anuncio."
+
+cta:
+  kicker: "Medir antes de invertir más"
+  title: "¿Estás invirtiendo en publicidad sin tener claro qué está funcionando?"
+  text: "Revisemos tus objetivos, tu medición y los próximos pasos con calma."
+  message: "Hola René, quiero revisar mi publicidad y seguimiento de ventas."
+  subject: "Quiero revisar mi publicidad y seguimiento de ventas"
 ---
 
-La publicidad es un servicio de apoyo dentro de una operación ordenada. Puedo ayudarte a organizar campañas en **Meta y Google** cuando necesitas atraer oportunidades, darles seguimiento y saber cuáles terminan produciendo resultados, no solo impresiones y clics.
+## Primero el proceso, después el anuncio
 
-Antes de invertir más, revisamos la oferta, la página de destino y la forma en que el negocio atiende cada contacto. Una campaña no puede corregir por sí sola un proceso comercial que pierde oportunidades después del anuncio.
-
-## En qué puedo apoyarte
-
-Según la etapa y las necesidades del negocio, el trabajo puede incluir:
-
-- definición de objetivos, públicos y mensajes;
-- estructura y configuración de campañas;
-- revisión de anuncios, páginas y recorridos de contacto;
-- organización de métricas y seguimiento de resultados;
-- pruebas de audiencias, mensajes y formatos;
-- documentación para comprender qué se está haciendo y por qué;
-- mejoras en procesos comerciales relacionados con las campañas.
-
-No prometo resultados instantáneos ni cifras sin contexto. La publicidad depende de la oferta, el mercado, el presupuesto, la experiencia después del clic y la capacidad del negocio para atender oportunidades. Mi enfoque es **trabajar con datos, explicar las decisiones y mejorar de forma continua**.
+La publicidad es un servicio de apoyo dentro de una operación ordenada. Antes de invertir más, revisamos la oferta, la página de destino y la forma en que el negocio atiende cada contacto. Una campaña no puede corregir por sí sola un proceso comercial que pierde oportunidades después del anuncio.
 
 ## Medir lo que realmente importa
 
@@ -34,10 +76,4 @@ Cuando hace falta, también puedo apoyar con herramientas para ordenar contactos
 
 ## Una estrategia que puedas comprender
 
-Quiero que sepas dónde se invierte, qué se está probando y qué aprendimos. El marketing no debería sentirse como una caja cerrada. Una estrategia profesional también debe dejar criterios que permitan tomar mejores decisiones en el futuro.
-
-{% include page-cta.html
-  title="¿Estás invirtiendo en publicidad sin tener claro qué está funcionando?"
-  text="Revisemos tus objetivos, medición y próximos pasos con calma."
-  whatsapp_message="Hola René, quiero revisar mi publicidad y seguimiento de ventas."
-  mail_subject="Quiero revisar mi publicidad y seguimiento de ventas" %}
+Quiero que sepas dónde se invierte, qué se está probando y qué aprendimos. El marketing no debería sentirse como una caja cerrada: una estrategia profesional también debe dejar criterios para tomar mejores decisiones en el futuro.

@@ -1,0 +1,44 @@
+{% comment %}
+  Hero de páginas internas, con el mismo lenguaje visual que el de la home.
+  Front matter opcional:
+    hero_eyebrow   texto pequeño sobre el título
+    hero_title     título (por defecto page.title); hero_highlight, segunda línea en verde
+    hero_sub       párrafo bajo el título
+    hero_points    lista de puntos que se muestran en una tarjeta a la derecha
+    hero_portrait  true para mostrar el retrato a la derecha
+    hero_cta       false para ocultar los botones (páginas legales, blog)
+    whatsapp_message  mensaje predefinido del botón de WhatsApp
+{% endcomment %}
+{% assign hero_has_aside = false %}
+{% if page.hero_points or page.hero_portrait %}{% assign hero_has_aside = true %}{% endif %}
+<section class="hero hero--page{% if hero_has_aside %} hero--split{% endif %}" aria-labelledby="hero-title">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      {% if page.hero_eyebrow %}<p class="eyebrow"><span aria-hidden="true">~/</span> {{ page.hero_eyebrow }}</p>{% endif %}
+      <h1 id="hero-title" class="main">
+        {{ page.hero_title | default: page.title }}
+        {% if page.hero_highlight %}<span>{{ page.hero_highlight }}</span>{% endif %}
+      </h1>
+      {% if page.hero_sub %}<p class="sub">{{ page.hero_sub }}</p>{% endif %}
+      {% unless page.hero_cta == false %}
+        <div class="hero-actions">
+          {% include whatsapp-button.html label="Escríbeme por WhatsApp" message=page.whatsapp_message %}
+          {% if page.show_process %}<a class="button button--ghost" href="#proceso">Cómo trabajo</a>{% elsif page.faqs %}<a class="button button--ghost" href="#faqs">Preguntas frecuentes</a>{% endif %}
+        </div>
+        <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
+      {% endunless %}
+    </div>
+    {% if page.hero_portrait %}
+      {% include hero-portrait.html %}
+    {% elsif page.hero_points %}
+      <div class="hero-points">
+        <p class="hero-points-label">{{ page.hero_points_label | default: "Lo que obtienes" }}</p>
+        <ul>
+          {% for point in page.hero_points %}
+            <li><span class="hero-points-icon">{% include icon.html name="check" size=14 %}</span>{{ point }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</section>
