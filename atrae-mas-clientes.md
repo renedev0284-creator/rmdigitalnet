@@ -140,8 +140,7 @@ service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
     title="¿Reconoces dos o tres de estas señales en tu publicidad?"
     text="Cuéntame qué estás haciendo hoy y revisemos juntos qué está funcionando y qué no."
     whatsapp_message="Hola René, reconozco varias de estas señales en mi publicidad y quiero platicar."
-    mail_subject="Reconozco señales de que mi publicidad necesita orden"
-    email="rmoya0284@gmail.com" %}
+    mail_subject="Reconozco señales de que mi publicidad necesita orden" %}
 </section>
 
 <section class="project-section project-flow" aria-labelledby="process-title" data-reveal>
@@ -215,7 +214,7 @@ service_type: "Publicidad en redes sociales y Google Ads conectada a resultados"
   <div class="project-final-actions">
     {% include whatsapp-button.html class="button button--light" label="Escríbeme por WhatsApp" message="Hola René, quiero solicitar un diagnóstico de mi publicidad digital." %}
     <a class="button button--ghost" href="tel:+{{ site.whatsapp.number }}">{% include icon.html name="phone" size=16 %} Llamar {{ site.whatsapp.display }}</a>
-    <a class="button button--ghost" href="mailto:rmoya0284@gmail.com?subject=Quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20mi%20publicidad%20digital">{% include icon.html name="mail" size=16 %} Escribir un correo</a>
+    <a class="button button--ghost" href="mailto:{{ site.author.email }}?subject=Quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20mi%20publicidad%20digital">{% include icon.html name="mail" size=16 %} Escribir un correo</a>
   </div>
 </section>
 

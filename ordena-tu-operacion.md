@@ -178,8 +178,7 @@ service_type: "Sistemas web a medida con base de datos para negocios pequeños"
     title="¿Reconoces dos o tres de estas señales en tu negocio?"
     text="Cuéntame cómo operas hoy y revisemos juntos si ya es momento de dar el siguiente paso."
     whatsapp_message="Hola René, reconozco varias de estas señales en mi negocio y quiero platicar."
-    mail_subject="Reconozco señales de que necesito un sistema a medida"
-    email="rmoya0284@gmail.com" %}
+    mail_subject="Reconozco señales de que necesito un sistema a medida" %}
 </section>
 
 <section class="project-section project-flow" aria-labelledby="process-title" data-reveal>
@@ -253,7 +252,7 @@ service_type: "Sistemas web a medida con base de datos para negocios pequeños"
   <div class="project-final-actions">
     {% include whatsapp-button.html class="button button--light" label="Escríbeme por WhatsApp" message="Hola René, quiero solicitar un diagnóstico para un sistema a medida." %}
     <a class="button button--ghost" href="tel:+{{ site.whatsapp.number }}">{% include icon.html name="phone" size=16 %} Llamar {{ site.whatsapp.display }}</a>
-    <a class="button button--ghost" href="mailto:rmoya0284@gmail.com?subject=Quiero%20solicitar%20un%20diagn%C3%B3stico%20para%20un%20sistema%20a%20medida">{% include icon.html name="mail" size=16 %} Escribir un correo</a>
+    <a class="button button--ghost" href="mailto:{{ site.author.email }}?subject=Quiero%20solicitar%20un%20diagn%C3%B3stico%20para%20un%20sistema%20a%20medida">{% include icon.html name="mail" size=16 %} Escribir un correo</a>
   </div>
 </section>
 

@@ -2,17 +2,21 @@
 layout: default
 title: "Página no encontrada"
 permalink: /404.html
+sitemap: false
 ---
-<div class="frame">
-  <div class="content content--page">
-    {% include sidebar-left.html %}
-    <main id="main-content" class="main-col">
-      <div class="card" style="text-align:center; padding: 40px 20px;">
-        <h1>Página no encontrada</h1>
-        <p>El enlace que buscas no existe o cambió de lugar.</p>
-        <a class="btn-cta" href="{{ '/' | relative_url }}">volver a inicio</a>
+<div class="content content--page">
+  {% include sidebar-left.html %}
+  <main id="main-content" class="main-col">
+    <div class="card not-found">
+      <p class="section-kicker">Error 404</p>
+      <h1>Esta página no existe o cambió de lugar.</h1>
+      <p>Puede que el enlace esté incompleto. Desde aquí puedes volver al inicio, ver los servicios o escribirme directamente.</p>
+      <div class="hero-actions">
+        <a class="button button--primary" href="{{ '/' | relative_url }}">Volver al inicio</a>
+        <a class="button button--ghost" href="{{ '/#servicios' | relative_url }}">Ver servicios</a>
       </div>
-    </main>
-    {% include sidebar-right.html %}
-  </div>
+      <a class="text-link" href="{{ '/blog/' | relative_url }}">o lee el blog {% include icon.html name="arrow-right" size=15 %}</a>
+    </div>
+  </main>
+  {% include sidebar-right.html %}
 </div>

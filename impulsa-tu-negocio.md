@@ -140,8 +140,7 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
     title="¿Reconoces dos o tres de estas señales en tu negocio?"
     text="Cuéntame qué está pasando hoy y revisemos juntos si ya es momento de ordenarlo."
     whatsapp_message="Hola René, reconozco varias de estas señales en mi negocio y quiero platicar."
-    mail_subject="Reconozco señales de que necesito ordenar mi presencia digital"
-    email="rmoya0284@gmail.com" %}
+    mail_subject="Reconozco señales de que necesito ordenar mi presencia digital" %}
 </section>
 
 <section class="project-section project-flow" aria-labelledby="process-title" data-reveal>
@@ -215,7 +214,7 @@ service_type: "Presencia digital, automatización y publicidad para negocios peq
   <div class="project-final-actions">
     {% include whatsapp-button.html class="button button--light" label="Escríbeme por WhatsApp" message="Hola René, quiero solicitar un diagnóstico de mi presencia digital." %}
     <a class="button button--ghost" href="tel:+{{ site.whatsapp.number }}">{% include icon.html name="phone" size=16 %} Llamar {{ site.whatsapp.display }}</a>
-    <a class="button button--ghost" href="mailto:rmoya0284@gmail.com?subject=Quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20mi%20presencia%20digital">{% include icon.html name="mail" size=16 %} Escribir un correo</a>
+    <a class="button button--ghost" href="mailto:{{ site.author.email }}?subject=Quiero%20solicitar%20un%20diagn%C3%B3stico%20de%20mi%20presencia%20digital">{% include icon.html name="mail" size=16 %} Escribir un correo</a>
   </div>
 </section>
 
