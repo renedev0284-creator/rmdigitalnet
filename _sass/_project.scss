@@ -22,7 +22,8 @@
   padding: clamp(44px, 7vw, 76px);
   overflow: hidden;
   background-color: #edf6f0;
-  background-image: $texture-hero;
+  background-image: linear-gradient(rgba(35, 107, 87, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
   border: 1px solid #cbded5;
   border-radius: 20px;
 }

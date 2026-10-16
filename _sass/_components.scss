@@ -83,7 +83,8 @@
 .announcement-visual {
   padding: 24px 24px 20px;
   background-color: #dfece5;
-  background-image: $texture-hero;
+  background-image: linear-gradient(rgba(35, 107, 87, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 107, 87, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
   border-bottom: 1px solid #cbded5;
 }
 
