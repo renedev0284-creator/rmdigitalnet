@@ -36,7 +36,7 @@ faqs:
       </div>
       <p class="hero-note">Te respondo yo mismo, sin bots ni operadores.</p>
     </div>
-    {% include hero-portrait.html %}
+    {% include hero-globe.html %}
   </div>
 </section>
 

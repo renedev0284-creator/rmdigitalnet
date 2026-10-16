@@ -1,0 +1,15 @@
+{% comment %}
+  Globo animado del hero (assets/js/globe.js). Va dentro de .hero-inner junto
+  a .hero-copy, en una sección con la clase "hero--split".
+{% endcomment %}
+<figure class="hero-globe">
+  <div class="hero-globe-stage">
+    <span class="hero-globe-orbit" aria-hidden="true"></span>
+    <canvas data-globe role="img" aria-label="Globo terráqueo que gira, con conexiones desde Guatemala hacia Latinoamérica"></canvas>
+  </div>
+  <figcaption>
+    <span class="status-dot" aria-hidden="true"></span>
+    <span><strong>Desde Guatemala</strong> Trabajo remoto con negocios de Latinoamérica</span>
+  </figcaption>
+</figure>
+<script src="{{ '/assets/js/globe.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
